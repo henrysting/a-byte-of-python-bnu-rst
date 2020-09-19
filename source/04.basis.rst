@@ -608,5 +608,5 @@ Joining）*\ 。你可以在后面当我们讨论\ `列表（List） <https://gi
 
 现在我们已经了解了诸多本质性的细节，我们可以前去了解控制流语句等更多更加有趣的东西。记得一定要充分理解你在本章所阅读的内容。
 
-.. |image0| image:: pic/pycharm_command_line_arguments.png
+.. |image0| image:: ../pic/pycharm_command_line_arguments.png
 

@@ -159,7 +159,7 @@ Jupyter Notebook
 
    jupyter notebook 
 
-.. figure:: pic/03.IDE/jupyter.png
+.. figure:: ../pic/03.IDE/jupyter.png
    :alt: jupyter
 
    jupyter
@@ -169,7 +169,7 @@ Spyder
 
 `Spyder <https://www.spyder-ide.org/>`__\ 是Anaconda打包的集成开发环境。
 
-.. figure:: pic/03.IDE/spyder.png
+.. figure:: ../pic/03.IDE/spyder.png
    :alt: Spyder
 
    Spyder
@@ -188,14 +188,14 @@ PyCharm
 
 当你打开 PyCharm 时，你会看见如下界面，点击 ``Create New Project`` ：
 
-.. figure:: pic/pycharm_open.png
+.. figure:: ../pic/pycharm_open.png
    :alt: 当你打开 PyCharm 时
 
    当你打开 PyCharm 时
 
 选择 ``Pure Python`` ：
 
-.. figure:: pic/pycharm_create_new_project.png
+.. figure:: ../pic/pycharm_create_new_project.png
    :alt: PyCharm 新项目
 
    PyCharm 新项目
@@ -203,7 +203,7 @@ PyCharm
 将你的项目路径位置中的 ``untitled`` 更改为 ``helloworld``
 ，你所看到的界面细节应该类似于下方这番：
 
-.. figure:: pic/pycharm_create_new_project_pure_python.png
+.. figure:: ../pic/pycharm_create_new_project_pure_python.png
    :alt: PyCharm 项目细节
 
    PyCharm 项目细节
@@ -213,21 +213,21 @@ PyCharm
 对侧边栏中的 ``helloworld`` 右击选中，并选择 ``New`` -> ``Python File``
 ：
 
-.. figure:: pic/pycharm_new_python_file.png
+.. figure:: ../pic/pycharm_new_python_file.png
    :alt: PyCharm -&gt; New -&gt; Python File
 
    PyCharm -&gt; New -&gt; Python File
 
 你会被要求输入名字，现在输入 ``hello`` ：
 
-.. figure:: pic/pycharm_new_file_input.png
+.. figure:: ../pic/pycharm_new_file_input.png
    :alt: PyCharm 新文件对话框
 
    PyCharm 新文件对话框
 
 现在你便可以看见一个新的文件已为你开启：
 
-.. figure:: pic/pycharm_hello_open.png
+.. figure:: ../pic/pycharm_hello_open.png
    :alt: PyCharm hello.py 文件
 
    PyCharm hello.py 文件
@@ -240,14 +240,14 @@ PyCharm
 
 现在右击你所输入的内容（无需选中文本），然后点击 ``Run 'hello'`` 。
 
-.. figure:: pic/pycharm_run.png
+.. figure:: ../pic/pycharm_run.png
    :alt: PyCharm Run ‘hello’
 
    PyCharm Run ‘hello’
 
 此刻你将会看到你的程序所输出的内容（它所打印出来的内容）：
 
-.. figure:: pic/pycharm_output.png
+.. figure:: ../pic/pycharm_output.png
    :alt: PyCharm 输出内容
 
    PyCharm 输出内容
@@ -302,7 +302,7 @@ Python 程序：
    $ python hello.py
    hello world
 
-.. figure:: pic/terminal_screenshot.png
+.. figure:: ../pic/terminal_screenshot.png
    :alt: 在终端中运行程序的截图
 
    在终端中运行程序的截图
@@ -346,6 +346,6 @@ Python 程序是由 *语句*
 
 从此你便成为一名 Python 用户了，现在让我们来学习更多有关 Python 的概念。
 
-.. |IDLE界面| image:: pic/03.IDE/IDLE.jpg
-.. |Eclipse| image:: pic/03.IDE/Eclipse.jpg
+.. |IDLE界面| image:: ../pic/03.IDE/IDLE.jpg
+.. |Eclipse| image:: ../pic/03.IDE/Eclipse.jpg
 

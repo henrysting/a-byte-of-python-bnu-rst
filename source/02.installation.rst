@@ -134,21 +134,21 @@ Navigator、Jupyter Notebook和Spyder都得在命令行中启动。
 从现在起，我们将假定你已经在你的系统中安装了Anaconda
 Python。接下来，我们将要撰写我们的第一个 Python 程序。
 
-.. |image0| image:: pic/windows_01.png
-.. |image1| image:: pic/windows_02.png
-.. |image2| image:: pic/windows_03.png
-.. |image3| image:: pic/windows_04.png
-.. |image4| image:: pic/windows_05.png
-.. |image5| image:: pic/windows_08.png
-.. |image6| image:: pic/windows_09.png
-.. |image7| image:: pic/windows_9.png
-.. |image8| image:: pic/windows_10.png
-.. |image9| image:: pic/linux_01.png
-.. |image10| image:: pic/linux_02.png
-.. |image11| image:: pic/linux_03.png
-.. |image12| image:: pic/linux_04.png
-.. |image13| image:: pic/linux_05.png
-.. |image14| image:: pic/linux_06.png
-.. |image15| image:: pic/linux_07.png
-.. |image16| image:: pic/linux_08.png
+.. |image0| image:: ../pic/windows_01.png
+.. |image1| image:: ../pic/windows_02.png
+.. |image2| image:: ../pic/windows_03.png
+.. |image3| image:: ../pic/windows_04.png
+.. |image4| image:: ../pic/windows_05.png
+.. |image5| image:: ../pic/windows_08.png
+.. |image6| image:: ../pic/windows_09.png
+.. |image7| image:: ../pic/windows_9.png
+.. |image8| image:: ../pic/windows_10.png
+.. |image9| image:: ../pic/linux_01.png
+.. |image10| image:: ../pic/linux_02.png
+.. |image11| image:: ../pic/linux_03.png
+.. |image12| image:: ../pic/linux_04.png
+.. |image13| image:: ../pic/linux_05.png
+.. |image14| image:: ../pic/linux_06.png
+.. |image15| image:: ../pic/linux_07.png
+.. |image16| image:: ../pic/linux_08.png
 

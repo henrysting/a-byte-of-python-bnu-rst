@@ -397,19 +397,19 @@ pylab实时动画
    ani.FuncAnimation(fig, animate, np.arange(1, 200), interval=25, blit=True)
    plt.show()
 
-.. |image0| image:: pic/figure_1.png
-.. |image1| image:: pic/figure_2.png
-.. |image2| image:: pic/figure_3.png
-.. |image3| image:: pic/figure_4.png
-.. |image4| image:: pic/figure_5.png
-.. |image5| image:: pic/figure_6.png
-.. |image6| image:: pic/figure_7.png
-.. |image7| image:: pic/figure_8.png
-.. |image8| image:: pic/figure_9.png
-.. |image9| image:: pic/figure_10.png
-.. |image10| image:: pic/figure_11.png
-.. |image11| image:: pic/figure_12.png
-.. |image12| image:: pic/figure_13.png
-.. |image13| image:: pic/figure_14.png
-.. |image14| image:: pic/figure_16.png
+.. |image0| image:: ../pic/figure_1.png
+.. |image1| image:: ../pic/figure_2.png
+.. |image2| image:: ../pic/figure_3.png
+.. |image3| image:: ../pic/figure_4.png
+.. |image4| image:: ../pic/figure_5.png
+.. |image5| image:: ../pic/figure_6.png
+.. |image6| image:: ../pic/figure_7.png
+.. |image7| image:: ../pic/figure_8.png
+.. |image8| image:: ../pic/figure_9.png
+.. |image9| image:: ../pic/figure_10.png
+.. |image10| image:: ../pic/figure_11.png
+.. |image11| image:: ../pic/figure_12.png
+.. |image12| image:: ../pic/figure_13.png
+.. |image13| image:: ../pic/figure_14.png
+.. |image14| image:: ../pic/figure_16.png
 
