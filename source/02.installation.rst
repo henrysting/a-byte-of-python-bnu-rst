@@ -6,8 +6,7 @@
 3。由于Anaconda Python发行版使Python多版本环境和包的安装管理变得方便灵活，并且集成了适合数据分析和科学计算的工具，使其已成为大多数人安装Python的首选，所以这里我们选用最新版的Anaconda
 Python。值得注意的是，通过\ `Python官网 <https://www.python.org/>`__\ 也可以下载各个版本的Python，但其仅仅包含Python解释器，所以这里我们并不推荐。
 
-Anaconda的最新版本可在 https://www.anaconda.com/products/individual 或清华镜像 https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/ 
-下载。本讲义所用版本为Anaconda3 2019.10（其中包含Python 3.7.3）。
+Anaconda的最新版本可在\ `其官网 <https://www.anaconda.com/products/individual>`__\  或 \ `清华镜像 <https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/ >`__\ 下载。本讲义所用版本为Anaconda3 2019.10（其中包含Python 3.7.3）。
 
 在 Windows 中安装
 -----------------
@@ -134,21 +133,21 @@ Navigator、Jupyter Notebook和Spyder都得在命令行中启动。
 从现在起，我们将假定你已经在你的系统中安装了Anaconda
 Python。接下来，我们将要撰写我们的第一个 Python 程序。
 
-.. |image0| image:: ../pic/windows_01.png
-.. |image1| image:: ../pic/windows_02.png
-.. |image2| image:: ../pic/windows_03.png
-.. |image3| image:: ../pic/windows_04.png
-.. |image4| image:: ../pic/windows_05.png
-.. |image5| image:: ../pic/windows_08.png
-.. |image6| image:: ../pic/windows_09.png
-.. |image7| image:: ../pic/windows_9.png
-.. |image8| image:: ../pic/windows_10.png
-.. |image9| image:: ../pic/linux_01.png
-.. |image10| image:: ../pic/linux_02.png
-.. |image11| image:: ../pic/linux_03.png
-.. |image12| image:: ../pic/linux_04.png
-.. |image13| image:: ../pic/linux_05.png
-.. |image14| image:: ../pic/linux_06.png
-.. |image15| image:: ../pic/linux_07.png
-.. |image16| image:: ../pic/linux_08.png
+.. |image0| image:: ../pic/02/windows_1.png
+.. |image1| image:: ../pic/02/windows_2.png
+.. |image2| image:: ../pic/02/windows_3.png
+.. |image3| image:: ../pic/02/windows_4.png
+.. |image4| image:: ../pic/02/windows_5.png
+.. |image5| image:: ../pic/02/windows_6.png
+.. |image6| image:: ../pic/02/windows_7.png
+.. |image7| image:: ../pic/02/windows_9.png
+.. |image8| image:: ../pic/02/windows_10.png
+.. |image9| image:: ../pic/02/linux_01.png
+.. |image10| image:: ../pic/02/linux_02.png
+.. |image11| image:: ../pic/02/linux_03.png
+.. |image12| image:: ../pic/02/linux_04.png
+.. |image13| image:: ../pic/02/linux_05.png
+.. |image14| image:: ../pic/02/linux_06.png
+.. |image15| image:: ../pic/02/linux_07.png
+.. |image16| image:: ../pic/02/linux_08.png
 
