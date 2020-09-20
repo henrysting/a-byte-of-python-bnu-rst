@@ -260,6 +260,58 @@ PyCharm
 Quickstart <https://www.jetbrains.com/pycharm-educational/quickstart/>`__
 页面找到有关 PyCharm 的更多信息。
 
+
+Vscode
+~~~~~~~
+
+使用方法同以上类似。先打开一个你想保存.py文件的文件夹，然后编辑并允许即可。需要注意的是你需要编辑.vscode文件夹下的launch.json才能使vscode按照一个python的文件运行它。
+
+.. figure:: ../pic/vscode_edit1.png
+   :alt: VSCODE打开文件
+
+.. figure:: ../pic/vscode_edit2.png
+   :alt: VSCODE打开文件夹（工作区域）
+ 
+我们需要为launch.json配置如下内容
+
+.. code:: python
+
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "Python: Current File (Integrated Terminal)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Current File (External Terminal)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "externalTerminal"
+        }
+    ]
+}
+
+其中的关键部分在于 "type" ， "request" ， "program" 。
+
+type，必填项，调试类型，也就是以什么语言读这个文件；
+
+request，必填项，有两种类型，分别是 launch 和 attach，launch 就是以 debug 模式启动调试（开启一个新终端），attach 就是附加到已经启动的进程开启 debug 模式并调试（使用已有的终端）；
+
+program，程序的启动入口（在哪里找到文件），$file代表当前的.py路径;
+
+.. figure:: ../pic/vscode_edit3.png
+   :alt: VSCODE编辑launch.json
+   
 使用源文件
 ----------
 
