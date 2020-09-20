@@ -22,6 +22,15 @@ Windows用户只要正确地设置了PATH变量，应该可以从命令行启动
 如果安装时没有将Python加到系统路径当中，则可以使用安装菜单中的 Anaconda
 Prompt 程序启动。
 
+可以使用终端下的 DOS 命令以进行一些有关文件的基本操作：
+d:     改变路径到 D 盘
+cd     改变目录 , 如  cd test/
+dir    列出当前目录下文件和文件夹
+python  进入python运行环境
+ipython 进入ipython 增强运行环境
+python test.py  运行test.py脚本
+
+
 Linux 或 MacOS系统
 ~~~~~~~~~~~~~~~~~~
 
