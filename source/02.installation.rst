@@ -192,21 +192,21 @@ pip
 
 1.在官网下选择对应版本并下载
 
-|image19|
+|image21|
 
 2.同意协定，点击确定
 
-|image20|
+|image22|
 
 3.勾选需要的选项，在WIN10下可以勾选添加到PATH选项，可以省去配置环境变量，
 
-|image21|
+|image23|
 
 4.点击并等待安装完成
 
 5.配置插件。VS CODE需要对应的插件才能运行不同编程语言的程序，这里我们在左上角的搜索框搜索 ``python`` ,选择微软官方发布的插件（更新比较及时），点击安装即可。
 
-|image22|
+|image24|
 
 总结
 ----
@@ -233,9 +233,11 @@ Python，和对应的编辑器。接下来，我们将要撰写我们的第一�
 .. |image16| image:: ../pic/linux_08.png
 .. |image17| image:: ../pic/win_env1.png
 .. |image18| image:: ../pic/win_env2.png
-.. |image19| image:: ../pic/vscode1.png
-.. |image20| image:: ../pic/vscode2.png
-.. |image21| image:: ../pic/vscode3.png
-.. |image22| image:: ../pic/vscode4.png
+.. |image19| image:: ../pic/linux_env1.png
+.. |image20| image:: ../pic/linux_env2.png
+.. |image21| image:: ../pic/vscode1.png
+.. |image22| image:: ../pic/vscode2.png
+.. |image23| image:: ../pic/vscode3.png
+.. |image24| image:: ../pic/vscode4.png
 
 
