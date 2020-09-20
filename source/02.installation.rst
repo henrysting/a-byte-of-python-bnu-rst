@@ -128,6 +128,43 @@ Navigator、Jupyter Notebook和Spyder都得在命令行中启动。
 （以启动 Spotlight 搜索），输入 ``Terminal`` 并按下 ``Enter``
 键来启动终端程序。
 
+环境变量
+--------
+
+当我们直接使用终端启动程序时，比如直接输入 ``Python`` 然后回车，或者导入一些包时，系统首先需要在一个特定路径搜索，这时候就需要环境变量。不同操作系统下设置环境变量的方法不一样。
+
+Windows 
+-------
+1.右键打开 ``我的电脑`` ,点击 ``属性`` 。点击 ``高级系统设置`` ``高级`` 下面的 ``环境变量`` 。
+
+|image17|
+
+2.在 ``环境变量`` 下选择 ``系统变量`` 下的 Path，假如你是在 ``C:\ProgramData\Anaconda3`` 下安装的Anaconda，添加如下三个变量：``C:\ProgramData\Anaconda3`` ``C:\ProgramData\Anaconda3\Library\bin`` ``C:\ProgramData\Anaconda3\Scripts``。如果在WIN7及以下系统，这三个路径需要使用分号隔开.
+
+|image18|
+
+3.点击确定退出
+
+
+Linux
+-------
+
+假设安装在~/anaconda3下：
+1.使用 ``ctrl+alt+t`` 打开终端，输入 ``sudo vim /etc/profile`` 并回车
+2.在终端输入 ``i`` 并回车，进入编辑模式，在最下面插入 ``export PATH=~/anaconda3/bin:$PATH``
+3.按 ``esc``退出编辑模式，输入 ``:wq!`` 保存并退出，其中：代表以下输入的是命令，w代表写入，q代表退出，！代表强制。
+包的安装
+--------
+
+我们使用Anaconda最主要的目的是使用它进行模块(module)的管理,关于模块我们将在\ `第九章 <https://github.com/weichen-yan/a-byte-of-python-bnu-rst/edit/master/source/09.modules.rst>`__\进行讨论。在使用import语句导入需要包含的模块之前，我们需要使用Anaconda或者pip这样的管理器进行安装。需要说明的是在Windows，Linux以及MacOS中执行安装模块的命令都是一样的。以numpy模块为例：
+
+Anaconda
+在终端中输入 ``conda install numpy`` 并按下 ``Enter`` 即可。
+
+pip
+在终端中输入 ``pip install numpy`` 并按下 ``Enter`` 即可。
+在执行这条命令前请确认只安装了Python3.x，虽然我们可以设置同时安装python2.x对应的pip2与pip3，但是鉴于python2.x已经于2020年1月停止维护的事实，除非某些模块必须使用python2.x，否则我们不建议你这样做。具体请搜索 ```python pip2与pip3如何共存```。
+
 总结
 ----
 
@@ -151,4 +188,8 @@ Python。接下来，我们将要撰写我们的第一个 Python 程序。
 .. |image14| image:: ../pic/linux_06.png
 .. |image15| image:: ../pic/linux_07.png
 .. |image16| image:: ../pic/linux_08.png
+.. |image17| image:: ../pic/win_env1.png
+.. |image18| image:: ../pic/win_env2.png
+.. |image19| image:: ../pic/linux_env1.png
+.. |image20| image:: ../pic/linux_env2.png
 
