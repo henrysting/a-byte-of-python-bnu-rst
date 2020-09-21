@@ -277,10 +277,10 @@ Vscode
 
 使用方法同以上类似。先打开一个你想保存.py文件的文件夹，然后编辑并允许即可。需要注意的是你需要编辑.vscode文件夹下的launch.json才能使vscode按照一个python的文件运行它。
 
-.. figure:: ../pic/vscode_edit1.png
+.. figure:: ../pic/03.IDE/vscode_edit1.png
    :alt: VSCODE打开文件
 
-.. figure:: ../pic/vscode_edit2.png
+.. figure:: ../pic/03.IDE/vscode_edit2.png
    :alt: VSCODE打开文件夹（工作区域）
  
 我们需要为launch.json配置如下内容
@@ -320,7 +320,7 @@ request，必填项，有两种类型，分别是 launch 和 attach，launch 就
 
 program，程序的启动入口（在哪里找到文件），$file代表当前的.py路径;
 
-.. figure:: ../pic/vscode_edit3.png
+.. figure:: ../pic/03.IDE/vscode_edit3.png
    :alt: VSCODE编辑launch.json
    
 使用源文件
