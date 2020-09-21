@@ -22,6 +22,15 @@ Windows用户只要正确地设置了PATH变量，应该可以从命令行启动
 如果安装时没有将Python加到系统路径当中，则可以使用安装菜单中的 Anaconda
 Prompt 程序启动。
 
+可以使用终端下的 DOS 命令以进行一些有关文件的基本操作：
+d:     改变路径到 D 盘
+cd     改变目录 , 如  cd test/
+dir    列出当前目录下文件和文件夹
+python  进入python运行环境
+ipython 进入ipython 增强运行环境
+python test.py  运行test.py脚本
+
+
 Linux 或 MacOS系统
 ~~~~~~~~~~~~~~~~~~
 
@@ -139,6 +148,8 @@ Emacs
 
 集成开发环境(IDE)
 -----------------
+
+\ **注意：在进行编辑之前，请确认你的代码使用英文字体。部分中文字体的字符"O"与"0"无法区分，而且某些符号编译器无法识别。**
 
 IDLE
 ~~~~
@@ -260,6 +271,58 @@ PyCharm
 Quickstart <https://www.jetbrains.com/pycharm-educational/quickstart/>`__
 页面找到有关 PyCharm 的更多信息。
 
+
+Vscode
+~~~~~~~
+
+使用方法同以上类似。先打开一个你想保存.py文件的文件夹，然后编辑并允许即可。需要注意的是你需要编辑.vscode文件夹下的launch.json才能使vscode按照一个python的文件运行它。
+
+.. figure:: ../pic/03.IDE/vscode_edit1.png
+   :alt: VSCODE打开文件
+
+.. figure:: ../pic/03.IDE/vscode_edit2.png
+   :alt: VSCODE打开文件夹（工作区域）
+ 
+我们需要为launch.json配置如下内容
+
+.. code:: python
+
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "Python: Current File (Integrated Terminal)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Current File (External Terminal)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "externalTerminal"
+        }
+    ]
+}
+
+其中的关键部分在于 "type" ， "request" ， "program" 。
+
+type，必填项，调试类型，也就是以什么语言读这个文件；
+
+request，必填项，有两种类型，分别是 launch 和 attach，launch 就是以 debug 模式启动调试（开启一个新终端），attach 就是附加到已经启动的进程开启 debug 模式并调试（使用已有的终端）；
+
+program，程序的启动入口（在哪里找到文件），$file代表当前的.py路径;
+
+.. figure:: ../pic/03.IDE/vscode_edit3.png
+   :alt: VSCODE编辑launch.json
+   
 使用源文件
 ----------
 
@@ -338,6 +401,12 @@ Python 程序是由 *语句*
 如果你需要获得有关 ``return``
 这类运算符的帮助，你需要做的就是将它们放在引号中，就像
 ``help('return')`` 这般，这样 Python 就不会混淆我们正在试图做的事情。
+
+
+退出python命令行界面
+----------------
+
+输入 ``exit()`` 并回车即可。
 
 总结
 ----

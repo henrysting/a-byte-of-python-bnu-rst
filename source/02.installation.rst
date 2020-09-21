@@ -8,10 +8,22 @@ Python。值得注意的是，通过\ `Python官网 <https://www.python.org/>`__
 
 Anaconda的最新版本可在\ `其官网 <https://www.anaconda.com/products/individual>`__\  或 \ `清华镜像 <https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/ >`__\ 下载。本讲义所用版本为Anaconda3 2019.10（其中包含Python 3.7.3）。
 
+除此之外，我们还需要一个合适的集成开发环境(IDE)来编写程序。一个好的IDE通常是一个拥有图形界面，可以以类似记事本的形式编写程序，检查并可以提示错误，进行调试或者运行的环境。常见的IDE包括：
+
+Jupyter Notebook https://jupyter.org/install
+
+VSCODE+python https://code.visualstudio.com/docs/?dv=win64user
+
+Spyder https://www.spyder-ide.org/
+
+Pycharm https://www.jetbrains.com/pycharm/download/download-thanks.html
+
+等等。你可以在官网中找到它们并安装。
+
 在 Windows 中安装
 -----------------
 
-其安装过程与Windows平台的其他软件的安装过程无异。具体安装流程如下所示：
+Anaconda的安装过程与Windows平台的其他软件的安装过程无异。具体安装流程如下所示：
 
 第一步：点击安装包文件，开始我们的安装过程，点击“下一步”。
 
@@ -127,11 +139,79 @@ Navigator、Jupyter Notebook和Spyder都得在命令行中启动。
 （以启动 Spotlight 搜索），输入 ``Terminal`` 并按下 ``Enter``
 键来启动终端程序。
 
+环境变量
+--------
+
+当我们直接使用终端启动程序时，比如直接输入 ``Python`` 然后回车，或者导入一些包时，系统首先需要在一个特定路径搜索，这时候就需要环境变量。不同操作系统下设置环境变量的方法不一样。
+
+Windows ：
+--------
+
+1.右键打开 ``我的电脑`` ,点击 ``属性`` 。点击 ``高级系统设置`` ``高级`` 下面的 ``环境变量`` 。
+
+|image17|
+
+2.在 ``环境变量`` 下选择 ``系统变量`` 下的 Path，假如你是在 ``C:\ProgramData\Anaconda3`` 下安装的Anaconda，添加如下三个变量：``C:\ProgramData\Anaconda3`` ``C:\ProgramData\Anaconda3\Library\bin`` ``C:\ProgramData\Anaconda3\Scripts``。如果在WIN7及以下系统，这三个路径需要使用分号隔开.
+
+|image18|
+
+3.点击确定退出
+
+
+Linux
+-----
+
+假设安装在~/anaconda3下：
+
+1.使用 ``ctrl+alt+t`` 打开终端，输入 ``sudo vim /etc/profile`` 并回车
+
+|image19|
+
+2.在终端输入 ``i`` 并回车，进入编辑模式，在最下面插入 ``export PATH=~/anaconda3/bin:$PATH``
+
+|image20|
+
+3.按 ``esc``退出编辑模式，输入 ``:wq!`` 保存并退出，其中：代表以下输入的是命令，w代表写入，q代表退出，！代表强制。
+
+模块管理器的安装
+--------------
+
+我们使用Anaconda最主要的目的是使用它进行模块(module)的管理,关于模块我们将在\ `第九章 <https://github.com/weichen-yan/a-byte-of-python-bnu-rst/edit/master/source/09.modules.rst>`__\进行讨论。在使用import语句导入需要包含的模块之前，我们需要使用Anaconda或者pip这样的管理器进行安装。需要说明的是在Windows，Linux以及MacOS中执行安装模块的命令都是一样的。以numpy模块为例：
+
+Anaconda
+在终端中输入 ``conda install numpy`` 并按下 ``Enter`` 即可。类似的，输入 ``conda install -c conda-forge notebook`` 可以安装jupyter notebook.
+
+
+pip
+在终端中输入 ``pip install numpy`` 并按下 ``Enter`` 即可。
+在执行这条命令前请确认只安装了Python3.x，虽然我们可以设置同时安装python2.x对应的pip2与pip3，但是鉴于python2.x已经于2020年1月停止维护的事实，除非某些模块必须使用python2.x，否则我们不建议你这样做。具体请搜索 ```python pip2与pip3如何共存```。
+
+编辑器安装———以64位WIN10下VSCODE安装为例
+--------------------------------------
+
+1.在官网下选择对应版本并下载
+
+|image21|
+
+2.同意协定，点击确定
+
+|image22|
+
+3.勾选需要的选项，在WIN10下可以勾选添加到PATH选项，可以省去配置环境变量，
+
+|image23|
+
+4.点击并等待安装完成
+
+5.配置插件。VS CODE需要对应的插件才能运行不同编程语言的程序，这里我们在左上角的搜索框搜索 ``python`` ,选择微软官方发布的插件（更新比较及时），点击安装即可。
+
+|image24|
+
 总结
 ----
 
 从现在起，我们将假定你已经在你的系统中安装了Anaconda
-Python。接下来，我们将要撰写我们的第一个 Python 程序。
+Python，和对应的编辑器。接下来，我们将要撰写我们的第一个 Python 程序。
 
 .. |image0| image:: ../pic/02/windows_1.png
 .. |image1| image:: ../pic/02/windows_2.png
@@ -150,4 +230,14 @@ Python。接下来，我们将要撰写我们的第一个 Python 程序。
 .. |image14| image:: ../pic/02/linux_06.png
 .. |image15| image:: ../pic/02/linux_07.png
 .. |image16| image:: ../pic/02/linux_08.png
+.. |image17| image:: ../pic/02/win_env1.png
+.. |image18| image:: ../pic/02/win_env2.png
+.. |image19| image:: ../pic/02/linux_env1.png
+.. |image20| image:: ../pic/02/linux_env2.png
+.. |image21| image:: ../pic/02/vscode1.png
+.. |image22| image:: ../pic/02/vscode2.png
+.. |image23| image:: ../pic/02/vscode3.png
+.. |image24| image:: ../pic/02/vscode4.png
+
+
 

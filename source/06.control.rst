@@ -9,6 +9,32 @@ Python
 正如你可能已经猜测到的那番，这是通过控制流语句来实现的。在 Python
 中有三种控制流语句——\ ``if`` ``for`` 和 ``while``\ 。
 
+所有控制流语句分为判断部分，和非判断部分，比如：
+
+.. code:: python
+
+   number = 23
+   guess = int(input('Enter an integer : '))
+
+   if guess == number:
+       # 新块从这里开始
+       print('Congratulations, you guessed it.')
+       print('(but you do not win any prizes!)')
+       # 新块在这里结束
+   elif guess < number:
+       # 另一代码块
+       print('No, it is a little higher than that')
+       # 你可以在此做任何你希望在该代码块内进行的事情
+   else:
+       print('No, it is a little lower than that')
+       # 你必须通过猜测一个大于（>）设置数的数字来到达这里。
+
+**这里有if,elif,else,或者for的语句是判断部分，判断分支的方向，或者循环是否应该结束。判断部分结尾一定要用冒号结尾，而且需要是在英文标点下编辑。否则会出现错误：**
+**``SyntaxError: invalid syntax``**
+
+**非判断部分，同一层分支（或循环）需要使用相同个数的 ``tab`` 制表符或者四个空格来区分。不要混用tab或者空格，否则会出现错误：**
+**`` IndentationError: unexpected indent``**
+
 ``if`` 语句
 -----------
 
@@ -361,9 +387,32 @@ C/C++
 
 要注意 ``continue`` 语句同样能用于 ``for`` 循环。
 
+
+练习
+-----------------
+
+1.如果数a能被数b整除，a就叫做b的倍数，b就叫做a的约数。
+    如：6 的约数为 2 和 3 。
+几个整数中公有的约数，叫做这几个数的公约数；其中最大的一个，叫做这几个数的最大公约数。 
+    如： 30 和 18 的最大公约数为 6 。
+    
+求 8191 和 9689 的最大公约数
+    
+2.求以下方程的数值解：
+
+代数方程（包含加、减、乘、除、乘方、开方六则运算的方程）：
+            x^5=3x
+超越方程（包含指数、对数、三角函数等超越函数）：
+         2^x=3x
+
+|image0|
+
 总结
 ----
 
 我们已经了解了三种控制流语句——\ ``if``\ ，\ ``while`` 和 ``for``
 ——及其相关的 ``break`` 与 ``continue`` 语句是如何工作的。这些语句是
 Python 中一些最常用的部分，因此，习惯去使用它们是必要的。
+
+
+.. |image0| image:: ../pic/2_structure.png

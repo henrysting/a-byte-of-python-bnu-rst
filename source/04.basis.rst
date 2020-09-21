@@ -34,7 +34,7 @@ Python
 
 `代码会告诉你怎么做，注释会告诉你为何如此。 <http://www.codinghorror.com/blog/2006/12/code-tells-you-how-comments-tell-you-why.html>`__
 
-这样做对你的程序的读者来说非常有用，他们可以很容易地理解你的程序是做什么的。请记住，这个人可以是六个月后的你！
+这样做对你的程序的读者来说非常有用，他们可以很容易地理解你的程序是做什么的。请记住，这个人可以是六个月后的你！此外，合理、适当、有效的注释有助于提高程序的考试分数。
 
 字面常量
 --------
@@ -65,10 +65,16 @@ Python
    ``2things``\ ，\ ``this is spaced out``\ ，\ ``my-name`` 或
    ``>a1b2_c3``\ 都是_无效\_ 的名称。
 
+常见命名法：
+
+-  匈牙利（Hungarian notation）：nSize、fPrice
+-  驼峰（Camel-Case）：FirstName、LastName
+-  下划线(Under Score Case)：First_name
+
 数字
 ----
 
-数字主要分为两种类型——整数（Integers）与浮点数（Floats）。
+数字主要分为两种类型——整数（Integers）与浮点数（Floats）。此外，你也可以使用类似 ``3+4i`` 的形式表示复数。
 
 整数是 ``2``\ 这样的数，它只是一个整数。
 
@@ -100,7 +106,7 @@ Python
 双引号
 ~~~~~~
 
-被双引号包括的字符串和被单引号括起的字符串其工作机制完全相同。例如
+被双引号包括的字符串和被单引号括起的字符串其工作机制完全相同，此外它可以包括单引号。例如
 ``"你的名字是？"`` 或 ``"What's your name?"`` 。
 
 .. _triple-quotes:
@@ -109,7 +115,7 @@ Python
 ~~~~~~
 
 你可以通过使用三个引号——\ ``"""`` 或 ``'''``
-来指定多行字符串。你可以在三引号之间自由地使用单引号与双引号。来看看这个例子：
+来指定多行字符串。我们可以使用三引号来表示多行注释。你可以在三引号之间自由地使用单引号与双引号。来看看这个例子：
 
 .. code:: python
 
@@ -133,11 +139,13 @@ Python
 
    记住单引号括起的字符串和双引号括起的字符串是一样的——它们不存在任何区别。
 
+注意，你可以使用 ``str(56)``  方法把一个数56转换为字符串，以便显示和处理，如针对字符串，使用 ``+``运算符把它和其他字符串连接起来。
+
 格式化方法
 ~~~~~~~~~~
 
 有时候我们会想要从其他信息中构建字符串。这正是 ``format()``
-方法大有用武之地的地方。
+方法大有用武之地的地方。或者使用str()方法进行转换也行。
 
 将以下内容保存为文件 ``str_format.py`` ：
 
@@ -147,6 +155,8 @@ Python
    name = 'Swaroop'
 
    print('{0} was {1} years old when he wrote this book'.format(name, age))
+   print(name,'was',str(age),'years old')
+   print(name+' was '+str(age)+' years old')
    print('Why is {0} playing with that python?'.format(name))
 
 输出：
@@ -155,6 +165,8 @@ Python
 
    $ python str_format.py
    Swaroop was 20 years old when he wrote this book
+   Swaroop was 20 years old
+   Swaroop was 20 years old
    Why is Swaroop playing with that python?
 
 **它是如何工作的**
@@ -189,26 +201,62 @@ Python
 
 这样做同样能得到与前面的程序一样的输出结果。
 
+你可以使用 ``int('12')`` 方法把一个可以读成整数的字符串转换为数字，但是其他类型的字符串不行。
+
 Python 中 ``format``
-方法所做的事情便是将每个参数值替换至格式所在的位置。这之中可以有更详细的格式，例如：
+方法所做的事情便是将每个参数值替换至格式所在的位置。语法可以看作 ``格式字符串.format(数字)`` ,格式字符串需要大括号括住。这之中可以有更详细的格式，例如：
 
 .. code:: python
 
    # 对于浮点数 '0.333' 保留小数点(.)后三位
    print('{0:.3f}'.format(1.0/3))
+   # +3.14	带符号保留小数点后两位
+   print('{:+.2f}'.format(+3.14))
    # 使用下划线填充文本，并保持文字处于中间位置
    # 使用 (^) 定义 '___hello___'字符串长度为 11
    print('{0:_^11}'.format('hello'))
    # 基于关键词输出 'Swaroop wrote A Byte of Python'  
    print('{name} wrote {book}'.format(name='Swaroop', book='A Byte of Python'))
+   #带符号保留小数点后两位
+   print('{:+.2f}'.format(-1))		
+   #不带小数
+   print('{:.0f}'.format(2.71828))
+   #数字补零 (填充左边, 宽度为2)
+   print('{:0>2d}'.format(5))
+   #数字补x (填充右边, 宽度为4)
+   print('{:x<4d}'.format(10))
+   #以逗号分隔的数字格式
+   print('{:,}'.format(1000000))
+   #百分比格式
+   print('{:.2%}'.format(0.25))
+   #指数记法
+   print('{:.2e}'.format(1000000000))
+   #右对齐 (默认, 宽度为10)
+   print('{:>10d}'.format(13))
+   #左对齐 (宽度为10)
+   print('{:<10d}'.format(13))
+   #中间对齐 (宽度为10)
+   print('{:^10d}'.format(13))
+
 
 输出：
 
 .. code:: text
 
    0.333
+   +3.14
    ___hello___
    Swaroop wrote A Byte of Python
+   -1.00
+   3
+   05
+   10xx
+   1,000,000
+   25.00%
+   1.00e+09
+           13
+   13
+       13
 
 由于我们正在讨论格式问题，就要注意 ``print``
 总是会以一个不可见的“新一行”字符（\ ``\n``\ ）结尾，因此重复调用
@@ -322,8 +370,8 @@ join & split
    >>>"I'm fine".split("'")
    ["I","m fine"]
 
-replace & find
-^^^^^^^^^^^^^^
+replace & find & count
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code:: python
 
@@ -334,8 +382,8 @@ replace & find
    a.rfind('a')
    a.count('a')  
 
-isalnum
-^^^^^^^
+isalnum & isdigit & isalpha
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code:: python
 
@@ -343,9 +391,24 @@ isalnum
    help(a.isalnum)
    print(a.isalnum())
    print("1234".isalnum())
+   print("1234".isdigit())
    print("123abc".isalnum())
    print("1.23".isalnum())
    print("123.abc".isalnum())
+   print("123.abc".isalpha())
+   print("123.abc".isdigit())
+
+upper & lower & ljust & rjust & zfill
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code:: python
+   a=" potato "
+   print(a.upper()) 
+   print(a.lower())
+   print(a.ljust(10)) 
+   print(a.rjust(10)) 
+   print(a.zfill(20))
+
 
 数据类型
 --------
@@ -405,6 +468,20 @@ in,is。 我们现在通过下面2段例子学习其用法：
 
 需要记住的是，Python 将程序中的任何内容统称为
 *对象（Object）*\ 。这是一般意义上的说法。我们以“*某某对象（object）*”相称，而非“*某某东西（something）*”。
+
+针对数字来说，python可以完成：
+
+-  通用功能（加减乘除，求余乘方，改变进制）
+   3.14, 0xFF, 012, 5**2, 5//2, 5%2, 0<x<=5
+-  C风格位运算（位移，与或非等）
+   1<<16, x & 0xff, x|1, ~x, x^y
+-  逻辑运算（判断大小关系）
+   a < b, a > b, a <= b, a >= b
+   a == b, a != b
+-  直接支持任意精度长整型和复数
+   2**100 -> 1267650600228229401496703205376
+   1j**2 -> (-1+0j)
+
 
    **针对面向对象编程语言用户的提示：**
 
@@ -602,6 +679,28 @@ Joining）*\ 。你可以在后面当我们讨论\ `列表（List） <https://gi
 
    Python 将始终对块使用缩进，并且绝不会使用大括号。你可以通过运行
    ``from __future__ import braces`` 来了解更多信息。
+   
+随堂练习
+--------
+
+观察以下程序的输出结果：
+.. code:: python
+   a=" potato "
+   a.strip()
+   a.split()
+   a.find('o')
+   a.count('o')
+   a.upper() ;  a.lower()
+   a.ljust(10) ; a.rjust(10) ; a.zfill(20)
+   a.isalpha()
+
+   b='hello'
+   help(b.isalnum)
+   print(b.isalnum())
+   print("1234".isalnum())
+   print("123abc".isalnum())
+   print("1.23".isalnum())
+   print("123.abc".isalnum())
 
 总结
 ----

@@ -81,6 +81,13 @@ Python 同时支持面向过程编程与面向对象编程。在 *面向过程* 
 
 除了标准库以外，你还可以在 `Python 库索引（Python Package Index） <http://pypi.python.org/pypi>`__ 中找到许多其它高质量的库。
 
+|image4|
+
+小结
+~~~~
+
+Python 一门精彩又强大的语言。它恰当地结合了性能与功能，使得编写 Python 程序简单有趣。
+
 
 对比 Python 3 与 Python 2
 -------------------------
@@ -126,9 +133,13 @@ Enthought Canopy
 
 Canopy 是 `Enthought <https://www.enthought.com/>`__ 公司开发维护的 Python 商业发行版，曾叫做EPD(Enthought Python Distribution)。它是 Anaconda 出现之前最完善的 Python 发行版，不过已于2018年停止更新。公司目前推荐使用更加轻便灵活的部署系统EDM（Enthought Deployment Manager）。
 
+
 .. |image0| image:: ../pic/01/Anaconda_Logo.png
     :width: 256 px
 .. |image1| image:: ../pic/01/ActivePython.jpg
     :width: 256 px
 .. |image2| image:: ../pic/01/canopy.png
     :width: 256 px
+.. |image4| image:: ../pic/01/1_basic_background.png
+    :width: 256 px
+
