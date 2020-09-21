@@ -231,13 +231,13 @@ Python，和对应的编辑器。接下来，我们将要撰写我们的第一�
 .. |image14| image:: ../pic/linux_06.png
 .. |image15| image:: ../pic/linux_07.png
 .. |image16| image:: ../pic/linux_08.png
-.. |image17| image:: ../pic/win_env1.png
-.. |image18| image:: ../pic/win_env2.png
-.. |image19| image:: ../pic/linux_env1.png
-.. |image20| image:: ../pic/linux_env2.png
-.. |image21| image:: ../pic/vscode1.png
-.. |image22| image:: ../pic/vscode2.png
-.. |image23| image:: ../pic/vscode3.png
-.. |image24| image:: ../pic/vscode4.png
+.. |image17| image:: ../pic/02/win_env1.png
+.. |image18| image:: ../pic/02/win_env2.png
+.. |image19| image:: ../pic/02/linux_env1.png
+.. |image20| image:: ../pic/02/linux_env2.png
+.. |image21| image:: ../pic/02/vscode1.png
+.. |image22| image:: ../pic/02/vscode2.png
+.. |image23| image:: ../pic/02/vscode3.png
+.. |image24| image:: ../pic/02/vscode4.png
 
 
