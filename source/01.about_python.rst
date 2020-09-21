@@ -128,4 +128,4 @@ Python成为了目前在Linux,Windows和Mac上进行Python科学计算和Python�
 
 
 .. |image0| image:: ../pic/Anaconda.png
-.. |image1| image:: ../pic/1_basic_background.png
+.. |image1| image:: ../pic/01/1_basic_background.png
