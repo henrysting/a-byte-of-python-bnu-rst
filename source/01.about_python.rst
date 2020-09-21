@@ -82,6 +82,9 @@ Included）* 式的哲学。
 
 除了标准库以外，你还可以在 `Python 库索引（Python Package Index） <http://pypi.python.org/pypi>`__ 中发掘许多其它高质量的库。
 
+|image1|
+
+
 小结
 ~~~~
 
@@ -125,3 +128,4 @@ Python成为了目前在Linux,Windows和Mac上进行Python科学计算和Python�
 
 
 .. |image0| image:: ../pic/Anaconda.png
+.. |image1| image:: ../pic/1_basic_background.png
