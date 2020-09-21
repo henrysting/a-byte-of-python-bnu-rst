@@ -77,25 +77,24 @@ Python 同时支持面向过程编程与面向对象编程。在 *面向过程* 
 -  *丰富的库*
 
 实际上 Python 标准库的规模非常庞大。它能够帮助你完成诸多事情，包括正则表达式、文档生成、单元测试、多线程、数据库、网页浏览器、CGI、FTP、邮件、XML、XML-RPC、HTML、WAV
-文件、密码系统、GUI（图形用户界面），以及其它系统依赖型的活动。只需记住，只要安装了 Python，这些功能便随时可用。它们的存在被称作 Python *自备电池（Batteries
-Included）* 式的哲学。
+文件、密码系统、GUI（图形用户界面），以及其它系统依赖型的活动。只需记住，只要安装了 Python，这些功能便随时可用。它们的存在被称作 Python *自备电池（Batteries Included）* 式的哲学。
 
-除了标准库以外，你还可以在 `Python 库索引（Python Package Index） <http://pypi.python.org/pypi>`__ 中发掘许多其它高质量的库。
+除了标准库以外，你还可以在 `Python 库索引（Python Package Index） <http://pypi.python.org/pypi>`__ 中找到许多其它高质量的库。
 
-|image1|
-
+|image4|
 
 小结
 ~~~~
 
 Python 一门精彩又强大的语言。它恰当地结合了性能与功能，使得编写 Python 程序简单有趣。
 
+
 对比 Python 3 与 Python 2
 -------------------------
 
-如果你对“Python 2”与“Python 3”之间的区别不感兴趣你可以略过本段。但务必注意你正在使用的版本。本书是以 Python 3 为对象撰写的。
+如果你对“Python 2”与“Python 3”之间的区别不感兴趣你可以略过本段。但务必注意你正在使用的版本。因为 Python 2 已于2020年1月1日正式停止维护。 本书是以 Python 3 为标准撰写的。
 
-只消记住一旦你正确理解并学习了其中一个版本的 Python，你便可以很容易地理解另一版本的区别，并能快速学习如何使用。困难的是学习如何编程以及理解
+不过一旦你正确理解并学习了一个版本的 Python，便可以很容易地理解另一版本，并能快速学习如何使用。困难的是学习如何编程以及理解
 Python 语言本身的基础部分。这便是我们在本书中的目标，而一旦你达成了目标，你便可以根据你的实际情况，决定是该使用 Python 2 还是 Python 3。
 
 要想了解有关 Python 2 和 Python 3 之间的区别的更多细节，你可以参阅：
@@ -111,21 +110,36 @@ Python 语言本身的基础部分。这便是我们在本书中的目标，而�
 发行版
 ------
 
-官方安装包：\ https://www.python.org/
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+由于 Python 的官方安装包只提供核心功能。包括绘图在内的许多常用模块都需要额外自行安装，而且这些模块经常还会依赖其他更多的模块。
+因此有公司或团体将Python和它的编辑器、常用模块等工具打包在一起做成整体的安装包来发布，方便用户使用。这种集成安装包被称为发行版（Distribution）。
 
-提供核心功能，需要自行安装其它相关模块。
 
-Anaconda Python  \ https://www.anaconda.com/
+Anaconda Python 
 ~~~~~~~~~~~~~~~
-
 |image0|
 
-`如上图所示 <https://www.anaconda.com/distribution/>`__\ ，开源的Anaconda Python有机的整合了科学计算领域中常用的Python库，使得Anaconda
-Python成为了目前在Linux,Windows和Mac上进行Python科学计算和Python机器学习最方便的平台，能够方便的安装和管理各种Python库和Python环境。
-在本书中，我们会详细介绍相关用法。
+`Anaconda Python <https://www.anaconda.com/>`__ 是目前最流行的 Python 发行版。它的名字源于南美洲的一种蟒蛇--水蚺。开源的 Anaconda  Python 整合了科学计算领域中常用的Python库，使它成为了目前在Linux,Windows和Mac上进行Python科学计算和Python机器学习最方便的平台。它能够方便的安装和管理各种Python库和Python环境。在本书中，我们会详细介绍相关用法。
 
 
+Active Python 
+~~~~~~~~~~~~~~~
+|image1|
 
-.. |image0| image:: ../pic/Anaconda.png
-.. |image1| image:: ../pic/01/1_basic_background.png
+`Active Python <https://www.activestate.com/products/python/>`__ 是ActiveState软件公司发布的二进制Python执行版本，可以为付费用户提供商业支持服务。
+
+Enthought Canopy 
+~~~~~~~~~~~~~~~
+|image2|
+
+Canopy 是 `Enthought <https://www.enthought.com/>`__ 公司开发维护的 Python 商业发行版，曾叫做EPD(Enthought Python Distribution)。它是 Anaconda 出现之前最完善的 Python 发行版，不过已于2018年停止更新。公司目前推荐使用更加轻便灵活的部署系统EDM（Enthought Deployment Manager）。
+
+
+.. |image0| image:: ../pic/01/Anaconda_Logo.png
+    :width: 256 px
+.. |image1| image:: ../pic/01/ActivePython.jpg
+    :width: 256 px
+.. |image2| image:: ../pic/01/canopy.png
+    :width: 256 px
+.. |image4| image:: ../pic/01/1_basic_background.png
+    :width: 256 px
+
