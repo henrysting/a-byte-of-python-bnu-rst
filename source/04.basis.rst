@@ -679,6 +679,28 @@ Joining）*\ 。你可以在后面当我们讨论\ `列表（List） <https://gi
 
    Python 将始终对块使用缩进，并且绝不会使用大括号。你可以通过运行
    ``from __future__ import braces`` 来了解更多信息。
+   
+随堂练习
+--------
+
+观察以下程序的输出结果：
+.. code:: python
+   a=" potato "
+   a.strip()
+   a.split()
+   a.find('o')
+   a.count('o')
+   a.upper() ;  a.lower()
+   a.ljust(10) ; a.rjust(10) ; a.zfill(20)
+   a.isalpha()
+
+   b='hello'
+   help(b.isalnum)
+   print(b.isalnum())
+   print("1234".isalnum())
+   print("123abc".isalnum())
+   print("1.23".isalnum())
+   print("123.abc".isalnum())
 
 总结
 ----
