@@ -4,7 +4,7 @@
 在上一章，你已经了解了如何在你的程序中通过定义一次函数工作来重用代码。那么如果你想在你所编写的别的程序中重用一些函数的话，应该怎么办？正如你可能想象到的那样，答案是模块（Modules）。
 
 编写模块有很多种方法，其中最简单的一种便是创建一个包含函数与变量、以
-``.py`` 为后缀的文件。
+``.py`` 为后缀的文件。这个文件被称为脚本。
 
 另一种方法是使用撰写 Python
 解释器本身的本地语言来编写模块。举例来说，你可以使用 `C
@@ -13,7 +13,9 @@
 代码中使用它们。
 
 一个模块可以被其它程序_导入_并运用其功能。我们在使用 Python
-标准库的功能时也同样如此。首先，我们要了解如何使用标准库模块。
+标准库的功能时也同样如此。模块名与脚本的文件名相同，例如我们编写了一个
+名为Items.py的脚本，则可在另外一个脚本中用
+`` import Items`` 语句来导入它。首先，我们要了解如何使用标准库模块。
 
 案例 (保存为 ``module_using_sys.py``):
 
@@ -89,9 +91,39 @@ Arguments）_这一列表，也就是使用命令行传递给你的程序的参�
 环境变量等同。这意味着你可以直接导入位于当前目录的模块。否则，你必须将你的模块放置在
 ``sys.path`` 内所列出的目录中。
 
-另外要注意的是当前目录指的是程序启动的目录。你可以通过运行
-``import os; print(os.getcwd())`` 来查看你的程序目前所处在的目录。
+有关sys的其他函数可以在help()中或者文档中查找，举两个例子：
 
+sys.getdefaultencoding(): 获取当前终端编码，一般默认为ascii。
+
+sys.getfilesystemencoding(): 获取文件系统编码，Windows下返回""mbcs""，mac下返回""utf-8""。
+
+
+另外要注意的是在sys中提到的当前目录指的是程序启动的目录。这就需要在操作系统上进行操作。我们需要os模块为操作系统服务提供了可移植的（portable）的接口。你可以通过运行
+``print(os.getcwd())`` 来查看你的程序目前所处在的目录。 除此之外， ``os`` 下还包含了很多函数，包括
+
+• os.name：获取当前体系平台，Windows下返回""nt""，Linux下返回""posix""。
+
+• os.linesep：获取当前平台应用的行终止符。Windows下返回""/r/n""，Linux应用""/n""。
+
+• os.getcwd(): 获取当前工作目录，即当前python脚本工作的目录路径。
+
+• os.listdir(path)：返回指定目录下的所有文件和目录名。
+
+• os.path.split()：分离路径中的目录名和文件名。
+
+• os.path.exists()：检查路径是否存在。
+
+• os.path.isfile()： 判断是否为文件。
+
+你可以测试以下代码的执行结果：
+
+.. code:: python
+
+   import os
+   print(os.getcwd())
+   print(os.listdir("D:\\"))
+   print(os.path.exists("D:\\test")
+   
 .. _pyc:
 
 按字节码编译的 .pyc 文件
@@ -226,19 +258,25 @@ Python 程序中使用这一模块。
 这一名称，那将产生冲突。这可能是因为每个模块通常都会使用这一名称来声明它们各自的版本号。因此，我们大都推荐最好去使用
 ``import`` 语句，尽管这会使你的程序变得稍微长一些。
 
+你也可以使用：
+
+.. code:: python
+
+   import math as m  # 导入同时给缩写
+   import sys, os # 同时导入多个模块
+
 你还可以使用：
 
 .. code:: python
 
+   
    from mymodule import *
 
 这将导入诸如 ``say_hi`` 等所有公共名称，但不会导入 ``__version__``
-名称，因为后者以双下划线开头。
+名称，因为后者以双下划线开头。如果只需要某一个或某几个函数，把 ``*`` 替换为想要的函数，并用逗号分开即可。
 
    **警告：**\ 要记住你应该避免使用 import *这种形式，即 \`from mymodule
    import* \`。
-
-..
 
    **Python 之禅**
 
@@ -312,6 +350,8 @@ Python 程序中使用这一模块。
 ```vars()`` <http://docs.python.org/3/library/functions.html#vars>`__
 函数也可以返回给你这些值的属性，但只是可能，它并不能针对所有类都能正常工作。
 
+**如果你对这个函数有疑问，可以通过help(包名.函数名)的方式查看帮助**
+
 包
 --
 
@@ -345,6 +385,149 @@ Python 表明这一文件夹是特别的，因为其包含了 Python 模块。
 包是一种能够方便地分层组织模块的方式。你将在
 `标准库 <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/17.stdlib.md#stdlib>`__
 中看到许多有关于此的实例。
+
+常用系统模块
+------------
+
+除了 ``os`` 和 ``sys`` 外，python还有许多内置模块，包括：
+
+• decimal：python中的float使用双精度的二进制浮点编码来表示
+的，这种编码导致了小数不能被精确的表示，因为一个浮点数包括两部分：有效数字部分M，指数部分E，,即 $\pmM*2^E .IEEE 754 规定最高的1位是符号位 s，接着的 8 位是指数E，剩下的 23 位为有效数字 M。由于指数和有效位数有限，因此尾部无法表示的数会出现因四舍五入导致的误差。例如0.1实际上内存中为0.100000000000000001，还有3*0.1 == 0.3 为False. decimal就是为了解决类似的问题的，拥有更高的精确度能表示更大范围的数字，更精确地四舍五入。
+
+试验代码与运行结果(分别在VSCODE和命令行上运行，某些结果，如decimal.Decimal()执行结果有差异)：
+
+.. code::python
+
+   a="%.20f" %(1/3.)
+   a="%.20f" %(2.645)
+   a="%.20f" %(2.675)
+   round(2.675,2)
+   print (0.1+0.1+0.1-0.3)
+
+   from decimal import Decimal as D
+   print(D('0.1') + D('0.1') + D('0.1') - D('0.3'))
+   
+.. code:: text
+
+   5.551115123125783e-17
+   0.0
+
+.. code::python
+
+   >>> from decimal import Decimal as D
+   >>> from decimal import getcontext
+   >>> getcontext().prec
+   28
+   >>> D(1)/D(7)
+   Decimal('0.1428571428571428571428571429')
+   >>> getcontext().prec=6
+   >>> D(1)/D(7)
+   Decimal('0.142857')
+   >>> D(1.12 str()/1.12D(7))/D(7)
+
+• math：定义了标准的数学方法，例如cos(x),sin(x)等。在天文学中常用的包括从原点(0,0)到(x,y)的直线距离 ``hypot(x,y)`` 和角度数转弧度的 ``radians(x)`` 。复数运算可使用 cmath 模块
+
+.. code::python
+
+   >>> import math
+   >>> math.pi
+   >>> math.e
+   >>> math.sin(2*math.pi/180)
+   >>> math.fmod(9.8,4.0)
+
+• random： 随机数生成
+
+
+.. code::python
+
+   >>> import random
+   >>> random.randint(0,99) #随机整数
+   >>> random.randrange(0, 101, 2) #随机偶数
+   >>> random.random() #随机浮点数
+   >>> random.uniform(1, 10) #均匀分布
+   >>> random.choice('?abc&%^*f') #随机字符
+   >>> random.sample('abcdefghij',3)
+   >>> items = [1, 2, 3, 4, 5, 6]
+   >>> random.shuffle(items) #洗牌
+
+• string：包含大量处理字符串的函数
+
+• io： 实现了各种IO形式和内置的open()函数
+
+• datetime：时间日期相关函数
+
+   在该函数中，date：表示日期的类；time：表示时间的类；datetime：表示日期时间； timedelta：表示时间间隔，tzinfo：与时区有关的相关信息
+   
+
+.. code::python
+
+   import datetime as dt
+   print('date.max:', dt.date.max)
+   print('date.min:', dt.date.min)
+   print('date.today():', dt.date.today())
+   dt.date.isoweekday(dt.date.today())
+   dt.date.today()+dt.timedelta(7)
+   print('Time:', dt.time(12,5,4))
+   dt.datetime.now() 
+   
+结果：
+
+.. code::text   
+
+   date.max: 9999-12-31
+   date.min: 0001-01-01
+   date.today(): 2020-10-02
+   Time: 12:05:04
+  
+以下是另外一个例子：需要注意这里%a 星期的简写，%A 星期的全称， %b 月份的简写，%B 月份的全称，%I: 小时（12小时制），%W 周数（星期一起算）
+
+.. code::python
+
+   from datetime import datetime as dtdt
+   dtdt.now()
+   dtdt.strftime(dtdt.now(),'%c')
+   d = dtdt.now() - dtdt.strptime('2015/12/20
+   20:56:30','%Y/%m/%d %H:%M:%S')
+   (d.days, d.seconds, d.microseconds)
+   
+.. code::text   
+
+   date.max: 9999-12-31
+   date.min: 0001-01-01
+   date.today(): 2020-10-02
+   Time: 12:05:04
+
+• timeit：计时函数，调试相关
+
+.. code::python
+
+   import timeit as ti
+   t = ti.Timer('x=range(100)')
+   t.timeit()
+   t.timeit(100)
+   ti.timeit('x=range(100)',number=100)
+   t.repeat(3, 20000)
+
+科学计算常用模块
+---------------
+
+• Numpy – Arrays manipulation library 科学计算的必装模块，几乎所有的其他科学模块都依赖于它。
+
+• Scipy – 扩展的科学计算模块。
+
+• PyGSL C/C++语言中著名的科学计算函数库GNU Scientific Library(GSL)的python版
+
+• Matplotlib – 高质量的2D作图模块，足以替代GNUPlot
+
+• Mayavi：强大的三维作图模块，属于EPD公司套件的一部分
+
+• Sympy：符号计算模块
+
+• StatLib：统计学工具箱
+
+• Escript/Finley：偏微分方程求解
+
+• Parallel Python：并行计算模块
 
 总结
 ----
