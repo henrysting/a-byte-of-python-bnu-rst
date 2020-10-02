@@ -163,6 +163,8 @@ Python 中你需要在它们之间多加上一个逗号。
    >>> list(range(2, 30, 5))
    [2, 7, 12, 17, 22, 27] 
    # sum()   求和
+   >>> print(sum(list(range(10))))
+   45
    # min()   返回列表中最小元素
    # max()   返回列表中最大元素
 
@@ -188,6 +190,8 @@ Python 中你需要在它们之间多加上一个逗号。
 
 元组通常用于保证某一语句或某一用户定义的函数可以安全地采用一组数值，意即元组内的数值不会改变。
 
+虽然元组元素值是不允许修改的，但我们可以对元组进行连接组合,也可以删除整个元组。
+
 案例（保存为 ``ds_using_tuple.py``\ ）：
 
 .. code:: python
@@ -207,6 +211,7 @@ Python 中你需要在它们之间多加上一个逗号。
    print('Number of animals in the new zoo is',
          len(new_zoo)-1+len(new_zoo[2]))
 
+
 输出：
 
 .. code:: text
@@ -218,6 +223,35 @@ Python 中你需要在它们之间多加上一个逗号。
    Animals brought from old zoo are ('python', 'elephant', 'penguin')
    Last animal brought from old zoo is penguin
    Number of animals in the new zoo is 5
+   
+   
+   
+元组案例2:
+
+.. code:: python
+
+
+   tup = ('physics', 'chemistry', 1997, 2000)
+   tup1 = (12, 34.56)
+   tup2 = ('abc', 'xyz')
+   tup3 = tup1 + tup2
+   print(tup)
+   print(tup3)
+   del tup
+   print("After deleting tup : ")
+   print (tup)#已经删除,会报ERROR
+
+输出:
+
+.. code:: text
+
+   ('physics', 'chemistry', 1997, 2000)
+   (12, 34.56, 'abc', 'xyz')
+   After deleting tup : 
+   Traceback (most recent call last):
+     File "c:\Users\spitfire\Desktop\program\test\test1.py", line 49, in <module>
+       print (tup)
+   NameError: name 'tup' is not defined
 
 **它是如何工作的**
 
@@ -257,6 +291,7 @@ Python 中你需要在它们之间多加上一个逗号。
 
 在字典中，你可以通过使用符号构成 ``d = {key : value1 , key2 : value2}``
 这样的形式，来成对地指定键值与值。在这里要注意到成对的键值与值之间使用冒号分隔，而每一对键值与值则使用逗号进行区分，它们全都由一对花括号括起。
+或者你也可以使用先构造列表,然后使用dict(键值名1=值1,键值名2=值2,......), ``注意如果键值和值是字符串的时候带不带引号`` 或者dict(zip(键值列表名=值列表名))的方式进行构建.
 
 另外需要记住，字典中的成对的键值—值配对不会以任何方式进行排序。如果你希望为它们安排一个特别的次序，只能在使用它们之前自行进行排序。
 
@@ -267,13 +302,23 @@ Python 中你需要在它们之间多加上一个逗号。
 .. code:: python
 
    # “ab”是地址（Address）簿（Book）的缩写
-
+   #构造字典
    ab = {
        'Swaroop': 'swaroop@swaroopch.com',
        'Larry': 'larry@wall.org',
        'Matsumoto': 'matz@ruby-lang.org',
        'Spammer': 'spammer@hotmail.com'
    }
+   #注意下面的引号
+   ab1 = dict(Swaroop = 'swaroop@swaroopch.com',
+              Larry = 'larry@wall.org',
+              Matsumoto = 'matz@ruby-lang.org',
+              Spammer = 'spammer@hotmail.com')
+   keys = ['Swaroop','Larry','Matsumoto','Spammer']
+   vals = ['swaroop@swaroopch.com','larry@wall.org','matz@ruby-lang.org','spammer@hotmail.com']
+   ab2 = dict(zip(keys,vals))
+   print(ab1)
+   print(ab2)
 
    print("Swaroop's address is", ab['Swaroop'])
 
@@ -291,20 +336,29 @@ Python 中你需要在它们之间多加上一个逗号。
    if 'Guido' in ab:
        print("\nGuido's address is", ab['Guido'])
 
+   # 修改一对键值—值配对
+   ab['Guido'] = 'guido@java.org'
+
+   if 'Guido' in ab:
+       print("\nGuido's address is", ab['Guido'])
 输出：
 
 .. code:: text
 
    $ python ds_using_dict.py
+   {'Swaroop': 'swaroop@swaroopch.com', 'Larry': 'larry@wall.org', 'Matsumoto': 'matz@ruby-lang.org', 'Spammer': 'spammer@hotmail.com'}
+   {'Swaroop': 'swaroop@swaroopch.com', 'Larry': 'larry@wall.org', 'Matsumoto': 'matz@ruby-lang.org', 'Spammer': 'spammer@hotmail.com'}
    Swaroop's address is swaroop@swaroopch.com
 
    There are 3 contacts in the address-book
 
    Contact Swaroop at swaroop@swaroopch.com
-   Contact Matsumoto at matz@ruby-lang.org
    Contact Larry at larry@wall.org
+   Contact Matsumoto at matz@ruby-lang.org
 
    Guido's address is guido@python.org
+
+   Guido's address is guido@java.org
 
 **它是如何工作的**
 
@@ -398,6 +452,7 @@ Operations）*\ ，它们能够允许我们直接获取序列中的特定项目�
 
 上面所提到的序列的三种形态——列表、元组与字符串，同样拥有一种_切片（Slicing）_运算符，它能够允许我们序列中的某段切片——也就是序列之中的一部分。
 
+
 案例（保存为 ``ds_seq.py``\ ）：
 
 .. code:: python
@@ -447,6 +502,8 @@ Operations）*\ ，它们能够允许我们直接获取序列中的特定项目�
    characters 2 to end is aroop
    characters 1 to -1 is waroo
    characters start to end is swaroop
+
+
 
 **它是如何工作的**
 
