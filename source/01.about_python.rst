@@ -108,7 +108,7 @@ Python 语言本身的基础部分。这便是我们在本书中的目标，而�
    guide <http://python3porting.com>`__
 
 发行版
-------
+--------
 
 由于 Python 的官方安装包只提供核心功能。包括绘图在内的许多常用模块都需要额外自行安装，而且这些模块经常还会依赖其他更多的模块。
 因此有公司或团体将Python和它的编辑器、常用模块等工具打包在一起做成整体的安装包来发布，方便用户使用。这种集成安装包被称为发行版（Distribution）。
@@ -128,7 +128,7 @@ Active Python
 `Active Python <https://www.activestate.com/products/python/>`__ 是ActiveState软件公司发布的二进制Python执行版本，可以为付费用户提供商业支持服务。
 
 Enthought Canopy 
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 |image2|
 
 Canopy 是 `Enthought <https://www.enthought.com/>`__ 公司开发维护的 Python 商业发行版，曾叫做EPD(Enthought Python Distribution)。它是 Anaconda 出现之前最完善的 Python 发行版，不过已于2018年停止更新。公司目前推荐使用更加轻便灵活的部署系统EDM（Enthought Deployment Manager）。

@@ -1,10 +1,8 @@
-4 基础：基本概念
+基础：基本概念
 ================
 
-只打印 ``hello world``
-肯定是不够的，对吗？你希望做得比这还要多——你想要输入一些内容，进行操作，然后得到输出。在
-Python
-中我们可以通过使用变量与常量来实现这一目标，在本章中我们还会学习其它的一些概念。
+只打印 ``hello world`` 肯定是不够的，对吗？你希望做得比这还要多——你想要输入一些内容，进行操作，然后得到输出。在
+Python 中我们可以通过使用变量与常量来实现这一目标，在本章中我们还会学习其它的一些概念。
 
 注释
 ----
@@ -34,7 +32,7 @@ Python
 
 `代码会告诉你怎么做，注释会告诉你为何如此。 <http://www.codinghorror.com/blog/2006/12/code-tells-you-how-comments-tell-you-why.html>`__
 
-这样做对你的程序的读者来说非常有用，他们可以很容易地理解你的程序是做什么的。请记住，这个人可以是六个月后的你！此外，合理、适当、有效的注释有助于提高程序的考试分数。
+这样做对你的程序的读者来说非常有用，他们可以很容易地理解你的程序是做什么的。请记住，这个人可以是六个月后的你！
 
 字面常量
 --------
@@ -43,8 +41,7 @@ Python
 这样的数字，或者是 ``This is a string`` 这样的文本。
 
 因为你用的就是它字面意义上的值或是内容。数字 ``2``
-总是表示它本身——它是一个
-*常量*\ ，因为它的值不能被改变。因此，所有的这些都被称作字面常量。
+总是表示它本身——它是一个*常量*\ ，因为它的值不能被改变。因此，所有的这些都被称作字面常量。
 
 变量
 ----
@@ -65,12 +62,45 @@ Python
    ``2things``\ ，\ ``this is spaced out``\ ，\ ``my-name`` 或
    ``>a1b2_c3``\ 都是_无效\_ 的名称。
 
-常见命名法：
+在编程界有一些经典的命名规则：
 
--  匈牙利（Hungarian notation）：nSize、fPrice
--  驼峰（Camel-Case）：FirstName、LastName
--  下划线(Under Score Case)：First_name
+-  匈牙利命名法（Hungarian notation）：通过在变量名前面加上相应的小写字母的符号标识作为前缀，标识出变量的作用域，类型等，如 nSize、fPrice ；
+-  驼峰命名法（Camel-Case）：当变量名或函数名是由一个或多个单词连结在一起构成时，第一个单词以小写字母开始；从第二个单词开始以后的每个单词的首字母都采用大写字母，如： FirstName、LastName。不过当单词中包含全为大写字母的缩写时辨识度下降。
+-  下划线命名法(Under Score Case)：与驼峰命名法类似，不过单词之间用下划线连接，如：First_name。
 
+
+布尔类型
+----------
+
+布尔类型常用于逻辑判断。 函数： bool(); 运算符： not,or,and; 测试：
+in,is。 我们现在通过下面2段例子学习其用法：
+
+.. code:: python
+
+   >>> bool('')
+   False
+   >>> bool('hello')
+   True
+   >>> a = None
+   >>> b = 1
+   >>> bool(a)
+   False
+   >>> bool(b)
+   True
+
+.. code:: python
+
+   >>> not 1==3        
+   True
+   >>> 1>2 or 2>1      
+   True
+   >>> (1>2) + (2>1)  
+   1                   
+   >>> (1>2) and (2>1)  
+   False
+   >>> (1>2) * (2>1)    
+   0
+   
 数字
 ----
 
@@ -86,6 +116,7 @@ Python
 
    没有单独的长整数类型 ``long``
    。整数类型\ ``int``\ 可以指任何大小的整数。
+   
 
 字符串
 ------
@@ -98,8 +129,7 @@ Python
 单引号
 ~~~~~~
 
-你可以使用单引号来指定字符串，例如 ``'将我这样框进来'`` 或
-``'Quote me on this'`` 。
+你可以使用单引号来指定字符串，例如 ``'Quote me on this'`` 。
 
 所有引号内的空间，诸如空格与制表符，都将按原样保留。
 
@@ -107,7 +137,7 @@ Python
 ~~~~~~
 
 被双引号包括的字符串和被单引号括起的字符串其工作机制完全相同，此外它可以包括单引号。例如
-``"你的名字是？"`` 或 ``"What's your name?"`` 。
+ ``"What's your name?"`` 。
 
 .. _triple-quotes:
 
@@ -139,13 +169,13 @@ Python
 
    记住单引号括起的字符串和双引号括起的字符串是一样的——它们不存在任何区别。
 
-注意，你可以使用 ``str(56)``  方法把一个数56转换为字符串，以便显示和处理，如针对字符串，使用 ``+``运算符把它和其他字符串连接起来。
+注意，你可以使用 ``str(56)``  方法把一个数56转换为字符串，以便显示和处理，如针对字符串，使用 ``+`` 运算符把它和其他字符串连接起来。
 
 格式化方法
 ~~~~~~~~~~
 
 有时候我们会想要从其他信息中构建字符串。这正是 ``format()``
-方法大有用武之地的地方。或者使用str()方法进行转换也行。
+方法大有用武之地的地方。
 
 将以下内容保存为文件 ``str_format.py`` ：
 
@@ -155,8 +185,6 @@ Python
    name = 'Swaroop'
 
    print('{0} was {1} years old when he wrote this book'.format(name, age))
-   print(name,'was',str(age),'years old')
-   print(name+' was '+str(age)+' years old')
    print('Why is {0} playing with that python?'.format(name))
 
 输出：
@@ -165,9 +193,8 @@ Python
 
    $ python str_format.py
    Swaroop was 20 years old when he wrote this book
-   Swaroop was 20 years old
-   Swaroop was 20 years old
    Why is Swaroop playing with that python?
+   
 
 **它是如何工作的**
 
@@ -210,33 +237,23 @@ Python 中 ``format``
 
    # 对于浮点数 '0.333' 保留小数点(.)后三位
    print('{0:.3f}'.format(1.0/3))
-   # +3.14	带符号保留小数点后两位
-   print('{:+.2f}'.format(+3.14))
+   # 对于整数 '3' ，强制带符号保留小数点后两位
+   print('{:+.2f}'.format(3))
+   # 对于浮点数，四舍五入取整输出
+   print('{:.0f}'.format(2.71828))
+   # 将数字以百分比格式输出
+   print('{:.2%}'.format(0.25))
+   # 将数字以指数记法输出
+   print('{:.2e}'.format(1000000000))
    # 使用下划线填充文本，并保持文字处于中间位置
    # 使用 (^) 定义 '___hello___'字符串长度为 11
-   print('{0:_^11}'.format('hello'))
+   print('{0:_^11}'.format('hello')) 
+   # 输出数字靠右对齐(默认)，并指定宽度为10
+   print('{:>10d}'.format(13))  
+   # 输出靠右对齐，左侧补零 (填充左边, 宽度为2)
+   print('{:0>2d}'.format(5))  
    # 基于关键词输出 'Swaroop wrote A Byte of Python'  
    print('{name} wrote {book}'.format(name='Swaroop', book='A Byte of Python'))
-   #带符号保留小数点后两位
-   print('{:+.2f}'.format(-1))		
-   #不带小数
-   print('{:.0f}'.format(2.71828))
-   #数字补零 (填充左边, 宽度为2)
-   print('{:0>2d}'.format(5))
-   #数字补x (填充右边, 宽度为4)
-   print('{:x<4d}'.format(10))
-   #以逗号分隔的数字格式
-   print('{:,}'.format(1000000))
-   #百分比格式
-   print('{:.2%}'.format(0.25))
-   #指数记法
-   print('{:.2e}'.format(1000000000))
-   #右对齐 (默认, 宽度为10)
-   print('{:>10d}'.format(13))
-   #左对齐 (宽度为10)
-   print('{:<10d}'.format(13))
-   #中间对齐 (宽度为10)
-   print('{:^10d}'.format(13))
 
 
 输出：
@@ -244,19 +261,14 @@ Python 中 ``format``
 .. code:: text
 
    0.333
-   +3.14
-   ___hello___
-   Swaroop wrote A Byte of Python
-   -1.00
+   +3.00
    3
-   05
-   10xx
-   1,000,000
    25.00%
    1.00e+09
-           13
-   13
-       13
+   ___hello___
+              13
+   05
+   Swaroop wrote A Byte of Python
 
 由于我们正在讨论格式问题，就要注意 ``print``
 总是会以一个不可见的“新一行”字符（\ ``\n``\ ）结尾，因此重复调用
@@ -348,9 +360,10 @@ Python 中 ``format``
 字符串方法
 ~~~~~~~~~~
 
-我们可以通过使用字符串方法来对字符串进行操作。 \* *.strip():
-去除首尾空白字符* \* *.split(): 分割字符串（默认为空格）* \*
-*.replace(): 替换字符* \* *.find(): 查找字符* \* *.count(): 字符计数* \*
+我们可以通过使用字符串方法来对字符串进行操作。 
+\* *.strip():去除首尾空白字符* 
+\* *.split(): 分割字符串（默认为空格）* 
+\* *.replace(): 替换字符* \* *.find(): 查找字符* \* *.count(): 字符计数* \*
 *.upper()/.lower(): 转大/小写* \* *.ljust()/rjust()/zfill(): 指定宽度*
 \* *.isalpha()/isdigit()/.isalnum()*
 
@@ -402,6 +415,7 @@ upper & lower & ljust & rjust & zfill
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code:: python
+
    a=" potato "
    print(a.upper()) 
    print(a.lower())
@@ -431,37 +445,6 @@ Type）_。基本的类型是我们已经讨论过的数字与字符串。在后
   *元组：tuple()，不可变的有序序列* \* *集合：set()，无序不重复元素集*
   \* *字典：dict()，描述映射关系的无序集合*
 
-布尔类型
-~~~~~~~~
-
-布尔类型常用于逻辑判断。 函数： bool(); 运算符： not,or,and; 测试：
-in,is。 我们现在通过下面2段例子学习其用法：
-
-.. code:: python
-
-   >>> bool('')
-   False
-   >>> bool('hello')
-   True
-   >>> a = None
-   >>> b = 1
-   >>> bool(a)
-   False
-   >>> bool(b)
-   True
-
-.. code:: python
-
-   >>> not 1==3        
-   True
-   >>> 1>2 or 2>1      
-   True
-   >>> (1>2) + (2>1)  
-   1                   
-   >>> (1>2) and (2>1)  
-   False
-   >>> (1>2) * (2>1)    
-   0
 
 对象
 ----
@@ -469,18 +452,6 @@ in,is。 我们现在通过下面2段例子学习其用法：
 需要记住的是，Python 将程序中的任何内容统称为
 *对象（Object）*\ 。这是一般意义上的说法。我们以“*某某对象（object）*”相称，而非“*某某东西（something）*”。
 
-针对数字来说，python可以完成：
-
--  通用功能（加减乘除，求余乘方，改变进制）
-   3.14, 0xFF, 012, 5**2, 5//2, 5%2, 0<x<=5
--  C风格位运算（位移，与或非等）
-   1<<16, x & 0xff, x|1, ~x, x^y
--  逻辑运算（判断大小关系）
-   a < b, a > b, a <= b, a >= b
-   a == b, a != b
--  直接支持任意精度长整型和复数
-   2**100 -> 1267650600228229401496703205376
-   1j**2 -> (-1+0j)
 
 
    **针对面向对象编程语言用户的提示：**
@@ -495,8 +466,18 @@ in,is。 我们现在通过下面2段例子学习其用法：
 
 从今以后，保存和运行 Python 程序的标准步骤如下：
 
-对于 PyCharm 用户
-~~~~~~~~~~~~~~~~~
+对于代码编辑器用户
+~~~~~~~~~~~~~~~~~~
+
+1. 打开你选择的编辑器。
+2. 输入案例中给出的代码。
+3. 以给定的文件名将其保存成文件。
+4. 在终端中通过命令 ``python program.py`` 来运行程序。
+
+   
+
+对于 IDE 用户（以PyCharm为例）
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. 打开
    `PyCharm <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/06.first_steps.md#pycharm>`__\ 。
@@ -511,13 +492,6 @@ Arguments） <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5
 
 |image0|
 
-对于其他编辑器用户
-~~~~~~~~~~~~~~~~~~
-
-1. 打开你选择的编辑器。
-2. 输入案例中给出的代码。
-3. 以给定的文件名将其保存成文件。
-4. 在解释器中通过命令 ``python program.py`` 来运行程序。
 
 案例：使用变量与字面常量
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -685,6 +659,7 @@ Joining）*\ 。你可以在后面当我们讨论\ `列表（List） <https://gi
 
 观察以下程序的输出结果：
 .. code:: python
+
    a=" potato "
    a.strip()
    a.split()

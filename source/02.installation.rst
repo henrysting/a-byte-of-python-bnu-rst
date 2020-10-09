@@ -132,7 +132,7 @@ Navigator、Jupyter Notebook和Spyder都得在命令行中启动。
 当我们直接使用终端启动程序时，比如直接输入 ``Python`` 然后回车，或者导入一些包时，系统首先需要在一个特定路径搜索，这时候就需要环境变量。不同操作系统下设置环境变量的方法不一样。
 
 Windows ：
---------
+----------
 
 1.右键打开 ``我的电脑`` ,点击 ``属性`` 。点击 ``高级系统设置`` ``高级`` 下面的 ``环境变量`` 。
 
@@ -146,7 +146,7 @@ Windows ：
 
 
 Linux
------
+------
 
 假设安装在~/anaconda3下：
 
@@ -160,7 +160,7 @@ Linux
 
 
 模块管理器的安装
---------------
+------------------
 
 我们使用Anaconda最主要的目的是使用它进行模块(module)的管理,关于模块我们将在\ `第九章 <https://github.com/weichen-yan/a-byte-of-python-bnu-rst/edit/master/source/09.modules.rst>`__\进行讨论。在使用import语句导入需要包含的模块之前，我们需要使用Anaconda或者pip这样的管理器进行安装。需要说明的是在Windows，Linux以及MacOS中执行安装模块的命令都是一样的。以numpy模块为例：
 

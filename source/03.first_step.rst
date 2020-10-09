@@ -98,6 +98,7 @@ Python 提示符（Python Prompt）。
 - 显示空白字符（whitespace character）。能够显示空格、制表符、换行符等空白字符，方便检查Python所要求的缩进。
 - 设定等宽字体（monospaced font）。采用Consolas、DejaVu Sans Mono、Menlo、Source Code Pro、Microsoft Yahei Mono（微软雅黑）、Noto Sans CJK (思源黑体)之类的等宽字体，能够明显区分0和O，l和I等字形。
 - 支持代码快捷执行。能够通过菜单栏或快捷键直接执行代码并检查结果。
+
 |image25| |image26|
 
 如果你对于从哪开始还没有概念，我推荐你使用\ `SciTE <https://www.scintilla.org/SciTE.html>`__\， \ `VSCode <https://code.visualstudio.com/>`__\
@@ -309,9 +310,9 @@ Vscode
  
 我们需要为launch.json配置如下内容
 
-.. code:: python
+.. code:: javascript
 
-{
+    {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
@@ -334,7 +335,7 @@ Vscode
             "console": "externalTerminal"
         }
     ]
-}
+    }
 
 其中的关键部分在于 "type" ， "request" ， "program" 。
 

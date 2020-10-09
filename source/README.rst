@@ -19,7 +19,7 @@ Python）一书的基础上修订、补而来。
 -  漠伦译本：
    https://legacy.gitbook.com/book/lenkimo/byte-of-python-chinese-edition/
    （\ `漠伦译本源文件 <https://github.com/LenKiMo/byte-of-python>`__\ ）
--  北师大天文系修改版：\ https://a-byte-of-python-bnu.gitbook.io/book/\ （\ `天文系修改版源文件 <https://github.com/WuShichao/a-byte-of-python-bnu>`__\ ）
+-  北师大天文系修改版：\ https://a-byte-of-python-bnu-rst.readthedocs.io/en/latest/\ （\ `天文系修改版源文件 <https://github.com/henrysting/a-byte-of-python-bnu-rst/>`__\ ）
 
 版权
 ----

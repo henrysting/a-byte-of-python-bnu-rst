@@ -12,7 +12,7 @@
    :titlesonly:
    :caption: 目录
 
-    说明 <README.rst>
+    前言 <README.rst>
     基础：背景介绍 <01.about_python.rst>
     基础：安装 <02.installation.rst>
     基础：初次运行 <03.first_step.rst>
@@ -28,6 +28,7 @@
     扩展：绘图模块 matplotlib <12.matplotlib.rst>
     进阶：解决问题 <14.advance.rst>
     进阶：错误和异常 <15.exception.rst>
+    进阶：额外特性 <17.more.rst>
     进阶：面向对象编程 <13.object_oriented_programming.rst>
     迈出下一步 <18.next.rst>
 
