@@ -4,7 +4,7 @@
 接下来我们通过尝试在 Python 中运行一个经典的“Hello
 World”程序，来了解如何编写、保存与运行 Python 程序。
 
-python程序有两种运行方式——使用交互式解释器或使用源文件。下面我们将学习这两种方法。
+python程序有两种运行方式——使用交互式解释器或使用脚本。下面我们将学习这两种方法。
 
 终端（Terminal）
 ----------------
@@ -13,28 +13,20 @@ python程序有两种运行方式——使用交互式解释器或使用源文�
 虽然现在用户的大部分操作被软件中的窗口和按钮取代，但其背后的输入仍是通过具体的命令和接口来完成的。很多时候，终端仍然是更快捷高效的交互方式。
 
 Windows 操作系统
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~ 
 
 在Windows系统中启动终端可以通过\ ``开始``\ ，\ ``运行``\ （快捷键为\ ``Win``\ +
-R），输入 cmd 并回车来实现。 然后在命令行中输入 ``python3``
+R），输入 cmd 并回车来实现。 然后在命令行中输入 ``python3`` 或 ``python3``
 并按下回车键来打开 Python 提示符（Python Prompt）。
+也可以输入``ipython`` 进入增强版的命令行环境。
 Windows用户只要正确地设置了PATH变量，应该可以从命令行启动解释器。
 如果安装时没有将Python加到系统路径当中，则可以使用安装菜单中的 Anaconda
 Prompt 程序启动。
 
-可以使用终端下的 DOS 命令以进行一些有关文件的基本操作：
-d:     改变路径到 D 盘
-cd     改变目录 , 如  cd test/
-dir    列出当前目录下文件和文件夹
-python  进入python运行环境
-ipython 进入ipython 增强运行环境
-python test.py  运行test.py脚本
-
-
 Linux 或 MacOS系统
 ~~~~~~~~~~~~~~~~~~
 
-在你的操作系统中开启终端程序然后通过输入 ``python3`` 并按下回车键来打开
+在你的操作系统中开启终端程序然后通过输入``python``或``python3`` 并按下回车键来打开
 Python 提示符（Python Prompt）。
 
 解释器环境
@@ -60,8 +52,8 @@ Python 提示符（Python Prompt）。
 .. code:: python
 
    nightwing@halo:~$ python
-   Python 3.6.5 |Anaconda, Inc.| (default, Apr 29 2018, 16:14:56) 
-   [GCC 7.2.0] on linux
+   Python 3.7.3 (default, Mar 27 2019, 22:11:17) 
+   [GCC 7.3.0] :: Anaconda, Inc. on linux
    Type "help", "copyright", "credits" or "license" for more information.
    >>> print("Hello World")
    Hello World
@@ -69,52 +61,83 @@ Python 提示符（Python Prompt）。
 
 你自然会注意到，Python
 会立即给你输出了一行结果！你刚才所输入的便是一句独立的 Python *语句*
-。我们使用 ``print``
-（不必太过惊讶）命令来打印你所提供的信息。在这里，我们提供了文本
+。我们使用 ``print``命令来打印你所提供的信息。在这里，我们提供了文本
 ``Hello World`` ，然后它便被迅速地打印到了屏幕上。
 
+获取帮助
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+如果你需要获得 Python 中有关任何函数或语句的快速信息，你可以使用其内置的
+``help`` 功能。这在使用解释器环境时十分有用。例如，运行 ``help('len')``
+命令——这将显示出有关 ``len`` 函数的帮助，了解其是用来计算项目数量的。
+
+小贴士：按下 ``q`` 键可以退出帮助。
+
+类似地，你可以通过此方式获得几乎所有有关 Python 的信息。使用 ``help()``
+命令来了解有关 ``help`` 它本身的更多信息吧！
+
+如果你需要获得有关 ``return``
+这类运算符的帮助，你需要做的就是将它们放在引号中，就像
+``help('return')`` 这般，这样 Python 就不会混淆我们正在试图做的事情。
+
+
+退出解释器环境
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 退出解释器环境可以通过按下 ``[ctrl + d]`` 组合键或是输入 ``exit()``
-（注意：要记住要包含括号 ``()``\ ）并敲下回车实现。
+（注意：务必包含括号 ``()``\ ）并敲下回车实现。
+
 
 编辑器
 ------
 
 要创建 Python
-源代码文件，我们需要一款能够输入并保存代码的编辑器软件。一款优秀的面向程序员的编辑器能够帮助你的编写源代码文件工作变得轻松得多。故而选择一款编辑器确实至关重要。你要像挑选你想要购买的汽车一样挑选你的编辑器。一款优秀的编辑器能够帮助你更轻松地编写
-Python
-程序，使你的编程之旅更加舒适，并助你找到一条更加安全且快速的道路到达你的目的地（实现你的目标）。
+源代码文件，我们需要一款能够输入并保存代码的编辑器软件。一款优秀的面向程序员的编辑器能够帮助你的编写源代码文件工作变得轻松得多。故而选择一款编辑器确实至关重要。你要像挑选你想要购买的汽车一样挑选你的编辑器。一款优秀的编辑器能够帮助你更轻松地编写Python程序，使你的编程之旅更加舒适，并助你找到一条更加安全且快速的道路到达你的目的地（实现你的目标）。一个好的代码编辑器应该具有下面几个功能：
 
-对编辑器的一项最基本要求为 *语法高亮*
-，这一功能能够通过标以不同颜色来帮助你区分 Python
-程序中的不同部分，从而能够让你更好 *看清*
-你的程序，并使它的运行模式更加形象化。
+- 支持语法高亮（syntax highlighting）。能够以不同的颜色和字体显示编程内容，从而提高代码可读性。
+- 显示空白字符（whitespace character）。能够显示空格、制表符、换行符等空白字符，方便检查Python所要求的缩进。
+- 设定等宽字体（monospaced font）。采用Consolas、DejaVu Sans Mono、Menlo、Source Code Pro、Microsoft Yahei Mono（微软雅黑）、Noto Sans CJK (思源黑体)之类的等宽字体，能够明显区分0和O，l和I等字形。
+- 支持代码快捷执行。能够通过菜单栏或快捷键直接执行代码并检查结果。
+|image25| |image26|
 
-如果你对于从哪开始还没有概念，我推荐你使用\ `VSCode <https://code.visualstudio.com/>`__
-或者 `PyCharm 教育版 <https://www.jetbrains.com/pycharm-edu/>`__
-软件，它们在 Windows、Mac OS X、GNU/Linux 上都可以运行。
+如果你对于从哪开始还没有概念，我推荐你使用\ `SciTE <https://www.scintilla.org/SciTE.html>`__\， \ `VSCode <https://code.visualstudio.com/>`__\
+或者\ `PyCharm 教育版 <https://www.jetbrains.com/pycharm-edu/>`__\ 软件，它们在 Windows、Mac OS X、GNU/Linux 上都可以运行。
 
-如果你正在使用 Windows
-系统，\ **千万不要用记事本**——这是一个很糟糕的选择，因为它没有语法加亮功能，不支持文本缩进功能。我们后面会了解它究竟有多重要。一款好的编辑器能够极大地提高工作效率。
+如果你正在使用 Windows 系统，\ **千万不要用记事本**——这是一个很糟糕的选择，因为它没有语法加亮功能，不支持文本缩进功能。我们后面会了解这些功能究竟有多重要。一款好的编辑器能够极大地提高工作效率。
 
-如果你已是一名经验丰富的程序员，那你一定在用
-`Vim <http://www.vim.org>`__ 或
-`Emacs <http://www.gnu.org/software/emacs/>`__
-了。无需多言，它们都是最强大的编辑器之一，用它们来编写你的 Python
-程序自是好处多多。
+如果你已是一名经验丰富的程序员，那你一定在用\ `Vim <http://www.vim.org>`__\ 或\ `Emacs <http://www.gnu.org/software/emacs/>`__\
+了。无需多言，它们都是强大的编辑器，用它们来编写 Python 程序绰绰有余。
 
-或许你有意去花费时间来学习 Vim 或
-Emacs，那么我自是强烈推荐你学习它们二者中的一款，它们将在长远意义上对你裨益颇深。当然，正如我先前所推荐的，初学者可以以
+如果你有时间学习 Vim 或Emacs，那么我自是强烈推荐你学习它们二者中的一款，它们将在长远意义上对你裨益颇深。当然，正如我先前所推荐的，初学者可以以
 PyCharm 开始，从而在此刻专注于学习 Python 而不是编辑器。
 
-再次重申，请选择一款合适的编辑器——它能够让编写 Python
-程序变得更加有趣且容易。
+再次重申，请选择一款合适的编辑器——它能够让编写 Python程序变得更加有趣且容易。
 
 Visual Studio Code（VSCode）
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 这是微软公司开发的一款跨平台开源编辑器，具有丰富的功能和扩展。官方网站为
 `http://code.visualstudio.com/ <https://code.visualstudio.com/>`__\ 。
-装好之后记得在扩展(Extension)中安装\ ``中文语言包``\ 和\ ``python``\ 支持。
+装好之后还需要在扩展(Extension)中安装\ ``中文语言包``\ 和\ ``python``\ 支持。
+
+1.在官网下选择对应版本并下载
+
+|image21|
+
+2.同意协定，点击确定
+
+|image22|
+
+3.勾选需要的选项，在WIN10下可以勾选添加到PATH选项，可以省去配置环境变量，
+
+|image23|
+
+4.点击并等待安装完成
+
+5.配置插件。VS CODE需要对应的插件才能运行不同编程语言的程序，这里我们在左上角的搜索框搜索 ``python`` ,选择微软官方发布的插件（更新比较及时），点击安装即可。
+
+|image24|
+
 
 Vim
 ~~~
@@ -148,7 +171,8 @@ Emacs
 
 集成开发环境(IDE)
 -----------------
-
+如果需要更丰富的功能，如检查并提示错误，进行代码跟踪和调试，则需要使用集成开发环境(IDE)。常见的IDE包括：
+\ `Jupyter Notebook <https://jupyter.org/install>`__\ , \ `Spyder <https://www.spyder-ide.org/>`__\, \ `Pycharm <https://www.jetbrains.com/pycharm/>`__\等。其中Jupyter Notebook和Spyder都是Anaconda默认包含的工具，无需额外安装。
 \ **注意：在进行编辑之前，请确认你的代码使用英文字体。部分中文字体的字符"O"与"0"无法区分，而且某些符号编译器无法识别。**
 
 IDLE
@@ -267,8 +291,8 @@ PyCharm
 ``helloworld`` 上右击并选择 -> ``New`` -> ``Python File``
 并继续如上所述步骤一般输入内容并运行即可。
 
-你可以在 `PyCharm
-Quickstart <https://www.jetbrains.com/pycharm-educational/quickstart/>`__
+你可以在\ `PyCharm
+Quickstart <https://www.jetbrains.com/pycharm-educational/quickstart/>`__\
 页面找到有关 PyCharm 的更多信息。
 
 
@@ -323,13 +347,13 @@ program，程序的启动入口（在哪里找到文件），$file代表当前�
 .. figure:: ../pic/03.IDE/vscode_edit3.png
    :alt: VSCODE编辑launch.json
    
-使用源文件
+使用脚本
 ----------
 
 启动你所选择的编辑器，输入如下程序并将它保存为 ``hello.py`` 。
 
 如果你正在使用
-PyCharm，我们已经讨论过\ `如何从源文件中运行它了 <03.first_step.md#pycharm>`__\ 。
+PyCharm，我们已经讨论过\ `如何从脚本中运行它了 <03.first_step.md#pycharm>`__\ 。
 
 对于其它编辑器，打开一个新文件名将其命名为 ``hello.py``
 ，然后输入如下内容：
@@ -386,27 +410,7 @@ Python 程序是由 *语句*
 所构成的。我们的第一个程序中只有一条语句。在这条语句中，我们调用
 ``print`` *语句* 来搭配我们提供的文本”hello world“。
 
-获取帮助
---------
 
-如果你需要获得 Python 中有关任何函数或语句的快速信息，你可以使用其内置的
-``help`` 功能。这在使用解释器环境时十分有用。例如，运行 ``help('len')``
-命令——这将显示出有关 ``len`` 函数的帮助，了解其是用来计算项目数量的。
-
-小贴士：按下 ``q`` 键可以退出帮助。
-
-类似地，你可以通过此方式获得几乎所有有关 Python 的信息。使用 ``help()``
-命令来了解有关 ``help`` 它本身的更多信息吧！
-
-如果你需要获得有关 ``return``
-这类运算符的帮助，你需要做的就是将它们放在引号中，就像
-``help('return')`` 这般，这样 Python 就不会混淆我们正在试图做的事情。
-
-
-退出python命令行界面
-----------------
-
-输入 ``exit()`` 并回车即可。
 
 总结
 ----
@@ -417,4 +421,12 @@ Python 程序是由 *语句*
 
 .. |IDLE界面| image:: ../pic/03.IDE/IDLE.jpg
 .. |Eclipse| image:: ../pic/03.IDE/Eclipse.jpg
+.. |image21| image:: ../pic/02/vscode1.png
+.. |image22| image:: ../pic/02/vscode2.png
+.. |image23| image:: ../pic/02/vscode3.png
+.. |image24| image:: ../pic/02/vscode4.png
+.. |image25| image:: ../pic/02/editor0.png
+    :width: 49 %
+.. |image26| image:: ../pic/02/editor1.png
+    :width: 49 %
 

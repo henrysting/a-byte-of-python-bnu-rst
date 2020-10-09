@@ -1,4 +1,4 @@
-1 基础：背景介绍
+基础：背景介绍
 ================
 
 Python语言难得的既 **简单** 又 **强大** 。它注重的是如何解决问题而不是编程语言的语法和结构。
@@ -13,7 +13,7 @@ Python的官方介绍是：
 名字背后的故事
 --------------
 
-Python 的创造者吉多·范罗苏姆（Guido van Rossum）采用 BBC电视节目《蒙提·派森的飞行马戏团（Monty Python’s Flying Circus，一译巨蟒剧团）》的名字来为这门编程语言命名。尽管他本人并不特别喜欢蟒蛇这种用身体勒死猎物来捕食的动物。
+Python 的创造者吉多·范罗苏姆（Guido van Rossum）采用 BBC电视节目《蒙提·派森的飞行马戏团》（Monty Python’s Flying Circus，一译巨蟒剧团）的名字来为这门编程语言命名。尽管他本人并不特别喜欢蟒蛇这种用身体勒死猎物来捕食的动物。
 
 Python 的特色
 -------------
@@ -141,5 +141,4 @@ Canopy 是 `Enthought <https://www.enthought.com/>`__ 公司开发维护的 Pyth
 .. |image2| image:: ../pic/01/canopy.png
     :width: 256 px
 .. |image4| image:: ../pic/01/1_basic_background.png
-    :width: 256 px
 
