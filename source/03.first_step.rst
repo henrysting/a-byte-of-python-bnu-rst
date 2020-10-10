@@ -1,4 +1,4 @@
-3 基础：初次运行
+基础：初次运行
 ================
 
 接下来我们通过尝试在 Python 中运行一个经典的“Hello
@@ -26,7 +26,7 @@ Prompt 程序启动。
 Linux 或 MacOS系统
 ~~~~~~~~~~~~~~~~~~
 
-在你的操作系统中开启终端程序然后通过输入``python``或``python3`` 并按下回车键来打开
+在你的操作系统中开启终端程序然后通过输入 ``python`` 或 ``python3`` 并按下回车键来打开
 Python 提示符（Python Prompt）。
 
 解释器环境
@@ -35,7 +35,8 @@ Python 提示符（Python Prompt）。
 解释器启动之后，其中的输入就和平台无关了。
 
 在 Python 启动后，你会看见在你能开始输入内容的地方出现了 ``>>>``
-。这个被称作 *Python 解释器提示符（Python Interpreter Prompt）* 。
+。它是 *Python 解释器提示符（Python Interpreter Prompt）* ，
+是区别终端环境和Python解释器环境的标志。
 
 在提示符后输入：
 
@@ -47,9 +48,9 @@ Python 提示符（Python Prompt）。
 
 下面是一个在 Linux 电脑上你能够看见结果的示例。有关 Python
 软件的细节将会因为你使用的电脑而有所不同，但是从提示符（如 ``>>>``
-）开始部分应该是相同的，而不会受到操作系统的影响。
+）开始部分应该是相同的，不会受到操作系统的影响。
 
-.. code:: python
+.. code:: bash
 
    nightwing@halo:~$ python
    Python 3.7.3 (default, Mar 27 2019, 22:11:17) 
@@ -61,7 +62,7 @@ Python 提示符（Python Prompt）。
 
 你自然会注意到，Python
 会立即给你输出了一行结果！你刚才所输入的便是一句独立的 Python *语句*
-。我们使用 ``print``命令来打印你所提供的信息。在这里，我们提供了文本
+。我们使用 ``print`` 命令来打印你所提供的信息。在这里，我们提供了文本 
 ``Hello World`` ，然后它便被迅速地打印到了屏幕上。
 
 获取帮助
@@ -96,7 +97,7 @@ Python 提示符（Python Prompt）。
 
 - 支持语法高亮（syntax highlighting）。能够以不同的颜色和字体显示编程内容，从而提高代码可读性。
 - 显示空白字符（whitespace character）。能够显示空格、制表符、换行符等空白字符，方便检查Python所要求的缩进。
-- 设定等宽字体（monospaced font）。采用Consolas、DejaVu Sans Mono、Menlo、Source Code Pro、Microsoft Yahei Mono（微软雅黑）、Noto Sans CJK (思源黑体)之类的等宽字体，能够明显区分0和O，l和I等字形。
+- 设定等宽字体（monospaced font）。采用 *Consolas* 、 *DejaVu Sans Mono* 、 *Menlo* 、 *Source Code Pro* 之类的等宽字体，以便能够明确地区分0和O，l和I，\’和\'等相近字形。如果代码中包含中文，最好使用 *Microsoft Yahei Mono* （微软雅黑）、 *Noto Sans CJK* (思源黑体) 等支持中文的等宽字体。
 - 支持代码快捷执行。能够通过菜单栏或快捷键直接执行代码并检查结果。
 
 |image25| |image26|
@@ -124,7 +125,7 @@ Visual Studio Code（VSCode）
 1.在官网下选择对应版本并下载
 
 |image21|
-
+ 
 2.同意协定，点击确定
 
 |image22|

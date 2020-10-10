@@ -17,7 +17,6 @@
     基础：安装 <02.installation.rst>
     基础：初次运行 <03.first_step.rst>
     基础：基本概念 <04.basis.rst>
-    核心：运算符与表达式 <05.operators_and_expressions.rst>
     核心：控制流 <06.control.rst>
     核心：数据结构 <07.data_structures.rst>
     核心：函数 <08.functions.rst>
