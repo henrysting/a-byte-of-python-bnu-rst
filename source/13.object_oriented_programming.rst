@@ -286,7 +286,7 @@ variable）**\ 由类的每一个独立的对象或实例所拥有。在这种�
 ``staticmethod（静态方法）``\ ，这取决于我们是否需要知道这一方法属于哪个类。由于我们已经引用了一个类变量，因此我们使用
 ``classmethod（类方法）``\ 。
 
-我们使用\ `装饰器（Decorator） <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/18.more.md#decorator>`__\ 将
+我们使用\ :doc:`装饰器（Decorator） <./17.more>` \ 将
 ``how_many`` 方法标记为类方法。
 
 你可以将装饰器想象为调用一个包装器（Wrapper）函数的快捷方式，因此启用

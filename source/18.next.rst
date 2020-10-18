@@ -45,7 +45,7 @@ pickle
    是一本极具价值的“烹饪法”与提示的集合，它介绍了如何通过 Python
    解决某些特定类型的问题。
 -  `Python Module of the Week <http://pymotw.com/2/contents.html>`__
-   是另一本优秀的\ `标准库 <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/stdlib.md#stdlib>`__\ 必读指南。
+   是另一本优秀的\  :doc:`标准库 <./16.stdlib#stdlib>`__\ 必读指南。
 
 建议
 ----
@@ -231,7 +231,7 @@ JavaScript）编写你的 Web 浏览器（“Ajax”）程序。
 函数式编程（面向高阶读者）
 --------------------------
 
-当你开始编写更加庞大的程序时，你应该清楚了解更多关于使用函数的方式来进行编程，而不是我们在\ `《面向对象编程》章节中 <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/14.oop.md#oop>`__\ 所学习的基于类的方式进行编程：
+当你开始编写更加庞大的程序时，你应该清楚了解更多关于使用函数的方式来进行编程，而不是我们在\ :doc:`《面向对象编程》章节中 <./13.object_oriented_programming#oop>`__\ 所学习的基于类的方式进行编程：
 
 -  `Functional Programming Howto by A.M.
    Kuchling <http://docs.python.org/3/howto/functional.html>`__
