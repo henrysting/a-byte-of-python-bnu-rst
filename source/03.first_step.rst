@@ -218,6 +218,8 @@ Eclipse
 的通用开发平台，功能强大，应用广泛。可以与PyDev结合搭建python开发平台。
 |Eclipse|
 
+###pycharm
+ 
 PyCharm
 ~~~~~~~
 
@@ -355,7 +357,7 @@ program，程序的启动入口（在哪里找到文件），$file代表当前�
 启动你所选择的编辑器，输入如下程序并将它保存为 ``hello.py`` 。
 
 如果你正在使用
-PyCharm，我们已经讨论过\ `如何从脚本中运行它了 <03.first_step.md#pycharm>`__\ 。
+PyCharm，我们已经讨论过\ :doc:`如何从脚本中运行它了 <./03.first_step>` \ 。
 
 对于其它编辑器，打开一个新文件名将其命名为 ``hello.py``
 ，然后输入如下内容：
@@ -380,7 +382,7 @@ Python 程序：
 要想运行你的 Python 程序：
 
 1. 打开终端窗口（你可查阅先前的
-   `安装 <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/installation.md#installation>`__\ 章节来了解应该怎么做）。
+   \ :doc:`安装 :<./02.installation>` \ 章节来了解应该怎么做）。
 2. 使用 ``cd`` 命令来\ **改**\ 变\ **目**\ 录到你保存文件的地方，例如
    ``cd /tmp/py`` 。
 3. 通过输入命令 ``python hello.py``
@@ -404,7 +406,7 @@ Python
 Python 是区分大小写的，如 ``print`` 和 ``Print`` 是不同的——注意前者的 p
 是小写的，而后者的 P
 是大写的。此外，你需要确保每一行的第一个字符前面都没有任何空格或制表格——我们会在后面了解
-`为什么这件事如此重要 <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/07.basics.md#indentation>`__\ 。
+\ :doc:`为什么这件事如此重要 <./04.basis>` \ 。
 
 **它是如何工作的**
 

@@ -41,6 +41,8 @@
    '/Library/Python/2.7/site-packages',
    '/usr/local/lib/python2.7/site-packages']
 
+
+
 **它是如何工作的**
 
 首先，我们通过 ``import`` 语句_导入 ``sys``
@@ -57,7 +59,7 @@
 ``sys`` 模块中的 ``argv`` 变量通过使用点号予以指明，也就是 ``sys.argv`` 这样的形式。它清晰地表明了这一名称是 ``sys``
 模块的一部分。这一处理方式的另一个优点是这个名称不会与你程序中的其它任何一个 ``argv`` 变量冲突。
 
-``sys.argv`` 变量是一系列字符串的_列表（List）_（列表将在\ `后面的章节 <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/12.data_structures.md#data-structures>`__\ 予以详细解释）。具体而言，\ ``sys.argv``
+``sys.argv`` 变量是一系列字符串的_列表（List）_（列表将在\ :doc:`后面的章节 <./07.data_structures>` \ 予以详细解释）。具体而言，\ ``sys.argv``
 包含了_命令行参数（Command Line Arguments）_这一列表，也就是使用命令行传递给你的程序的参数。
 
 如果你正在使用一款 IDE 来编写并运行这些程序，请在程序菜单中寻找相关指定命令行参数的选项。
@@ -89,7 +91,7 @@ sys.getfilesystemencoding(): 获取文件系统编码，Windows下返回""mbcs""
 导入一个模块是一件代价高昂的事情，因此 Python
 引入了一些技巧使其能够更快速的完成。其中一种方式便是创建_按字节码编译的（Byte-Compiled）_文件，这一文件以
 ``.pyc`` 为其扩展名，是将 Python
-转换成中间形式的文件（还记得\ `《介绍》 <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/04.about_python.md#interpreted>`__\ 一章中介绍的
+转换成中间形式的文件（还记得\ :doc:`基础：背景介绍  <./01.about_python>` \ 一章中介绍的
 Python 是如何工作的吗？）。这一 ``.pyc``
 文件在你下一次从其它不同的程序导入模块时非常有用——它将更加快速，因为导入模块时所需要的一部分处理工作已经完成了。同时，这些按字节码编译的文件是独立于运行平台的。
 
@@ -232,8 +234,9 @@ Python 程序中使用这一模块。
 这将导入诸如 ``say_hi`` 等所有公共名称，但不会导入 ``__version__``
 名称，因为后者以双下划线开头。如果只需要某一个或某几个函数，把 ``*`` 替换为想要的函数，并用逗号分开即可。
 
-   **警告：**\ 要记住你应该避免使用 import *这种形式，即 \`from mymodule
-   import* \`。
+   **警告：**
+   
+   要记住你应该避免使用 ``import *``这种形式，即  ``from mymodule import*`` 。
 
    **Python 之禅**
 
@@ -340,7 +343,7 @@ Python 表明这一文件夹是特别的，因为其包含了 Python 模块。
                    - bar.py
 
 包是一种能够方便地分层组织模块的方式。你将在
-`标准库 <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/17.stdlib.md#stdlib>`__
+\ :doc:`标准库 <./16.standrad_library>  `
 中看到许多有关于此的实例。
 
 总结

@@ -52,7 +52,7 @@
 
 我们使用切片功能翻转文本。我们已经了解了我们可以通过使用 ``seq[a:b]``
 来从位置 ``a`` 开始到位置 ``b``
-结束来\ `对序列进行切片 <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/12.data_structures.md#sequence>`__
+结束来\ :doc:`对序列进行切片 <./07.data_structures> `  \
 。我们同样可以提供第三个参数来确定切片的_步长（Step）_。默认的步长为
 ``1``\ ，它会返回一份连续的文本。如果给定一个负数步长，如
 ``-1``\ ，将返回翻转过的文本。
@@ -280,7 +280,7 @@ Unicode
 **它是如何工作的**
 
 现在你可以忽略 ``import``
-语句，我们会在\ `模块章节 <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/11.modules.md#modules>`__\ 章节探讨有关它的更多细节。
+语句，我们会在\ :doc:`模块章节 <./09.modules> `\ 章节探讨有关它的更多细节。
 
 每当我们诸如上面那番使用 Unicode 字面量编写一款程序时，我们必须确保
 Python 程序已经被告知我们使用的是 UTF-8，因此我们必须将
