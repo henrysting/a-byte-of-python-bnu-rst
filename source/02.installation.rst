@@ -28,7 +28,7 @@ Anaconda的安装过程与Windows平台的其他软件的安装过程无异。�
 
 |image3|
 
-第五步：此处需注意，在这一步中我们**推荐勾选第一个选项**。这一选项的作用是将Python添加到Windows系统的环境变量PATH中，这样就能在终端cmd中直接运行Python。虽然有提示不建议勾选，但是只要系统中只安装一个版本的Python就不会有什么影响。
+第五步：此处需注意，在这一步中我们 ** 推荐勾选第一个选项 ** 。这一选项的作用是将Python添加到Windows系统的环境变量PATH中，这样就能在终端cmd中直接运行Python。虽然有提示不建议勾选，但是只要系统中只安装一个版本的Python就不会有什么影响。
 
 |image4|
 
@@ -184,7 +184,7 @@ Python，和对应的编辑器。接下来，我们将要撰写我们的第一�
 .. |image1| image:: ../pic/02/windows_2.png
 .. |image2| image:: ../pic/02/windows_3.png
 .. |image3| image:: ../pic/02/windows_4.png
-.. |image4| image:: ../pic/02/windows_5.png
+.. |image4| image:: ../pic/02/windows_05.png
 .. |image5| image:: ../pic/02/windows_6.png
 .. |image6| image:: ../pic/02/windows_7.png
 .. |image7| image:: ../pic/02/windows_9.png

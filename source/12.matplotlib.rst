@@ -5,8 +5,9 @@
 ------------
 
 Matplotlib：基于数值计算模块Numeric及Numarray，克隆了许多Matlab中的函数，帮助用户轻松地获得高质量的二维图形。
-PIL(Python Imaging
-Library)：支持各种图片文件格式，能进行图形格式的转换、显示，以及图形的放大、缩小和旋转等处理。
+
+PIL(Python Imaging Library)：支持各种图片文件格式，能进行图形格式的转换、显示，以及图形的放大、缩小和旋转等处理。
+
 Visual：是Python的一个简单易用的3D图形库，使用它可以快速创建3D场景、动画。
 
 下面我们来通过实际的例子来学习matplotlib绘图模块。
@@ -36,14 +37,14 @@ Plot参数
 
 .. code:: python
 
-   • alpha : float
-   • color or c : any matplotlib color
-   • label : any string , 图注名称
-   • linestyle or ls : [ '-' | '--' | '-.' | ':' | 'steps' | ...]
-   • linewidth or lw: float value (points, 0.3527mm )
-   • marker [ '+' | ',' | '.' | '1' | '2' | '3' | '4' ]
-   • markersize or ms : float
-   • zorder: any number 叠放顺序
+   alpha : float
+   color or c : any matplotlib color
+   label : any string , 图注名称
+   linestyle or ls : [ '-' | '--' | '-.' | ':' | 'steps' | ...]
+   linewidth or lw: float value (points, 0.3527mm )
+   marker [ '+' | ',' | '.' | '1' | '2' | '3' | '4' ]
+   markersize or ms : float
+   zorder: any number 叠放顺序
 
 颜色
 ~~~~
@@ -52,34 +53,40 @@ Plot参数
 
 .. code:: python
 
-   • 蓝色： 'b' (blue)
-   • 绿色： 'g' (green)
-   • 红色： 'r' (red)
-   • 青色： 'c' (cyan)
-   • 洋红： 'm' (magenta)
-   • 黄色： 'y' (yellow)
-   • 黑色： 'k' (black)
-   • 白色： 'w' (white)
+   #蓝色： 'b' (blue)
+   #绿色： 'g' (green)
+   #红色： 'r' (red)
+   #青色： 'c' (cyan)
+   #洋红： 'm' (magenta)
+   #黄色： 'y' (yellow)
+   #黑色： 'k' (black)
+   #白色： 'w' (white)
 
-   • 灰度表示： e.g. 0.75 ([0,1]内任意浮点数)
-   • RGB表示法： 由红色、绿色和蓝色的值组成的十六进制符号来定义 e.g. '#2F4F4F' 或 (0.18,0.31,0.31)
+   #灰度表示： e.g. 0.75 ([0,1]内任意浮点数)
+   #RGB表示法： 由红色、绿色和蓝色的值组成的十六进制符号来定义 e.g. '#2F4F4F' 或 (0.18,0.31,0.31)
 
 坐标轴定制
 ~~~~~~~~~~
 
 .. code:: python
 
-   • plt.title('sine function demo')
-   • plt.xlabel('time(s)')
-   • plt.ylabel('votage(mV)')
-   • plt.xlim([0.0,5.0])
-   • plt.ylim([-1.2,1.2])
-   • plt.hold('on') # 保持之前plot的结果
-   • plt.grid('on') # 添加网格
-   • plt.text(4,0,'$\mu=100$') # 文本
-   • plt.axis('equal') # 等比例坐标轴
-   • plt.ylim(plt.ylim()[::-1]) # 翻转Y轴
-   • plt.gca().invert_yaxis() # 翻转Y轴
+   import matplotlib.pyplot as plt
+   plt.title('sine function demo')
+   plt.xlabel('time(s)')
+   plt.ylabel('votage(mV)')
+   plt.xlim([0.0,5.0])
+   plt.ylim([-1.2,1.2])
+   #plt.hold('on') # 保持之前plot的结果
+   #这里在python 3.6.9测试时已经默认使用hold为true的结果,在Python3已经移除plt.hold('on')这一选项,
+   # 因此我们将上一句注释掉
+   plt.grid('on') # 添加网格
+   plt.text(4,0,'$\mu=100$') # 文本
+   plt.axis('equal') # 等比例坐标轴
+   plt.ylim(plt.ylim()[::-1]) # 翻转Y轴
+   plt.gca().invert_yaxis() # 翻转Y轴
+   plt.axvline(x=0)# 竖直参考线
+   plt.axhline(y=0,color='k'  )# 水平参考线
+   plt.show()
 
 极坐标
 ~~~~~~
@@ -184,15 +191,15 @@ matplotlib模块支持的图表类型非常之多，几乎能胜任任何绘图�
 
 .. code:: python
 
-   • subplot(numRows, numCols, plotNum)
-   – plt.subplot(221) # 第一行的左图
-   – plt.subplot(222) # 第一行的右图
-   – plt.subplot(212) # 第二整行
-   – plt.show()
-   – ax1 = plt.subplot(211) # 创建子图1
-   – ax1.plot(x,y)
-   – ax2 = plt.subplot(212) # 创建子图2
-   – ax2.plot(x,y)
+   subplot(numRows, numCols, plotNum)
+   plt.subplot(221) # 第一行的左图
+   plt.subplot(222) # 第一行的右图
+   plt.subplot(212) # 第二整行
+   plt.show()
+   ax1 = plt.subplot(211) # 创建子图1
+   ax1.plot(x,y)
+   ax2 = plt.subplot(212) # 创建子图2
+   ax2.plot(x,y)
 
 colormap
 ~~~~~~~~
@@ -201,10 +208,10 @@ colormap
 
 .. code:: python
 
-   • 查看可用色表
+   查看可用色表
    import pylab as pl
    pl.colormaps()
-   • 查看色表内容
+   查看色表内容
    pl.cm.hot(0.001)
    pl.cm.hot(0.999)
    pl.cm.hot(0.5)
@@ -302,15 +309,15 @@ colormap
 mplot3d 函数
 ~~~~~~~~~~~~
 
-.. code:: python
+.. code:: txt
 
-   • plot3D：三维控件绘图
-   • plot_surface： 三维网格曲面
-   • plot_trisurf： 三维三角曲面
-   • plot_wireframe：三维线图
-   • quiver： 矢量图
-   • quiver3D： 三维矢量图
-   • scatter: 散点图
+   plot3D：三维控件绘图
+   plot_surface： 三维网格曲面
+   plot_trisurf： 三维三角曲面
+   plot_wireframe：三维线图
+   quiver： 矢量图
+   quiver3D： 三维矢量图
+   scatter: 散点图
 
 三维球面
 ~~~~~~~~
