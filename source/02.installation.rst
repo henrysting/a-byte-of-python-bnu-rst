@@ -28,7 +28,7 @@ Anaconda的安装过程与Windows平台的其他软件的安装过程无异。�
 
 |image3|
 
-第五步：此处需注意，在这一步中我们**推荐勾选第一个选项**。这一选项的作用是将Python添加到Windows系统的环境变量PATH中，这样就能在终端cmd中直接运行Python。虽然有提示不建议勾选，但是只要系统中只安装一个版本的Python就不会有什么影响。
+第五步：此处需注意，在这一步中我们 ** 推荐勾选第一个选项 ** 。这一选项的作用是将Python添加到Windows系统的环境变量PATH中，这样就能在终端cmd中直接运行Python。虽然有提示不建议勾选，但是只要系统中只安装一个版本的Python就不会有什么影响。
 
 |image4|
 
@@ -56,8 +56,10 @@ Notebook能够在浏览器里编辑Python的Notebook文件，能够实现交互�
 
 |image8|
 
+#installation
+
 在 GNU/Linux 下安装
--------------------
+---------------------------
 
 对于GNU/Linux用户，访问 https://www.anaconda.com/download/
 并下载最新版本的Anaconda
@@ -120,19 +122,18 @@ Navigator、Jupyter Notebook和Spyder都得在命令行中启动。
 注意：输出的内容取决于你安装的Anaconda Python的版本。
 
 在 macOS 下安装
----------------
+--------------------
 
 对于macOS用户，安装过程和Linux类似。通过按键 ``Command + Space``
 （以启动 Spotlight 搜索），输入 ``Terminal`` 并按下 ``Enter``
 键来启动终端程序。
 
-环境变量
---------
+Windows 环境下的环境变量设置
+--------------------------------------------
 
 当我们直接使用终端启动程序时，比如直接输入 ``Python`` 然后回车，或者导入一些包时，系统首先需要在一个特定路径搜索，这时候就需要环境变量。不同操作系统下设置环境变量的方法不一样。
 
-Windows ：
-----------
+
 
 1.右键打开 ``我的电脑`` ,点击 ``属性`` 。点击 ``高级系统设置`` ``高级`` 下面的 ``环境变量`` 。
 
@@ -145,8 +146,8 @@ Windows ：
 3.点击确定退出
 
 
-Linux
-------
+Linux环境下的环境变量设置
+-----------------------------------
 
 假设安装在~/anaconda3下：
 
@@ -162,7 +163,8 @@ Linux
 模块管理器的安装
 ------------------
 
-我们使用Anaconda最主要的目的是使用它进行模块(module)的管理,关于模块我们将在\ `第九章 <https://github.com/weichen-yan/a-byte-of-python-bnu-rst/edit/master/source/09.modules.rst>`__\进行讨论。在使用import语句导入需要包含的模块之前，我们需要使用Anaconda或者pip这样的管理器进行安装。需要说明的是在Windows，Linux以及MacOS中执行安装模块的命令都是一样的。以numpy模块为例：
+我们使用Anaconda最主要的目的是使用它进行模块(module)的管理,关于模块我们将在\ :doc:`第九章 <./09.modules>` \进行讨论。在使用import语句导入需要包含的模块之前，我们需要使用Anaconda或者pip这样的管理器进行安装。需要说明的是在Windows，Linux以及MacOS中执行安装模块的命令都是一样的。以numpy模块为例：
+
 
 Anaconda
 在终端中输入 ``conda install numpy`` 并按下 ``Enter`` 即可。类似的，输入 ``conda install -c conda-forge notebook`` 可以安装jupyter notebook.
@@ -182,7 +184,7 @@ Python，和对应的编辑器。接下来，我们将要撰写我们的第一�
 .. |image1| image:: ../pic/02/windows_2.png
 .. |image2| image:: ../pic/02/windows_3.png
 .. |image3| image:: ../pic/02/windows_4.png
-.. |image4| image:: ../pic/02/windows_5.png
+.. |image4| image:: ../pic/02/windows_05.png
 .. |image5| image:: ../pic/02/windows_6.png
 .. |image6| image:: ../pic/02/windows_7.png
 .. |image7| image:: ../pic/02/windows_9.png

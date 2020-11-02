@@ -92,7 +92,7 @@ Python
 在这个程序中，我们根据用户猜测的数字来检查这一数字是否是我们所设置的。我们将变量
 ``number`` 设为任何我们所希望的整数，例如 ``23``\ 。然后，我们通过
 ``input()``
-函数来获取用户的猜测数。所谓函数是一种可重复使用的程序。我们将在\ `下一章 <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/10.functions.md#functions>`__\ 详细讨论它。
+函数来获取用户的猜测数。所谓函数是一种可重复使用的程序。我们将在\ :doc:`下一章 <./08.functions>`__\ 详细讨论它。
 
 我们为内置的 ``input``
 函数提供一串打印到屏幕上的字符串并等待用户的输入。一旦我们输入了某些内容并按下键盘上的
@@ -141,7 +141,7 @@ C/C++
    **针对 C/C++ 程序员的提示**
 
    Python 中不存在 ``switch`` 语句。你可以通过使用 ``if..elif..else``
-   语句来实现同样的事情（在某些情况下，使用一部\ `字典 <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/12.data_structures.md#dictionary>`__\ 能够更快速地完成）。
+   语句来实现同样的事情（在某些情况下，使用一部\ :doc:`字典 <./07.data_structures>` \ 能够更快速地完成）。
 
 ``while`` 语句
 --------------
@@ -217,7 +217,7 @@ C/C++
 ------------
 
 ``for...in``
-语句是另一种循环语句，其特点是会在一系列对象上进行_迭代（Iterates）_，意即它会遍历序列中的每一个项目。我们将在后面的\ `序列（Sequences） <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/12.data_structures.md#sequence>`__\ 章节中了解有关它的更多内容。现在你所需要的就是所谓队列就是一系列项目的有序集合。
+语句是另一种循环语句，其特点是会在一系列对象上进行_迭代（Iterates）_，意即它会遍历序列中的每一个项目。我们将在后面的\  :doc:`序列（Sequences） <./07.data_structures>`__\ 章节中了解有关它的更多内容。现在你所需要的就是所谓队列就是一系列项目的有序集合。
 
 案例（保存为 ``for.py``\ ）：
 
@@ -256,7 +256,7 @@ C/C++
 每次只会生成一个数字，如果你希望获得完整的数字列表，要在使用 ``range()``
 时调用 ``list()``\ 。例如下面这样：\ ``list(range(5))`` ，它将会返回
 ``[0, 1, 2, 3, 4]``\ 。有关列表的详细解释将会在
-`《数据结构》一章 <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/12.data_structures.md#data-structures>`__\ 呈现。
+\ :doc:`《数据结构》一章 <./07.data_structures>` \ 呈现。
 
 然后 ``for`` 循环就会在这一范围内展开递归——\ ``for i in range(1,5)``
 等价于

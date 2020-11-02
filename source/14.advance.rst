@@ -31,8 +31,8 @@ Python 脚本。
    项目页面 <http://gnuwin32.sourceforge.net/packages/zip.htm>`__
    上下载并\ `安装 <http://gnuwin32.sourceforge.net/downlinks/zip.php>`__
    ``zip`` 命令，并将 ``C:\Program Files\GnuWin32\bin`` 添加至你的系统的
-   ``PATH`` 环境变量中，这一操作过程与\ `我们为使系统识别 Python
-   命令本身所做的事情 <https://github.com/WuShichao/a-byte-of-python-bnu/tree/4e7952bd0b5a028cd3149f9b9cff837f08531314/installation.md#dos-prompt>`__\ 相同。
+   ``PATH`` 环境变量中，这一操作过程与\ :doc:`我们为使系统识别 Python
+   命令本身所做的事情 <./02.installation>` \ 相同。
 
 解决方案
 --------
