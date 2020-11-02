@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. 基础：初次运行 &#8212; A-Byte-of-Python-BNU 0.1 文档</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="5. 基础：基本概念" href="04.basis.html" />
+    <link rel="prev" title="3. 基础：安装" href="02.installation.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="04.basis.html" title="5. 基础：基本概念"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="02.installation.html" title="3. 基础：安装"
+             accesskey="P">上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">A-Byte-of-Python-BNU 0.1 文档</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">4. </span>基础：初次运行</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1><span class="section-number">4. </span>基础：初次运行<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>接下来我们通过尝试在 Python 中运行一个经典的“Hello
+World”程序，来了解如何编写、保存与运行 Python 程序。</p>
+<p>python程序有两种运行方式——使用交互式解释器或使用脚本。下面我们将学习这两种方法。</p>
+<div class="section" id="terminal">
+<h2><span class="section-number">4.1. </span>终端（Terminal）<a class="headerlink" href="#terminal" title="永久链接至标题">¶</a></h2>
+<p>终端是一台机器和外界（人）进行交互（命令输入输出）的窗口。在图形化界面（Windows系统）出现之前，它是计算机唯一的交互方式。
+虽然现在用户的大部分操作被软件中的窗口和按钮取代，但其背后的输入仍是通过具体的命令和接口来完成的。很多时候，终端仍然是更快捷高效的交互方式。</p>
+<div class="section" id="windows">
+<h3><span class="section-number">4.1.1. </span>Windows 操作系统<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h3>
+<p>在Windows系统中启动终端可以通过<code class="docutils literal notranslate"><span class="pre">开始</span></code>，<code class="docutils literal notranslate"><span class="pre">运行</span></code>（快捷键为<code class="docutils literal notranslate"><span class="pre">Win</span></code>+
+R），输入 cmd 并回车来实现。 然后在命令行中输入 <code class="docutils literal notranslate"><span class="pre">python3</span></code> 或 <code class="docutils literal notranslate"><span class="pre">python3</span></code>
+并按下回车键来打开 Python 提示符（Python Prompt）。
+也可以输入``ipython`` 进入增强版的命令行环境。
+Windows用户只要正确地设置了PATH变量，应该可以从命令行启动解释器。
+如果安装时没有将Python加到系统路径当中，则可以使用安装菜单中的 Anaconda
+Prompt 程序启动。</p>
+</div>
+<div class="section" id="linux-macos">
+<h3><span class="section-number">4.1.2. </span>Linux 或 MacOS系统<a class="headerlink" href="#linux-macos" title="永久链接至标题">¶</a></h3>
+<p>在你的操作系统中开启终端程序然后通过输入 <code class="docutils literal notranslate"><span class="pre">python</span></code> 或 <code class="docutils literal notranslate"><span class="pre">python3</span></code> 并按下回车键来打开
+Python 提示符（Python Prompt）。</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2><span class="section-number">4.2. </span>解释器环境<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>解释器启动之后，其中的输入就和平台无关了。</p>
+<p>在 Python 启动后，你会看见在你能开始输入内容的地方出现了 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>
+。它是 <em>Python 解释器提示符（Python Interpreter Prompt）</em> ，
+是区别终端环境和Python解释器环境的标志。</p>
+<p>在提示符后输入：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>输入完成后按下回车键。你将会看到屏幕上打印出 <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World</span></code> 字样。</p>
+<p>下面是一个在 Linux 电脑上你能够看见结果的示例。有关 Python
+软件的细节将会因为你使用的电脑而有所不同，但是从提示符（如 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>
+）开始部分应该是相同的，不会受到操作系统的影响。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nightwing@halo:~$ python
+Python <span class="m">3</span>.7.3 <span class="o">(</span>default, Mar <span class="m">27</span> <span class="m">2019</span>, <span class="m">22</span>:11:17<span class="o">)</span>
+<span class="o">[</span>GCC <span class="m">7</span>.3.0<span class="o">]</span> :: Anaconda, Inc. on linux
+Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
+&gt;&gt;&gt; print<span class="o">(</span><span class="s2">&quot;Hello World&quot;</span><span class="o">)</span>
+Hello World
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>你自然会注意到，Python
+会立即给你输出了一行结果！你刚才所输入的便是一句独立的 Python <em>语句</em>
+。我们使用 <code class="docutils literal notranslate"><span class="pre">print</span></code> 命令来打印你所提供的信息。在这里，我们提供了文本
+<code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World</span></code> ，然后它便被迅速地打印到了屏幕上。</p>
+<div class="section" id="id3">
+<h3><span class="section-number">4.2.1. </span>获取帮助<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>如果你需要获得 Python 中有关任何函数或语句的快速信息，你可以使用其内置的
+<code class="docutils literal notranslate"><span class="pre">help</span></code> 功能。这在使用解释器环境时十分有用。例如，运行 <code class="docutils literal notranslate"><span class="pre">help('len')</span></code>
+命令——这将显示出有关 <code class="docutils literal notranslate"><span class="pre">len</span></code> 函数的帮助，了解其是用来计算项目数量的。</p>
+<p>小贴士：按下 <code class="docutils literal notranslate"><span class="pre">q</span></code> 键可以退出帮助。</p>
+<p>类似地，你可以通过此方式获得几乎所有有关 Python 的信息。使用 <code class="docutils literal notranslate"><span class="pre">help()</span></code>
+命令来了解有关 <code class="docutils literal notranslate"><span class="pre">help</span></code> 它本身的更多信息吧！</p>
+<p>如果你需要获得有关 <code class="docutils literal notranslate"><span class="pre">return</span></code>
+这类运算符的帮助，你需要做的就是将它们放在引号中，就像
+<code class="docutils literal notranslate"><span class="pre">help('return')</span></code> 这般，这样 Python 就不会混淆我们正在试图做的事情。</p>
+</div>
+<div class="section" id="id4">
+<h3><span class="section-number">4.2.2. </span>退出解释器环境<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>退出解释器环境,在LINUX下可以通过按下 <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">d</span></code> 组合键,在WINDOWS下可以通过按下 <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">z</span></code> 组合键,或是在任意操作系统的命令行界面输入 <code class="docutils literal notranslate"><span class="pre">exit()</span></code>
+（注意：务必包含括号 <code class="docutils literal notranslate"><span class="pre">()</span></code>）并敲下回车实现。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">4.3. </span>编辑器<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>要创建 Python
+源代码文件，我们需要一款能够输入并保存代码的编辑器软件。一款优秀的面向程序员的编辑器能够帮助你的编写源代码文件工作变得轻松得多。故而选择一款编辑器确实至关重要。你要像挑选你想要购买的汽车一样挑选你的编辑器。一款优秀的编辑器能够帮助你更轻松地编写Python程序，使你的编程之旅更加舒适，并助你找到一条更加安全且快速的道路到达你的目的地（实现你的目标）。一个好的代码编辑器应该具有下面几个功能：</p>
+<ul class="simple">
+<li><p>支持语法高亮（syntax highlighting）。能够以不同的颜色和字体显示编程内容，从而提高代码可读性。</p></li>
+<li><p>显示空白字符（whitespace character）。能够显示空格、制表符、换行符等空白字符，方便检查Python所要求的缩进。</p></li>
+<li><p>设定等宽字体（monospaced font）。采用 <em>Consolas</em> 、 <em>DejaVu Sans Mono</em> 、 <em>Menlo</em> 、 <em>Source Code Pro</em> 之类的等宽字体，以便能够明确地区分0和O，l和I，’和'等相近字形。如果代码中包含中文，最好使用 <em>Microsoft Yahei Mono</em> （微软雅黑）、 <em>Noto Sans CJK</em> (思源黑体) 等支持中文的等宽字体。</p></li>
+<li><p>支持代码快捷执行。能够通过菜单栏或快捷键直接执行代码并检查结果。</p></li>
+</ul>
+<p><a class="reference internal" href="_images/editor0.png"><img alt="image25" src="_images/editor0.png" style="width: 49%;" /></a> <a class="reference internal" href="_images/editor1.png"><img alt="image26" src="_images/editor1.png" style="width: 49%;" /></a></p>
+<p>如果你对于从哪开始还没有概念，我推荐你使用<a class="reference external" href="https://www.scintilla.org/SciTE.html">SciTE</a>， <a class="reference external" href="https://code.visualstudio.com/">VSCode</a>或者<a class="reference external" href="https://www.jetbrains.com/pycharm-edu/">PyCharm 教育版</a>软件，它们在 Windows、Mac OS X、GNU/Linux 上都可以运行。</p>
+<p>如果你正在使用 Windows 系统，<strong>千万不要用记事本</strong>——这是一个很糟糕的选择，因为它没有语法加亮功能，不支持文本缩进功能。我们后面会了解这些功能究竟有多重要。一款好的编辑器能够极大地提高工作效率。</p>
+<p>如果你已是一名经验丰富的程序员，那你一定在用<a class="reference external" href="http://www.vim.org">Vim</a>或<a class="reference external" href="http://www.gnu.org/software/emacs/">Emacs</a>了。无需多言，它们都是强大的编辑器，用它们来编写 Python 程序绰绰有余。</p>
+<p>如果你有时间学习 Vim 或Emacs，那么我自是强烈推荐你学习它们二者中的一款，它们将在长远意义上对你裨益颇深。当然，正如我先前所推荐的，初学者可以以
+PyCharm 开始，从而在此刻专注于学习 Python 而不是编辑器。</p>
+<p>再次重申，请选择一款合适的编辑器——它能够让编写 Python程序变得更加有趣且容易。</p>
+<div class="section" id="visual-studio-code-vscode">
+<h3><span class="section-number">4.3.1. </span>Visual Studio Code（VSCode）<a class="headerlink" href="#visual-studio-code-vscode" title="永久链接至标题">¶</a></h3>
+<p>这是微软公司开发的一款跨平台开源编辑器，具有丰富的功能和扩展。官方网站为
+<a class="reference external" href="https://code.visualstudio.com/">http://code.visualstudio.com/</a>。
+装好之后还需要在扩展(Extension)中安装<code class="docutils literal notranslate"><span class="pre">中文语言包</span></code>和<code class="docutils literal notranslate"><span class="pre">python</span></code>支持。</p>
+<p>1.在官网下选择对应版本并下载</p>
+<p><img alt="image21" src="_images/vscode1.png" /></p>
+<p>2.同意协定，点击确定</p>
+<p><img alt="image22" src="_images/vscode2.png" /></p>
+<p>3.勾选需要的选项，在WIN10下可以勾选添加到PATH选项，可以省去配置环境变量，</p>
+<p><img alt="image23" src="_images/vscode3.png" /></p>
+<p>4.点击并等待安装完成</p>
+<p>5.配置插件。VS CODE需要对应的插件才能运行不同编程语言的程序，这里我们在左上角的搜索框搜索 <code class="docutils literal notranslate"><span class="pre">python</span></code> ,选择微软官方发布的插件（更新比较及时），点击安装即可。</p>
+<p><img alt="image24" src="_images/vscode4.png" /></p>
+</div>
+<div class="section" id="vim">
+<h3><span class="section-number">4.3.2. </span>Vim<a class="headerlink" href="#vim" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><p>安装 <a class="reference external" href="http://www.vim.org">Vim</a>。</p>
+<ul class="simple">
+<li><p>Mac OS X 应该通过 <a class="reference external" href="http://brew.sh/">HomeBrew</a> 来安装 <code class="docutils literal notranslate"><span class="pre">macvim</span></code>
+包。</p></li>
+<li><p>Windows 用户应该通过 <a class="reference external" href="http://www.vim.org/download.php">Vim
+官方网站</a>
+下载“自安装可执行文件”。</p></li>
+<li><p>GNU/Linux 用户应该通过他们使用的发行版的软件仓库获取 Vim。例如
+Debian 与 Ubuntu 用户可以安装 <code class="docutils literal notranslate"><span class="pre">vim</span></code> 包。</p></li>
+</ul>
+</li>
+<li><p>安装 <a class="reference external" href="https://github.com/davidhalter/jedi-vim">jedi-vim</a> 插件为
+Vim 增添自动完成功能。</p></li>
+<li><p>安装与之相应的 <code class="docutils literal notranslate"><span class="pre">jedi</span></code> Python 包：<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">jedi</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="emacs">
+<h3><span class="section-number">4.3.3. </span>Emacs<a class="headerlink" href="#emacs" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><p>安装 <a class="reference external" href="http://www.gnu.org/software/emacs/">Emacs 24+</a>。</p>
+<ul class="simple">
+<li><p>Mac OS X 用户应该从 <a class="reference external" href="http://emacsformacosx.com">http://emacsformacosx.com</a> 获取 Emacs。</p></li>
+<li><p>Windows 用户应该从 <a class="reference external" href="http://ftp.gnu.org/gnu/emacs/windows/">http://ftp.gnu.org/gnu/emacs/windows/</a> 获取
+Emacs。</p></li>
+<li><p>GNU/Linux 用户应该从他们使用的发行版的软件仓库获取 Emacs。如
+Debian 和 Ubuntu 用户可以安装 <code class="docutils literal notranslate"><span class="pre">emacs24</span></code> 包。</p></li>
+</ul>
+</li>
+<li><p>安装 <a class="reference external" href="https://github.com/jorgenschaefer/elpy/wiki">ELPY</a>。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="ide">
+<h2><span class="section-number">4.4. </span>集成开发环境(IDE)<a class="headerlink" href="#ide" title="永久链接至标题">¶</a></h2>
+<p>如果需要更丰富的功能，如检查并提示错误，进行代码跟踪和调试，则需要使用集成开发环境(IDE)。常见的IDE包括：
+<a class="reference external" href="https://jupyter.org/install">Jupyter Notebook</a>, <a class="reference external" href="https://www.spyder-ide.org/">Spyder</a>, <a class="reference external" href="https://www.jetbrains.com/pycharm/">Pycharm</a>等。其中Jupyter Notebook和Spyder都是Anaconda默认包含的工具，无需额外安装。
+<strong>注意：在进行编辑之前，请确认你的代码使用英文字体。部分中文字体的字符&quot;O&quot;与&quot;0&quot;无法区分，而且某些符号编译器无法识别。</strong></p>
+<div class="section" id="idle">
+<h3><span class="section-number">4.4.1. </span>IDLE<a class="headerlink" href="#idle" title="永久链接至标题">¶</a></h3>
+<p>IDLE
+是Python语言核心包自带的跨平台开发工具。IDLE旨在为初学者提供一个简单的开发调试环境。IDLE使用Python和Tkinter
+GUI工具包编写。但是这个软件功能有限，兼容性不好，甚至无法与终端输出保持一致。不建议使用。
+<img alt="IDLE界面" src="_images/IDLE.jpg" /></p>
+</div>
+<div class="section" id="jupyter-notebook">
+<h3><span class="section-number">4.4.2. </span>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://jupyter.org/">Jupyter Notebook</a>
+是一个基于Web端的开源多语言开发环境。将文档、代码、注释、结果、甚至图像整合到一个文档文件之中。代码的撰写、调试及分享都因此变得十分方便。
+在终端键入下列命令后，会自动打开默认网页浏览器进入环境</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<div class="figure align-default" id="id8">
+<img alt="jupyter" src="_images/jupyter.png" />
+<p class="caption"><span class="caption-text">jupyter</span><a class="headerlink" href="#id8" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="spyder">
+<h3><span class="section-number">4.4.3. </span>Spyder<a class="headerlink" href="#spyder" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://www.spyder-ide.org/">Spyder</a>是Anaconda打包的集成开发环境。</p>
+<div class="figure align-default" id="id9">
+<img alt="Spyder" src="_images/spyder.png" />
+<p class="caption"><span class="caption-text">Spyder</span><a class="headerlink" href="#id9" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="eclipse">
+<h3><span class="section-number">4.4.4. </span>Eclipse<a class="headerlink" href="#eclipse" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://www.eclipse.org/">Eclipse</a>是基于 Java
+的通用开发平台，功能强大，应用广泛。可以与PyDev结合搭建python开发平台。
+<img alt="Eclipse" src="_images/Eclipse.jpg" /></p>
+<p>###pycharm</p>
+</div>
+<div class="section" id="pycharm">
+<h3><span class="section-number">4.4.5. </span>PyCharm<a class="headerlink" href="#pycharm" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a>是JetBrains公司开发的一款编辑器，其教育版免费。</p>
+<p>当你打开 PyCharm 时，你会看见如下界面，点击 <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">New</span> <span class="pre">Project</span></code> ：</p>
+<div class="figure align-default" id="id10">
+<img alt="当你打开 PyCharm 时" src="_images/pycharm_open.png" />
+<p class="caption"><span class="caption-text">当你打开 PyCharm 时</span><a class="headerlink" href="#id10" title="永久链接至图片">¶</a></p>
+</div>
+<p>选择 <code class="docutils literal notranslate"><span class="pre">Pure</span> <span class="pre">Python</span></code> ：</p>
+<div class="figure align-default" id="id11">
+<img alt="PyCharm 新项目" src="_images/pycharm_create_new_project.png" />
+<p class="caption"><span class="caption-text">PyCharm 新项目</span><a class="headerlink" href="#id11" title="永久链接至图片">¶</a></p>
+</div>
+<p>将你的项目路径位置中的 <code class="docutils literal notranslate"><span class="pre">untitled</span></code> 更改为 <code class="docutils literal notranslate"><span class="pre">helloworld</span></code>
+，你所看到的界面细节应该类似于下方这番：</p>
+<div class="figure align-default" id="id12">
+<img alt="PyCharm 项目细节" src="_images/pycharm_create_new_project_pure_python.png" />
+<p class="caption"><span class="caption-text">PyCharm 项目细节</span><a class="headerlink" href="#id12" title="永久链接至图片">¶</a></p>
+</div>
+<p>点击 <code class="docutils literal notranslate"><span class="pre">Create</span></code> 按钮。</p>
+<p>对侧边栏中的 <code class="docutils literal notranslate"><span class="pre">helloworld</span></code> 右击选中，并选择 <code class="docutils literal notranslate"><span class="pre">New</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">File</span></code>
+：</p>
+<div class="figure align-default" id="id13">
+<img alt="PyCharm -&amp;gt; New -&amp;gt; Python File" src="_images/pycharm_new_python_file.png" />
+<p class="caption"><span class="caption-text">PyCharm -&amp;gt; New -&amp;gt; Python File</span><a class="headerlink" href="#id13" title="永久链接至图片">¶</a></p>
+</div>
+<p>你会被要求输入名字，现在输入 <code class="docutils literal notranslate"><span class="pre">hello</span></code> ：</p>
+<div class="figure align-default" id="id14">
+<img alt="PyCharm 新文件对话框" src="_images/pycharm_new_file_input.png" />
+<p class="caption"><span class="caption-text">PyCharm 新文件对话框</span><a class="headerlink" href="#id14" title="永久链接至图片">¶</a></p>
+</div>
+<p>现在你便可以看见一个新的文件已为你开启：</p>
+<div class="figure align-default" id="id15">
+<img alt="PyCharm hello.py 文件" src="_images/pycharm_hello_open.png" />
+<p class="caption"><span class="caption-text">PyCharm hello.py 文件</span><a class="headerlink" href="#id15" title="永久链接至图片">¶</a></p>
+</div>
+<p>删除那些已存在的内容，现在由你自己输入以下代码：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>现在右击你所输入的内容（无需选中文本），然后点击 <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">'hello'</span></code> 。</p>
+<div class="figure align-default" id="id16">
+<img alt="PyCharm Run ‘hello’" src="_images/pycharm_run.png" />
+<p class="caption"><span class="caption-text">PyCharm Run ‘hello’</span><a class="headerlink" href="#id16" title="永久链接至图片">¶</a></p>
+</div>
+<p>此刻你将会看到你的程序所输出的内容（它所打印出来的内容）：</p>
+<div class="figure align-default" id="id17">
+<img alt="PyCharm 输出内容" src="_images/pycharm_output.png" />
+<p class="caption"><span class="caption-text">PyCharm 输出内容</span><a class="headerlink" href="#id17" title="永久链接至图片">¶</a></p>
+</div>
+<p>嚯！虽然只是刚开始的几个步骤，但从今以后，每当我们要求你创建一个新的文件时，记住只需在
+<code class="docutils literal notranslate"><span class="pre">helloworld</span></code> 上右击并选择 -&gt; <code class="docutils literal notranslate"><span class="pre">New</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">File</span></code>
+并继续如上所述步骤一般输入内容并运行即可。</p>
+<p>你可以在<a class="reference external" href="https://www.jetbrains.com/pycharm-educational/quickstart/">PyCharm
+Quickstart</a>页面找到有关 PyCharm 的更多信息。</p>
+</div>
+<div class="section" id="vscode">
+<h3><span class="section-number">4.4.6. </span>Vscode<a class="headerlink" href="#vscode" title="永久链接至标题">¶</a></h3>
+<p>使用方法同以上类似。先打开一个你想保存.py文件的文件夹，然后编辑并允许即可。需要注意的是你需要编辑.vscode文件夹下的launch.json才能使vscode按照一个python的文件运行它。</p>
+<div class="figure align-default">
+<img alt="VSCODE打开文件" src="_images/vscode_edit1.png" />
+</div>
+<div class="figure align-default">
+<img alt="VSCODE打开文件夹（工作区域）" src="_images/vscode_edit2.png" />
+</div>
+<p>我们需要为launch.json配置如下内容</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="c1">// Use IntelliSense to learn about possible attributes.</span>
+<span class="c1">// Hover to view descriptions of existing attributes.</span>
+<span class="c1">// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387</span>
+
+<span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
+<span class="s2">&quot;configurations&quot;</span><span class="o">:</span> <span class="p">[</span>
+
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Python: Current File (Integrated Terminal)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;request&quot;</span><span class="o">:</span> <span class="s2">&quot;launch&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;program&quot;</span><span class="o">:</span> <span class="s2">&quot;${file}&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;console&quot;</span><span class="o">:</span> <span class="s2">&quot;integratedTerminal&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Python: Current File (External Terminal)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;request&quot;</span><span class="o">:</span> <span class="s2">&quot;launch&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;program&quot;</span><span class="o">:</span> <span class="s2">&quot;${file}&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;console&quot;</span><span class="o">:</span> <span class="s2">&quot;externalTerminal&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>其中的关键部分在于 &quot;type&quot; ， &quot;request&quot; ， &quot;program&quot; 。</p>
+<p>type，必填项，调试类型，也就是以什么语言读这个文件；</p>
+<p>request，必填项，有两种类型，分别是 launch 和 attach，launch 就是以 debug 模式启动调试（开启一个新终端），attach 就是附加到已经启动的进程开启 debug 模式并调试（使用已有的终端）；</p>
+<p>program，程序的启动入口（在哪里找到文件），$file代表当前的.py路径;</p>
+<div class="figure align-default">
+<img alt="VSCODE编辑launch.json" src="_images/vscode_edit3.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><span class="section-number">4.5. </span>使用脚本<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>启动你所选择的编辑器，输入如下程序并将它保存为 <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> 。</p>
+<p>如果你正在使用
+PyCharm，我们已经讨论过<a class="reference internal" href="#"><span class="doc">如何从脚本中运行它了</span></a> 。</p>
+<p>对于其它编辑器，打开一个新文件名将其命名为 <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>
+，然后输入如下内容：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>你应当将文件保存到哪里？保存到任何你知道其位置与路径的文件夹。如果你不了解这句话是什么意思，那就创建一个新文件夹并用这一路径来保存并运行你所有的
+Python 程序：</p>
+<ul class="simple">
+<li><p>Mac OS X 上的 <code class="docutils literal notranslate"><span class="pre">/tmp/py</span></code> 。</p></li>
+<li><p>GNU/Linux 上的 <code class="docutils literal notranslate"><span class="pre">/tmp/py</span></code> 。</p></li>
+<li><p>Windows 上的 <code class="docutils literal notranslate"><span class="pre">D:\\py</span></code> 。</p></li>
+</ul>
+<p>要想创建上述文件夹（在你正在使用的操作系统上），你可以在终端上使用
+<code class="docutils literal notranslate"><span class="pre">mkdir</span></code> 命令，如 <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">/tmp/py</span></code> 。</p>
+<p>重要提示：你需要经常确认并确保你为文件赋予了 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 扩展名，例如
+<code class="docutils literal notranslate"><span class="pre">foo.py</span></code> 。</p>
+<p>要想运行你的 Python 程序：</p>
+<ol class="arabic simple">
+<li><p>打开终端窗口（你可查阅先前的
+<a class="reference internal" href="02.installation.html"><span class="doc">安装 :</span></a> 章节来了解应该怎么做）。</p></li>
+<li><p>使用 <code class="docutils literal notranslate"><span class="pre">cd</span></code> 命令来<strong>改</strong>变<strong>目</strong>录到你保存文件的地方，例如
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/tmp/py</span></code> 。</p></li>
+<li><p>通过输入命令 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">hello.py</span></code>
+来运行程序。程序的输出结果应如下方所示：</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python hello.py
+hello world
+</pre></div>
+</div>
+<div class="figure align-default" id="id18">
+<img alt="在终端中运行程序的截图" src="_images/terminal_screenshot.png" />
+<p class="caption"><span class="caption-text">在终端中运行程序的截图</span><a class="headerlink" href="#id18" title="永久链接至图片">¶</a></p>
+</div>
+<p>如果你得到了与上图类似的输出结果，那么恭喜你！——你已经成功运行了你的第一个
+Python
+程序。你亦已经成功穿过了学习编程的最困难的部分，也就是，开始编写你的第一个程序！</p>
+<p>如果你遭遇了什么错误，请确认是否已经_正确地_输入了上面所列出的内容，并尝试重新运行程序。要注意
+Python 是区分大小写的，如 <code class="docutils literal notranslate"><span class="pre">print</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Print</span></code> 是不同的——注意前者的 p
+是小写的，而后者的 P
+是大写的。此外，你需要确保每一行的第一个字符前面都没有任何空格或制表格——我们会在后面了解
+<a class="reference internal" href="04.basis.html"><span class="doc">为什么这件事如此重要</span></a> 。</p>
+<p><strong>它是如何工作的</strong></p>
+<p>Python 程序是由 <em>语句</em>
+所构成的。我们的第一个程序中只有一条语句。在这条语句中，我们调用
+<code class="docutils literal notranslate"><span class="pre">print</span></code> <em>语句</em> 来搭配我们提供的文本”hello world“。</p>
+</div>
+<div class="section" id="id7">
+<h2><span class="section-number">4.6. </span>总结<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>现在，你应该可以轻松地编写、保存并运行 Python 程序了。</p>
+<p>从此你便成为一名 Python 用户了，现在让我们来学习更多有关 Python 的概念。</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4. 基础：初次运行</a><ul>
+<li><a class="reference internal" href="#terminal">4.1. 终端（Terminal）</a><ul>
+<li><a class="reference internal" href="#windows">4.1.1. Windows 操作系统</a></li>
+<li><a class="reference internal" href="#linux-macos">4.1.2. Linux 或 MacOS系统</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">4.2. 解释器环境</a><ul>
+<li><a class="reference internal" href="#id3">4.2.1. 获取帮助</a></li>
+<li><a class="reference internal" href="#id4">4.2.2. 退出解释器环境</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5">4.3. 编辑器</a><ul>
+<li><a class="reference internal" href="#visual-studio-code-vscode">4.3.1. Visual Studio Code（VSCode）</a></li>
+<li><a class="reference internal" href="#vim">4.3.2. Vim</a></li>
+<li><a class="reference internal" href="#emacs">4.3.3. Emacs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ide">4.4. 集成开发环境(IDE)</a><ul>
+<li><a class="reference internal" href="#idle">4.4.1. IDLE</a></li>
+<li><a class="reference internal" href="#jupyter-notebook">4.4.2. Jupyter Notebook</a></li>
+<li><a class="reference internal" href="#spyder">4.4.3. Spyder</a></li>
+<li><a class="reference internal" href="#eclipse">4.4.4. Eclipse</a></li>
+<li><a class="reference internal" href="#pycharm">4.4.5. PyCharm</a></li>
+<li><a class="reference internal" href="#vscode">4.4.6. Vscode</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6">4.5. 使用脚本</a></li>
+<li><a class="reference internal" href="#id7">4.6. 总结</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>上一个主题</h4>
+  <p class="topless"><a href="02.installation.html"
+                        title="上一章"><span class="section-number">3. </span>基础：安装</a></p>
+  <h4>下一个主题</h4>
+  <p class="topless"><a href="04.basis.html"
+                        title="下一章"><span class="section-number">5. </span>基础：基本概念</a></p>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/03.first_step.rst.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="04.basis.html" title="5. 基础：基本概念"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="02.installation.html" title="3. 基础：安装"
+             >上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">A-Byte-of-Python-BNU 0.1 文档</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">4. </span>基础：初次运行</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2020, BNU-Astro.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

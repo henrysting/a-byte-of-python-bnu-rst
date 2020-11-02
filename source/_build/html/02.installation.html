@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. 基础：安装 &#8212; A-Byte-of-Python-BNU 0.1 文档</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="4. 基础：初次运行" href="03.first_step.html" />
+    <link rel="prev" title="2. 基础：背景介绍" href="01.about_python.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="03.first_step.html" title="4. 基础：初次运行"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="01.about_python.html" title="2. 基础：背景介绍"
+             accesskey="P">上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">A-Byte-of-Python-BNU 0.1 文档</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">3. </span>基础：安装</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1><span class="section-number">3. </span>基础：安装<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>我们在本书中提及“Python
+3”时，我们指的是<a class="reference external" href="https://www.anaconda.com/download/">Anaconda Python发行版</a>中的Python
+3。由于Anaconda Python发行版使Python多版本环境和包的安装管理变得方便灵活，并且集成了适合数据分析和科学计算的工具，使其已成为大多数人安装Python的首选。值得注意的是，通过<a class="reference external" href="https://www.python.org/">Python官网</a>也可以下载各个版本的Python，但其仅仅包含Python解释器，缺乏必要的科学计算和绘图模块，所以这里我们并不推荐。</p>
+<p>Anaconda的最新版本可在<a class="reference external" href="https://www.anaconda.com/products/individual">其官网</a> 或 <a class="reference external" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">清华镜像</a>下载。本讲义所用版本为Anaconda3 2019.10（其中包含Python 3.7.3）。</p>
+<div class="section" id="windows">
+<h2><span class="section-number">3.1. </span>在 Windows 中安装<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h2>
+<p>Anaconda的安装过程与Windows平台的其他软件的安装过程无异。具体安装流程如下：</p>
+<p>第一步：点击安装包文件，开始我们的安装过程，点击“下一步”。</p>
+<p><img alt="image0" src="_images/windows_1.png" /></p>
+<p>第二步：此处是Anaconda的许可证，点击“同意”才能进入下一步。</p>
+<p><img alt="image1" src="_images/windows_2.png" /></p>
+<p>第三步：此处不推荐安装给所有用户，因为需要管理员权限。选择第一个选项后，只有当前的Windows账户可以使用；若选择第二个选项，则所有登录本机的Windows账户均可使用。由于Windows多账户使用场景较少，所以选择第一个选项足以。</p>
+<p><img alt="image2" src="_images/windows_3.png" /></p>
+<p>第四步：选择你希望的安装路径，前提是有足够的硬盘空间。考虑到程序本身的大小和今后的使用，建议选择剩余空间10GB以上的分区。</p>
+<p><img alt="image3" src="_images/windows_4.png" /></p>
+<p>第五步：此处需注意，在这一步中我们 ** 推荐勾选第一个选项 ** 。这一选项的作用是将Python添加到Windows系统的环境变量PATH中，这样就能在终端cmd中直接运行Python。虽然有提示不建议勾选，但是只要系统中只安装一个版本的Python就不会有什么影响。</p>
+<p><img alt="image4" src="_images/windows_05.png" /></p>
+<p>第六步：Anaconda主体安装完毕后会询问是否安装微软的VSCode编辑器，这里我们选择安装，VSCode是微软开发的一款强大的编辑器，开源，有非常丰富的插件来拓展其功能，本书就是在VSCode上配合
+`Markdown All in One` 、 `Markdown PDF` 和 `vscode-pdf`
+插件编写的。VSCode可以配合相关插件变成强大的Python开发环境。相关技巧，读者可以在网上查询。</p>
+<p><img alt="image5" src="_images/windows_6.png" /></p>
+<p>第七步：完成安装，点击“完成”。第一个选项勾选后，浏览器会自动打开Anaconda
+Cloud的网页，读者可以将Python的包、notebook文件、Python项目以及配置好的Python环境上传到Anaconda
+Cloud上，以供存储和分享；第二个选项勾选后，浏览器会自动打开相关网页让读者了解如何使用Anaconda
+Python。</p>
+<p><img alt="image6" src="_images/windows_7.png" /></p>
+<p>第八步：在Windows开始菜单中找到Anaconda
+Navigator，点击即可启动。Anaconda Navigator是Anaconda
+Python各项功能的集合，在其中读者可以通过图形界面方便地安装和管理Python环境和包，以及诸如VSCode和Spyder等工具；菜单中的Anaconda
+Prompt是Anaconda Python的命令行界面，可通过相应的命令实现Anaconda
+Navigator里的部分功能，比如Python环境和包的安装和管理等，同时也支持Windows系统的命令行指令；Jupyter
+Notebook能够在浏览器里编辑Python的Notebook文件，能够实现交互式编程；Spyder是Python的IDE，适用于数据处理和科学计算，界面和功能类似于Matlab。</p>
+<p><img alt="image7" src="_images/windows_9.png" /></p>
+<p><img alt="image8" src="_images/windows_10.png" /></p>
+<p>#installation</p>
+</div>
+<div class="section" id="gnu-linux">
+<h2><span class="section-number">3.2. </span>在 GNU/Linux 下安装<a class="headerlink" href="#gnu-linux" title="永久链接至标题">¶</a></h2>
+<p>对于GNU/Linux用户，访问 <a class="reference external" href="https://www.anaconda.com/download/">https://www.anaconda.com/download/</a>
+并下载最新版本的Anaconda
+Python（64位）。需要注意的是几乎每一个Linux发行版自身就带有某一版本的Python，但一般是不推荐直接使用的，一方面是因为其没有Anaconda
+Python方便，另一方面是可能会牵扯到Linux系统底层的依赖问题，影响Linux系统的稳定性。具体安装流程如下：</p>
+<p>第一步：点击 <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> 应用快捷方式或通过按下 <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">T</span></code>
+组合键打开命令行，用 <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Downloads/</span></code>
+命令切换到下载有安装包的文件夹中，通过 <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code>
+命令我们发现安装包默认没有可执行权限，所以我们用
+<code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">a+x</span> <span class="pre">Anaconda3-5.2.0-Linux-x86_64.sh</span></code>
+命令赋予安装包可执行权限。之后再用 <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code>
+命令查看发现安装包已经可以被执行了，于是使用
+<code class="docutils literal notranslate"><span class="pre">./Anaconda3-5.2.0-Linux-x86_64.sh</span></code>
+命令来执行安装包，按照命令行中的英文提示，按下 <code class="docutils literal notranslate"><span class="pre">Enter</span></code>
+回车键开始安装过程。</p>
+<p><img alt="image9" src="_images/linux_01.png" /></p>
+<p>第二步：按多次 <code class="docutils literal notranslate"><span class="pre">Enter</span></code> 回车键之后，会被询问是否接受license，输入
+<code class="docutils literal notranslate"><span class="pre">yes</span></code> 之后点击 <code class="docutils literal notranslate"><span class="pre">Enter</span></code> 回车键。</p>
+<p><img alt="image10" src="_images/linux_02.png" /></p>
+<p>第三步：正式开始安装过程，耐心等待。这一步无需操作。</p>
+<p><img alt="image11" src="_images/linux_03.png" /></p>
+<p>第四步：程序主体安装结束后，会被询问是否将Anaconda
+Python加入到环境变量PATH中，这里我们输入 <code class="docutils literal notranslate"><span class="pre">yes</span></code> 即可，之后点击
+<code class="docutils literal notranslate"><span class="pre">Enter</span></code>回车键继续，方便日后在命令行中的使用。</p>
+<p><img alt="image12" src="_images/linux_04.png" /></p>
+<p>第五步：和Windows安装过程类似，我们会被询问是否安装微软VSCode编辑器，这里我们推荐安装，输入
+<code class="docutils literal notranslate"><span class="pre">yes</span></code> 即可。 （由于笔者已经安装，所以这里输入 <code class="docutils literal notranslate"><span class="pre">no</span></code> 掠过了。）</p>
+<p><img alt="image13" src="_images/linux_05.png" /></p>
+<p>第六步：安装完毕，关闭当前终端，重新开启一个新的终端使得安装生效，输入
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-V</span></code>
+之后按回车键，我们可以看到此时系统已经开始使用Anaconda版本的Python了。</p>
+<p><img alt="image14" src="_images/linux_06.png" /></p>
+<p>第七步：输入 <code class="docutils literal notranslate"><span class="pre">anaconda-navigator</span> <span class="pre">&amp;</span></code> 开启Anaconda Navigator。</p>
+<p><img alt="image15" src="_images/linux_07.png" /></p>
+<p>第八步：成功启动，至此安装完毕。值得注意的是与Windows版本不同，Linux版的Anaconda
+Python安装完毕之后，系统菜单里并没有相应的快捷方式，Anaconda
+Navigator、Jupyter Notebook和Spyder都得在命令行中启动。</p>
+<p><img alt="image16" src="_images/linux_08.png" /></p>
+<p>附注：<code class="docutils literal notranslate"><span class="pre">$</span></code> 是 Shell
+的提示符。根据你电脑所运行的操作系统的设置的不同，它也会有所不同，在之后的内容中我们会使用
+<code class="docutils literal notranslate"><span class="pre">$</span></code> 符号来代表提示符。</p>
+<p>注意：输出的内容取决于你安装的Anaconda Python的版本。</p>
+</div>
+<div class="section" id="macos">
+<h2><span class="section-number">3.3. </span>在 macOS 下安装<a class="headerlink" href="#macos" title="永久链接至标题">¶</a></h2>
+<p>对于macOS用户，安装过程和Linux类似。通过按键 <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">+</span> <span class="pre">Space</span></code>
+（以启动 Spotlight 搜索），输入 <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> 并按下 <code class="docutils literal notranslate"><span class="pre">Enter</span></code>
+键来启动终端程序。</p>
+</div>
+<div class="section" id="id2">
+<h2><span class="section-number">3.4. </span>Windows 环境下的环境变量设置<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>当我们直接使用终端启动程序时，比如直接输入 <code class="docutils literal notranslate"><span class="pre">Python</span></code> 然后回车，或者导入一些包时，系统首先需要在一个特定路径搜索，这时候就需要环境变量。不同操作系统下设置环境变量的方法不一样。</p>
+<p>1.右键打开 <code class="docutils literal notranslate"><span class="pre">我的电脑</span></code> ,点击 <code class="docutils literal notranslate"><span class="pre">属性</span></code> 。点击 <code class="docutils literal notranslate"><span class="pre">高级系统设置</span></code> <code class="docutils literal notranslate"><span class="pre">高级</span></code> 下面的 <code class="docutils literal notranslate"><span class="pre">环境变量</span></code> 。</p>
+<p><img alt="image17" src="_images/win_env1.png" /></p>
+<p>2.在 <code class="docutils literal notranslate"><span class="pre">环境变量</span></code> 下选择 <code class="docutils literal notranslate"><span class="pre">系统变量</span></code> 下的 Path，假如你是在 <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Anaconda3</span></code> 下安装的Anaconda，添加如下三个变量：<code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Anaconda3</span></code> <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Anaconda3\Library\bin</span></code> <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Anaconda3\Scripts</span></code>。如果在WIN7及以下系统，这三个路径需要使用分号隔开.</p>
+<p><img alt="image18" src="_images/win_env2.png" /></p>
+<p>3.点击确定退出</p>
+</div>
+<div class="section" id="linux">
+<h2><span class="section-number">3.5. </span>Linux环境下的环境变量设置<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h2>
+<p>假设安装在~/anaconda3下：</p>
+<p>1.使用 <code class="docutils literal notranslate"><span class="pre">ctrl+alt+t</span></code> 打开终端，输入 <code class="docutils literal notranslate"><span class="pre">gedit</span> <span class="pre">.bashrc</span></code> 并回车</p>
+<p><img alt="image19" src="_images/linux_env1.png" /></p>
+<p>2.在文件最后插入 <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH=~/anaconda3/bin:$PATH</span></code>，保存并退出即可。</p>
+<p><img alt="image20" src="_images/linux_env2.png" /></p>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">3.6. </span>模块管理器的安装<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>我们使用Anaconda最主要的目的是使用它进行模块(module)的管理,关于模块我们将在<a class="reference internal" href="09.modules.html"><span class="doc">第九章</span></a> 进行讨论。在使用import语句导入需要包含的模块之前，我们需要使用Anaconda或者pip这样的管理器进行安装。需要说明的是在Windows，Linux以及MacOS中执行安装模块的命令都是一样的。以numpy模块为例：</p>
+<p>Anaconda
+在终端中输入 <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">numpy</span></code> 并按下 <code class="docutils literal notranslate"><span class="pre">Enter</span></code> 即可。类似的，输入 <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">notebook</span></code> 可以安装jupyter notebook.</p>
+<p>pip
+在终端中输入 <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code> 并按下 <code class="docutils literal notranslate"><span class="pre">Enter</span></code> 即可。
+在执行这条命令前请确认只安装了Python3.x，虽然我们可以设置同时安装python2.x对应的pip2与pip3，但是鉴于python2.x已经于2020年1月停止维护的事实，除非某些模块必须使用python2.x，否则我们不建议你这样做。具体请搜索 <code class="docutils literal notranslate"><span class="pre">`python</span> <span class="pre">pip2与pip3如何共存`</span></code>。</p>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">3.7. </span>总结<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>从现在起，我们将假定你已经在你的系统中安装了Anaconda
+Python，和对应的编辑器。接下来，我们将要撰写我们的第一个 Python 程序。</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3. 基础：安装</a><ul>
+<li><a class="reference internal" href="#windows">3.1. 在 Windows 中安装</a></li>
+<li><a class="reference internal" href="#gnu-linux">3.2. 在 GNU/Linux 下安装</a></li>
+<li><a class="reference internal" href="#macos">3.3. 在 macOS 下安装</a></li>
+<li><a class="reference internal" href="#id2">3.4. Windows 环境下的环境变量设置</a></li>
+<li><a class="reference internal" href="#linux">3.5. Linux环境下的环境变量设置</a></li>
+<li><a class="reference internal" href="#id3">3.6. 模块管理器的安装</a></li>
+<li><a class="reference internal" href="#id4">3.7. 总结</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>上一个主题</h4>
+  <p class="topless"><a href="01.about_python.html"
+                        title="上一章"><span class="section-number">2. </span>基础：背景介绍</a></p>
+  <h4>下一个主题</h4>
+  <p class="topless"><a href="03.first_step.html"
+                        title="下一章"><span class="section-number">4. </span>基础：初次运行</a></p>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/02.installation.rst.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="03.first_step.html" title="4. 基础：初次运行"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="01.about_python.html" title="2. 基础：背景介绍"
+             >上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">A-Byte-of-Python-BNU 0.1 文档</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">3. </span>基础：安装</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2020, BNU-Astro.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>
