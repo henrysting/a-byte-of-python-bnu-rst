@@ -486,7 +486,7 @@ pylab实时动画
    if __name__ == "__main__":
       main()
 
-|image17|
+
 
 
 
@@ -507,4 +507,3 @@ pylab实时动画
 .. |image14| image:: ../pic/figure_16.png
 .. |image15| image:: ../pic/subplot.png
 .. |image16| image:: ../pic/heatmap.png
-.. |image17| image:: ../pic/ani.gif
