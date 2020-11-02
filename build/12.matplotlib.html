@@ -213,14 +213,54 @@
 <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#多子图示例</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span>  <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span>  <span class="nn">plt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">10</span> <span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">;</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">);</span> <span class="n">y3</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span>  <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">211</span> <span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">223</span> <span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">224</span> <span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="image15" src="_images/subplot.png" /></p>
+</div>
+<div class="section" id="id10">
+<h3><span class="section-number">13.1.10. </span>热力图<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#热力图</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span>  <span class="nn">plt</span>
+<span class="k">def</span> <span class="nf">bbfunc</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
+   <span class="n">h</span><span class="o">=</span><span class="mf">6.626e-34</span>
+   <span class="n">c</span><span class="o">=</span><span class="mf">2.99792e+8</span>
+   <span class="n">k</span><span class="o">=</span><span class="mf">1.3806e-23</span>
+   <span class="n">lam</span><span class="o">=</span><span class="n">lam</span><span class="o">*</span><span class="mf">1e-9</span>
+   <span class="n">ddd</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">c</span><span class="o">*</span><span class="n">c</span><span class="o">/</span><span class="p">(</span><span class="n">lam</span><span class="o">*</span><span class="n">lam</span><span class="o">*</span><span class="n">lam</span><span class="o">*</span><span class="n">lam</span><span class="o">*</span><span class="n">lam</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">h</span><span class="o">*</span><span class="n">c</span><span class="o">/</span><span class="p">(</span><span class="n">lam</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">ddd</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">T</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span><span class="mi">6000</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">bbfunc</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;jet&#39;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">Z</span><span class="p">[::</span>  <span class="o">-</span><span class="mi">1</span><span class="p">],</span>  <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;jet&#39;</span><span class="p">),</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span>  <span class="mi">4000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><img alt="image16" src="_images/heatmap.png" /></p>
 </div>
 <div class="section" id="colormap">
-<h3><span class="section-number">13.1.10. </span>colormap<a class="headerlink" href="#colormap" title="永久链接至标题">¶</a></h3>
+<h3><span class="section-number">13.1.11. </span>colormap<a class="headerlink" href="#colormap" title="永久链接至标题">¶</a></h3>
 <p><img alt="image7" src="_images/figure_8.png" /></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">查看可用色表</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#查看可用色表</span>
 <span class="kn">import</span> <span class="nn">pylab</span> <span class="k">as</span> <span class="nn">pl</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">colormaps</span><span class="p">()</span>
-<span class="n">查看色表内容</span>
+<span class="c1">#查看色表内容</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">hot</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">hot</span><span class="p">(</span><span class="mf">0.999</span><span class="p">)</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">hot</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
@@ -228,8 +268,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id10">
-<h3><span class="section-number">13.1.11. </span>三维作图<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id11">
+<h3><span class="section-number">13.1.12. </span>三维作图<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -245,8 +285,8 @@
 <p>程序运行结果如下：</p>
 <p><img alt="image8" src="_images/figure_9.png" /></p>
 </div>
-<div class="section" id="id11">
-<h3><span class="section-number">13.1.12. </span>三维曲面<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id12">
+<h3><span class="section-number">13.1.13. </span>三维曲面<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -266,8 +306,8 @@
 <p>程序运行结果如下：</p>
 <p><img alt="image9" src="_images/figure_10.png" /></p>
 </div>
-<div class="section" id="id12">
-<h3><span class="section-number">13.1.13. </span>等高线图<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id13">
+<h3><span class="section-number">13.1.14. </span>等高线图<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -286,8 +326,8 @@
 <p>程序运行结果如下：</p>
 <p><img alt="image10" src="_images/figure_11.png" /></p>
 </div>
-<div class="section" id="id13">
-<h3><span class="section-number">13.1.14. </span>三维投影<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id14">
+<h3><span class="section-number">13.1.15. </span>三维投影<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">axes3d</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
@@ -306,7 +346,7 @@
 <p><img alt="image11" src="_images/figure_12.png" /></p>
 </div>
 <div class="section" id="mplot3d">
-<h3><span class="section-number">13.1.15. </span>mplot3d 函数<a class="headerlink" href="#mplot3d" title="永久链接至标题">¶</a></h3>
+<h3><span class="section-number">13.1.16. </span>mplot3d 函数<a class="headerlink" href="#mplot3d" title="永久链接至标题">¶</a></h3>
 <div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>plot3D：三维控件绘图
 plot_surface： 三维网格曲面
 plot_trisurf： 三维三角曲面
@@ -317,8 +357,8 @@ scatter: 散点图
 </pre></div>
 </div>
 </div>
-<div class="section" id="id14">
-<h3><span class="section-number">13.1.16. </span>三维球面<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id15">
+<h3><span class="section-number">13.1.17. </span>三维球面<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
 <p>方法一：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -355,6 +395,23 @@ scatter: 散点图
 <p>程序运行结果如下：</p>
 <p><img alt="image13" src="_images/figure_14.png" /></p>
 </div>
+<div class="section" id="animation">
+<h3><span class="section-number">13.1.18. </span>动画模块 animation<a class="headerlink" href="#animation" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">ani</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> <span class="c1"># x-array</span>
+<span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">i</span><span class="o">/</span><span class="mf">10.0</span><span class="p">))</span> <span class="c1"># update the data</span>
+    <span class="k">return</span> <span class="n">line</span>
+<span class="n">ani</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">animate</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="n">interval</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="pylab">
 <h2><span class="section-number">13.2. </span>pylab实时动画<a class="headerlink" href="#pylab" title="永久链接至标题">¶</a></h2>
@@ -373,22 +430,39 @@ scatter: 散点图
 </div>
 <p>程序运行结果如下：</p>
 <p><img alt="image14" src="_images/figure_16.png" /></p>
-<div class="section" id="animation">
-<h3><span class="section-number">13.2.1. </span>动画模块 animation<a class="headerlink" href="#animation" title="永久链接至标题">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">ani</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span> <span class="c1"># x-array</span>
-<span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="n">line</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">i</span><span class="o">/</span><span class="mf">10.0</span><span class="p">))</span> <span class="c1"># update the data</span>
-    <span class="k">return</span> <span class="n">line</span>
-<span class="n">ani</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">animate</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="n">interval</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="section" id="id16">
+<h3><span class="section-number">13.2.1. </span>保存动画<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#图片保存</span>
+<span class="c1">#程序运行前，先在该文件目录下新建一个文件夹ani</span>
+<span class="kn">import</span> <span class="nn">pylab</span> <span class="k">as</span>  <span class="nn">pl</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span>  <span class="nn">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+   <span class="n">pl</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+   <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">i</span> <span class="o">/</span><span class="mf">10.0</span><span class="p">))</span>
+   <span class="n">pl</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;/home/user/Desktop/助教/program/ani/</span><span class="si">{:0&gt;3d}</span><span class="s2">.png&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+   <span class="c1">#换成你想保存的绝对路径不会出错，注意不同操作系统下斜杠与反斜杠区别</span>
 </pre></div>
 </div>
+<p>接下来使用imageio进行动画文件制作</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#动画文件制作imageio</span>
+<span class="c1">#注意先运行上一个程序生成完图片再运行该程序生成动画</span>
+<span class="kn">import</span> <span class="nn">imageio</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+   <span class="n">img_folder</span><span class="o">=</span> <span class="s2">&quot;ani&quot;</span>
+   <span class="n">files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span><span class="n">img_folder</span><span class="p">)</span>
+   <span class="n">frames</span> <span class="o">=</span> <span class="p">[]</span>
+   <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+      <span class="n">img_path</span><span class="o">=</span> <span class="n">img_folder</span><span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">file</span>
+   <span class="n">img_path</span><span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">img_folder</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+   <span class="n">frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">img_path</span><span class="p">))</span>
+   <span class="n">imageio</span><span class="o">.</span><span class="n">mimsave</span><span class="p">(</span><span class="s2">&quot;ani.gif&quot;</span><span class="p">,</span> <span class="n">frames</span><span class="p">,</span> <span class="s1">&#39;GIF&#39;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+   <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="image17" src="_images/ani.gif" /></p>
 </div>
 </div>
 </div>
@@ -413,17 +487,19 @@ scatter: 散点图
 <li><a class="reference internal" href="#id7">13.1.7. 散点图</a></li>
 <li><a class="reference internal" href="#id8">13.1.8. 柱状图</a></li>
 <li><a class="reference internal" href="#id9">13.1.9. 多子图</a></li>
-<li><a class="reference internal" href="#colormap">13.1.10. colormap</a></li>
-<li><a class="reference internal" href="#id10">13.1.11. 三维作图</a></li>
-<li><a class="reference internal" href="#id11">13.1.12. 三维曲面</a></li>
-<li><a class="reference internal" href="#id12">13.1.13. 等高线图</a></li>
-<li><a class="reference internal" href="#id13">13.1.14. 三维投影</a></li>
-<li><a class="reference internal" href="#mplot3d">13.1.15. mplot3d 函数</a></li>
-<li><a class="reference internal" href="#id14">13.1.16. 三维球面</a></li>
+<li><a class="reference internal" href="#id10">13.1.10. 热力图</a></li>
+<li><a class="reference internal" href="#colormap">13.1.11. colormap</a></li>
+<li><a class="reference internal" href="#id11">13.1.12. 三维作图</a></li>
+<li><a class="reference internal" href="#id12">13.1.13. 三维曲面</a></li>
+<li><a class="reference internal" href="#id13">13.1.14. 等高线图</a></li>
+<li><a class="reference internal" href="#id14">13.1.15. 三维投影</a></li>
+<li><a class="reference internal" href="#mplot3d">13.1.16. mplot3d 函数</a></li>
+<li><a class="reference internal" href="#id15">13.1.17. 三维球面</a></li>
+<li><a class="reference internal" href="#animation">13.1.18. 动画模块 animation</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#pylab">13.2. pylab实时动画</a><ul>
-<li><a class="reference internal" href="#animation">13.2.1. 动画模块 animation</a></li>
+<li><a class="reference internal" href="#id16">13.2.1. 保存动画</a></li>
 </ul>
 </li>
 </ul>

@@ -201,6 +201,51 @@ matplotlib模块支持的图表类型非常之多，几乎能胜任任何绘图�
    ax2 = plt.subplot(212) # 创建子图2
    ax2.plot(x,y)
 
+.. code:: python
+
+   #多子图示例
+   import numpy as  np
+   import matplotlib.pyplot as  plt
+   x = np.linspace(0,  10 , 1000)
+   y1 = np.sin (x) ; y2 = np.cos (x**2); y3=np.tan  (x)
+   ax1 = plt.subplot(211 ) 
+   ax1.plot(x,y1)
+   ax2 = plt.subplot(223 ) 
+   ax2.plot(x,y2)
+   ax3 = plt.subplot(224 ) 
+   ax3.plot(x,y3)
+   plt.show()
+
+|image15|
+
+热力图
+~~~~~~
+
+.. code:: python
+
+   #热力图
+   import numpy as np
+   import matplotlib.pyplot as  plt
+   def bbfunc(lam,T):
+      h=6.626e-34
+      c=2.99792e+8
+      k=1.3806e-23
+      lam=lam*1e-9
+      ddd=2*h*c*c/(lam*lam*lam*lam*lam)/(np.exp(h*c/(lam*k*T))-1)
+      return ddd
+   n = 100
+   lam = np.linspace(0,2000,n) 
+   T  = np.linspace(4000,6000,n)
+   X, Y = np.meshgrid(lam, T)
+   Z = bbfunc(X,Y)
+   plt.imshow(Z, cmap=plt.get_cmap('jet'))
+   plt.colorbar()
+   plt.show()
+   plt.imshow(Z[::  -1],  cmap=plt.get_cmap('jet'), extent=[0, 2000,  4000, 6000])
+
+|image16|
+
+
 colormap
 ~~~~~~~~
 
@@ -208,10 +253,10 @@ colormap
 
 .. code:: python
 
-   查看可用色表
+   #查看可用色表
    import pylab as pl
    pl.colormaps()
-   查看色表内容
+   #查看色表内容
    pl.cm.hot(0.001)
    pl.cm.hot(0.999)
    pl.cm.hot(0.5)
@@ -365,6 +410,25 @@ mplot3d 函数
 
 |image13|
 
+动画模块 animation
+~~~~~~~~~~~~~~~~~~
+
+.. code:: python
+
+   import numpy as np
+   import matplotlib.pyplot as plt
+   import matplotlib.animation as ani
+
+   fig = plt.figure()
+   x = np.arange(0, 2*np.pi, 0.01) # x-array
+   line, = plt.plot(x, np.sin(x))
+   def animate(i):
+       line.set_ydata(np.sin(x+i/10.0)) # update the data
+       return line
+   ani.FuncAnimation(fig, animate, np.arange(1, 200), interval=25, blit=True)
+   plt.show()
+
+
 pylab实时动画
 -------------
 
@@ -386,23 +450,45 @@ pylab实时动画
 
 |image14|
 
-动画模块 animation
-~~~~~~~~~~~~~~~~~~
+保存动画
+~~~~~~~~
 
 .. code:: python
 
-   import numpy as np
-   import matplotlib.pyplot as plt
-   import matplotlib.animation as ani
+   #图片保存
+   #程序运行前，先在该文件目录下新建一个文件夹ani
+   import pylab as  pl
+   import numpy as  np
+   x = np.arange(0,2*np.pi,0.01)
+   for i in np.arange(200):
+      pl.figure()
+      pl.plot(x,np.sin (x+i /10.0))
+      pl.savefig("/home/user/Desktop/助教/program/ani/{:0>3d}.png".format(i))
+      #换成你想保存的绝对路径不会出错，注意不同操作系统下斜杠与反斜杠区别
 
-   fig = plt.figure()
-   x = np.arange(0, 2*np.pi, 0.01) # x-array
-   line, = plt.plot(x, np.sin(x))
-   def animate(i):
-       line.set_ydata(np.sin(x+i/10.0)) # update the data
-       return line
-   ani.FuncAnimation(fig, animate, np.arange(1, 200), interval=25, blit=True)
-   plt.show()
+接下来使用imageio进行动画文件制作
+
+.. code:: python
+
+   #动画文件制作imageio
+   #注意先运行上一个程序生成完图片再运行该程序生成动画
+   import imageio
+   import os
+   def main():
+      img_folder= "ani"
+      files = os.listdir(str(os.getcwd()) + "/" +img_folder)
+      frames = []
+      for file in files:
+         img_path= img_folder+ "/" + file
+      img_path= os.path.join(img_folder, file)
+      frames.append(imageio.imread(img_path))
+      imageio.mimsave("ani.gif", frames, 'GIF', duration=0.1)
+   if __name__ == "__main__":
+      main()
+
+|image17|
+
+
 
 .. |image0| image:: ../pic/figure_1.png
 .. |image1| image:: ../pic/figure_2.png
@@ -419,4 +505,6 @@ pylab实时动画
 .. |image12| image:: ../pic/figure_13.png
 .. |image13| image:: ../pic/figure_14.png
 .. |image14| image:: ../pic/figure_16.png
-
+.. |image15| image:: ../pic/subplot.png
+.. |image16| image:: ../pic/heatmap.png
+.. |image17| image:: ../pic/ani.gif

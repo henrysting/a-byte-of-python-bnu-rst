@@ -201,6 +201,51 @@ Jupyter Notebook
 
    jupyter
 
+我们将在这里说明jupyter notebook如何安装。
+
+1.打开终端，确定连接到网络，并更新pip `` python3 -m pip install --upgrade pip ``
+
+.. figure:: ../pic/03.IDE/linux-jupyter1.png
+
+2.执行安装命令 `` pip install jupyter `` 
+
+.. figure:: ../pic/03.IDE/linux-jupyter2.png
+
+3.更新jupyter的配置文件jupyter_notebook_config.py，命令为： `` jupyter notebook --generate-config `` .以下文件在LINUX下路径为 ``/home/user/.jupyter/jupyter_notebook_config.py`` (user是用户文件夹)
+在WINDOWS下路径为 ``C:\用户\user\.jupyter\jupyter_notebook_config.py`` (user是用户文件夹)
+
+
+.. figure:: ../pic/03.IDE/linux-jupyter3.png
+
+4.配置设置，为如果你想使用其他浏览器，把 ``c.NotebookApp.browser`` 前面的注释#去掉,选项换为你自己浏览器的安装路径：
+c.NotebookApp.browser = '/usr/bin/firefox'(LINUX)
+c.NotebookApp.browser = u'/opt/google/chrome/google-chrome'(LINUX)
+
+在WINDOWS下仅以配置CHROME为默认浏览器举例。c.NotebookApp.browser这一选项变为：
+
+.. code:: python
+
+   import webbrowser
+   webbrowser.register("chrome",None,webbrowser.GenericBrowser(u"C:\\ProgramFiles(x86)\\Google\\Chrome\\Application\\chrome.exe"))
+   c.NotebookApp.browser = 'chrome'
+
+.. figure:: ../pic/03.IDE/windows-jupyter.png
+
+.. figure:: ../pic/03.IDE/linux-jupyter4.png
+
+5.在终端输入 ``jupyter notebook`` 后回车就可以打开了。
+
+
+注意，如果报错 ``OSError: [Errno 99] Cannot assign requested address`` ，说明JUPYTER当前找不到IP，你可以在jupyter_notebook_config.py中设置
+c.NotebookApp.ip=你当前的IP地址
+
+其中IP地址可以通过终端查询，命令在WINDOWS下为 ``ipconfig`` ,LINUX下为 ``ifconfig`` 。
+
+
+.. figure:: ../pic/03.IDE/linux-jupyter5.png
+
+.. figure:: ../pic/03.IDE/linux-jupyter6.png
+
 Spyder
 ~~~~~~
 

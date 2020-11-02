@@ -201,6 +201,45 @@ GUI工具包编写。但是这个软件功能有限，兼容性不好，甚至�
 <img alt="jupyter" src="_images/jupyter.png" />
 <p class="caption"><span class="caption-text">jupyter</span><a class="headerlink" href="#id8" title="永久链接至图片">¶</a></p>
 </div>
+<p>我们将在这里说明jupyter notebook如何安装。</p>
+<p>1.打开终端，确定连接到网络，并更新pip `` python3 -m pip install --upgrade pip ``</p>
+<div class="figure align-default">
+<img alt="_images/linux-jupyter1.png" src="_images/linux-jupyter1.png" />
+</div>
+<p>2.执行安装命令 `` pip install jupyter ``</p>
+<div class="figure align-default">
+<img alt="_images/linux-jupyter2.png" src="_images/linux-jupyter2.png" />
+</div>
+<p>3.更新jupyter的配置文件jupyter_notebook_config.py，命令为： `` jupyter notebook --generate-config `` .以下文件在LINUX下路径为 <code class="docutils literal notranslate"><span class="pre">/home/user/.jupyter/jupyter_notebook_config.py</span></code> (user是用户文件夹)
+在WINDOWS下路径为 <code class="docutils literal notranslate"><span class="pre">C:\用户\user\.jupyter\jupyter_notebook_config.py</span></code> (user是用户文件夹)</p>
+<div class="figure align-default">
+<img alt="_images/linux-jupyter3.png" src="_images/linux-jupyter3.png" />
+</div>
+<p>4.配置设置，为如果你想使用其他浏览器，把 <code class="docutils literal notranslate"><span class="pre">c.NotebookApp.browser</span></code> 前面的注释#去掉,选项换为你自己浏览器的安装路径：
+c.NotebookApp.browser = '/usr/bin/firefox'(LINUX)
+c.NotebookApp.browser = u'/opt/google/chrome/google-chrome'(LINUX)</p>
+<p>在WINDOWS下仅以配置CHROME为默认浏览器举例。c.NotebookApp.browser这一选项变为：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">webbrowser</span>
+<span class="n">webbrowser</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;chrome&quot;</span><span class="p">,</span><span class="kc">None</span><span class="p">,</span><span class="n">webbrowser</span><span class="o">.</span><span class="n">GenericBrowser</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">ProgramFiles(x86)</span><span class="se">\\</span><span class="s2">Google</span><span class="se">\\</span><span class="s2">Chrome</span><span class="se">\\</span><span class="s2">Application</span><span class="se">\\</span><span class="s2">chrome.exe&quot;</span><span class="p">))</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">browser</span> <span class="o">=</span> <span class="s1">&#39;chrome&#39;</span>
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="_images/windows-jupyter.png" src="_images/windows-jupyter.png" />
+</div>
+<div class="figure align-default">
+<img alt="_images/linux-jupyter4.png" src="_images/linux-jupyter4.png" />
+</div>
+<p>5.在终端输入 <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> 后回车就可以打开了。</p>
+<p>注意，如果报错 <code class="docutils literal notranslate"><span class="pre">OSError:</span> <span class="pre">[Errno</span> <span class="pre">99]</span> <span class="pre">Cannot</span> <span class="pre">assign</span> <span class="pre">requested</span> <span class="pre">address</span></code> ，说明JUPYTER当前找不到IP，你可以在jupyter_notebook_config.py中设置
+c.NotebookApp.ip=你当前的IP地址</p>
+<p>其中IP地址可以通过终端查询，命令在WINDOWS下为 <code class="docutils literal notranslate"><span class="pre">ipconfig</span></code> ,LINUX下为 <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code> 。</p>
+<div class="figure align-default">
+<img alt="_images/linux-jupyter5.png" src="_images/linux-jupyter5.png" />
+</div>
+<div class="figure align-default">
+<img alt="_images/linux-jupyter6.png" src="_images/linux-jupyter6.png" />
+</div>
 </div>
 <div class="section" id="spyder">
 <h3><span class="section-number">4.4.3. </span>Spyder<a class="headerlink" href="#spyder" title="永久链接至标题">¶</a></h3>
