@@ -53,15 +53,15 @@
 <p>C# 与 Java 1.5 程序员会发现这与_装箱与拆箱（Boxing and
 Unboxing）_概念颇有相似之处。</p>
 </div></blockquote>
-<p>对象可以使用_属于_它的普通变量来存储数据。这种从属于对象或类的变量叫作<strong>字段（Field）</strong>。对象还可以使用_属于_类的函数来实现某些功能，这种函数叫作类的<strong>方法（Method）</strong>。这两个术语很重要，它有助于我们区分函数与变量，哪些是独立的，哪些又是属于类或对象的。总之，字段与方法通称类的<strong>属性（Attribute）</strong>。</p>
+<p>对象可以使用_属于_它的普通变量来存储数据。这种从属于对象或类的变量叫作<strong>字段（Field）</strong>。对象还可以使用属于类的函数来实现某些功能，这种函数叫作类的<strong>方法（Method）</strong>。这两个术语很重要，它有助于我们区分函数与变量，哪些是独立的，哪些又是属于类或对象的。总之，字段与方法通称类的<strong>属性（Attribute）</strong>。</p>
 <p>字段有两种类型——它们属于某一类的各个实例或对象，或是从属于某一类本身。它们被分别称作<strong>实例变量（Instance
 Variables）</strong>与<strong>类变量（Class Variables）</strong>。</p>
 <p>通过 <code class="docutils literal notranslate"><span class="pre">class</span></code>
 关键字可以创建一个类。这个类的字段与方法可以在缩进代码块中予以列出。</p>
 <div class="section" id="self">
 <h2><span class="section-number">17.1. </span><code class="docutils literal notranslate"><span class="pre">self</span></code><a class="headerlink" href="#self" title="永久链接至标题">¶</a></h2>
-<p>类方法与普通函数只有一种特定的区别——前者必须多加一个参数在参数列表开头，这个名字必须添加到参数列表的开头，但是你_不用_在你调用这个功能时为这个参数赋值，Python
-会为它提供。<a href="#id8"><span class="problematic" id="id9">这种特定的变量引用的是对象_本身_</span></a>，按照惯例，它被赋予
+<p>类方法与普通函数只有一种特定的区别——前者必须多加一个参数在参数列表开头，这个名字必须添加到参数列表的开头，但是你不用在你调用这个功能时为这个参数赋值，Python
+会为它提供。这种特定的变量引用的是对象本身，按照惯例，它被赋予
 <code class="docutils literal notranslate"><span class="pre">self</span></code> 这一名称。</p>
 <p>尽管你可以为这一参数赋予任何名称，但是_强烈推荐_你使用 <code class="docutils literal notranslate"><span class="pre">self</span></code>
 这一名称——其它的任何一种名称绝对会引人皱眉。使用一个标准名称能带来诸多好处——任何一位你的程序的读者能够立即认出它，甚至是专门的
@@ -82,8 +82,8 @@ Environments，集成开发环境）也可以为你提供帮助，只要你使�
 的全部特殊之处所在。</p>
 <p>这同时意味着，如果你有一个没有参数的方法，你依旧必须拥有一个参数——<code class="docutils literal notranslate"><span class="pre">self</span></code>。</p>
 </div>
-<div class="section" id="class">
-<span id="id2"></span><h2><span class="section-number">17.2. </span>类<a class="headerlink" href="#class" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h2><span class="section-number">17.2. </span>类<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>最简单的类（Class）可以通过下面的案例来展示（保存为
 <code class="docutils literal notranslate"><span class="pre">oop_simplestclass.py</span></code>）：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
@@ -132,7 +132,7 @@ Hello, how are you?
 这一方法不需要参数，但是依旧在函数定义中拥有 <code class="docutils literal notranslate"><span class="pre">self</span></code> 变量。</p>
 </div>
 <div class="section" id="init">
-<span id="id4"></span><h2><span class="section-number">17.4. </span><code class="docutils literal notranslate"><span class="pre">__init__</span></code> 方法<a class="headerlink" href="#init" title="永久链接至标题">¶</a></h2>
+<h2><span class="section-number">17.4. </span><code class="docutils literal notranslate"><span class="pre">__init__</span></code> 方法<a class="headerlink" href="#init" title="永久链接至标题">¶</a></h2>
 <p>在 Python 的类中，有不少方法的名称具有着特殊的意义。现在我们要了解的就是
 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 方法的意义。</p>
 <p><code class="docutils literal notranslate"><span class="pre">__init__</span></code>
@@ -171,8 +171,8 @@ Hello, my name is Swaroop
 <p>现在，我们可以使用我们方法中的 <code class="docutils literal notranslate"><span class="pre">self.name</span></code> 字段了，使用的方法在
 <code class="docutils literal notranslate"><span class="pre">say_hi</span></code> 方法中已经作过说明。</p>
 </div>
-<div class="section" id="class-obj-vars">
-<span id="id5"></span><h2><span class="section-number">17.5. </span>类变量与对象变量<a class="headerlink" href="#class-obj-vars" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h2><span class="section-number">17.5. </span>类变量与对象变量<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>我们已经讨论过了类与对象的功能部分（即方法），现在让我们来学习它们的数据部分。数据部分——也就是字段——只不过是_绑定（Bound）<em>到类与对象的***命名空间（Namespace）*</em><em>的普通变量。这就代表着这些名称仅在这些类与对象所存在的上下文中有效。这就是它们被称作</em>“命名空间”_的原因。</p>
 <p>_字段（Field）_有两种类型——类变量与对象变量，它们根据究竟是类还是对象_拥有_这些变量来进行分类。</p>
 <p><strong>类变量（Class
@@ -291,25 +291,25 @@ We have 0 robots.
 <code class="docutils literal notranslate"><span class="pre">Robot.say_hi.__doc__</span></code>。</p>
 <p>在 <code class="docutils literal notranslate"><span class="pre">die</span></code> 方法中，我们简单地将 <code class="docutils literal notranslate"><span class="pre">Robot.population</span></code> 的计数按 1
 向下减少。</p>
-<p>所有的类成员都是公开的。但有一个例外：<a href="#id10"><span class="problematic" id="id11">如果你使用数据成员并在其名字中_使用双下划线作为前缀_</span></a>，形成诸如
+<p>所有的类成员都是公开的。但有一个例外：如果你使用数据成员并在其名字中使用双下划线作为前缀，形成诸如
 <code class="docutils literal notranslate"><span class="pre">__privatevar</span></code> 这样的形式，Python
 会使用名称调整（Name-mangling）来使其有效地成为一个私有变量。</p>
 <p>因此，你需要遵循这样的约定：任何在类或对象之中使用的变量其命名应以下划线开头，其它所有非此格式的名称都将是公开的，并可以为其它任何类或对象所使用。请记得这只是一个约定，Python
 并不强制如此（除了双下划线前缀这点）。</p>
 <blockquote>
 <div><p><strong>针对 C++/Java/C# 程序员的提示</strong></p>
-<p>所有类成员（包括数据成员）都是_公开的_，并且 Python
-中所有的方法都是_虚拟的（Virtual）_。</p>
+<p>所有类成员（包括数据成员）都是公开的，并且 Python
+中所有的方法都是虚拟的（Virtual）。</p>
 </div></blockquote>
 </div>
-<div class="section" id="id6">
-<h2><span class="section-number">17.6. </span>继承<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h2><span class="section-number">17.6. </span>继承<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>面向对象编程的一大优点是对代码的<strong>重用（Reuse）</strong>，重用的一种实现方法就是通过<strong>继承（Inheritance）</strong>机制。继承最好是想象成在类之间实现<strong>类型与子类型（Type
 and Subtype）</strong>关系的工具。</p>
 <p>现在假设你希望编写一款程序来追踪一所大学里的老师和学生。有一些特征是他们都具有的，例如姓名、年龄和地址。另外一些特征是他们独有的，一如教师的薪水、课程与假期，学生的成绩和学费。</p>
 <p>你可以为每一种类型创建两个独立的类，并对它们进行处理。但增添一条共有特征就意味着将其添加进两个独立的类。这很快就会使程序变得笨重。</p>
 <p>一个更好的方法是创建一个公共类叫作
-<code class="docutils literal notranslate"><span class="pre">SchoolMember</span></code>，然后让教师和学生从这个类中_继承（Inherit）_，也就是说他们将成为这一类型（类）的子类型，而我们就可以向这些子类型中添加某些该类独有的特征。</p>
+<code class="docutils literal notranslate"><span class="pre">SchoolMember</span></code>，然后让教师和学生从这个类中继承（Inherit），也就是说他们将成为这一类型（类）的子类型，而我们就可以向这些子类型中添加某些该类独有的特征。</p>
 <p>这种方法有诸多优点。如果我们增加或修改了 <code class="docutils literal notranslate"><span class="pre">SchoolMember</span></code>
 的任何功能，它将自动反映在子类型中。举个例子，你可以通过简单地向
 SchoolMember 类进行操作，来为所有老师与学生添加一条新的 ID
@@ -405,8 +405,8 @@ Inheritance）</strong>。</p>
 函数中，目的是打印一行并允许下一次打印在同一行继续。这是一个让 <code class="docutils literal notranslate"><span class="pre">print</span></code>
 能够不在打印的末尾打印出 <code class="docutils literal notranslate"><span class="pre">\n</span></code> （新行换行符）符号的小窍门。</p>
 </div>
-<div class="section" id="id7">
-<h2><span class="section-number">17.7. </span>总结<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id6">
+<h2><span class="section-number">17.7. </span>总结<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>在这一章我们探索了有关类和对象的各个方面，还有与它们相关的各类术语。我们还了解了面向对象编程的益处与陷阱。Python
 是高度面向对象的，从长远来看，了解这些概念对你大有帮助。</p>
 </div>
@@ -423,12 +423,12 @@ Inheritance）</strong>。</p>
   <ul>
 <li><a class="reference internal" href="#">17. 进阶：面向对象编程</a><ul>
 <li><a class="reference internal" href="#self">17.1. <code class="docutils literal notranslate"><span class="pre">self</span></code></a></li>
-<li><a class="reference internal" href="#class">17.2. 类</a></li>
+<li><a class="reference internal" href="#id2">17.2. 类</a></li>
 <li><a class="reference internal" href="#id3">17.3. 方法</a></li>
 <li><a class="reference internal" href="#init">17.4. <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 方法</a></li>
-<li><a class="reference internal" href="#class-obj-vars">17.5. 类变量与对象变量</a></li>
-<li><a class="reference internal" href="#id6">17.6. 继承</a></li>
-<li><a class="reference internal" href="#id7">17.7. 总结</a></li>
+<li><a class="reference internal" href="#id4">17.5. 类变量与对象变量</a></li>
+<li><a class="reference internal" href="#id5">17.6. 继承</a></li>
+<li><a class="reference internal" href="#id6">17.7. 总结</a></li>
 </ul>
 </li>
 </ul>

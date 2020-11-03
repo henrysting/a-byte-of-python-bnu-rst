@@ -123,7 +123,7 @@ Python 就是对 <code class="docutils literal notranslate"><span class="pre">li
 <span class="go">Yes</span>
 </pre></div>
 </div>
-<p>注意，单个语句是在原地立即使用的，它不会被看作一个单独的块。尽管，<a href="#id10"><span class="problematic" id="id11">你可以通过这种方式来使你的程序更加_小巧_</span></a>，但除非是为了检查错误，我强烈建议你避免使用这种快捷方法，这主要是因为如果你不小心使用了一个“恰到好处”的缩进，它就很容易添加进额外的语句。</p>
+<p>注意，单个语句是在原地立即使用的，它不会被看作一个单独的块。尽管，你可以通过这种方式来使你的程序更加小巧，但除非是为了检查错误，我强烈建议你避免使用这种快捷方法，这主要是因为如果你不小心使用了一个“恰到好处”的缩进，它就很容易添加进额外的语句。</p>
 </div>
 <div class="section" id="lambda">
 <h2><span class="section-number">16.4. </span>Lambda 表格<a class="headerlink" href="#lambda" title="永久链接至标题">¶</a></h2>
@@ -171,7 +171,7 @@ Comprehension）用于从一份现有的列表中得到一份新列表。想象�
 前缀，则额外的参数将被视为字典的键值—值配对。</p>
 </div>
 <div class="section" id="assert">
-<span id="id7"></span><h2><span class="section-number">16.7. </span><code class="docutils literal notranslate"><span class="pre">assert</span></code> 语句<a class="headerlink" href="#assert" title="永久链接至标题">¶</a></h2>
+<h2><span class="section-number">16.7. </span><code class="docutils literal notranslate"><span class="pre">assert</span></code> 语句<a class="headerlink" href="#assert" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">assert</span></code>
 语句用以断言（Assert）某事是真的。例如说你非常确定你正在使用的列表中至少包含一个元素，并想确认这一点，如果其不是真的，就抛出一个错误，<code class="docutils literal notranslate"><span class="pre">assert</span></code>
 语句就是这种情况下的理想选择。当语句断言失败时，将会抛出
@@ -189,8 +189,8 @@ Comprehension）用于从一份现有的列表中得到一份新列表。想象�
 <p>你应该明智地选用 <code class="docutils literal notranslate"><span class="pre">assert</span></code>
 语句。在大多数情况下，它好过捕获异常，也好过定位问题或向用户显示错误信息然后退出。</p>
 </div>
-<div class="section" id="decorator">
-<span id="id8"></span><h2><span class="section-number">16.8. </span>装饰器<a class="headerlink" href="#decorator" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id7">
+<h2><span class="section-number">16.8. </span>装饰器<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <p>装饰器（Decorators）是应用包装函数的快捷方式。这有助于将某一功能与一些代码一遍又一遍地“包装”。举个例子，我为自己创建了一个
 <code class="docutils literal notranslate"><span class="pre">retry</span></code>
 装饰器，这样我可以将其运用到任何函数之中，如果在一次运行中抛出了任何错误，它就会尝试重新运行，直到最大次数
@@ -205,7 +205,7 @@ Comprehension）用于从一份现有的列表中得到一份新列表。想象�
 </ul>
 </div>
 <div class="section" id="python-2-python-3">
-<span id="two-vs-three"></span><h2><span class="section-number">16.9. </span>Python 2 与 Python 3 的不同<a class="headerlink" href="#python-2-python-3" title="永久链接至标题">¶</a></h2>
+<h2><span class="section-number">16.9. </span>Python 2 与 Python 3 的不同<a class="headerlink" href="#python-2-python-3" title="永久链接至标题">¶</a></h2>
 <p>请参阅：</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://pythonhosted.org/six/">“Six” library</a></p></li>
@@ -219,8 +219,8 @@ PyDanny</a></p></li>
 3.x?</a></p></li>
 </ul>
 </div>
-<div class="section" id="id9">
-<h2><span class="section-number">16.10. </span>总结<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id8">
+<h2><span class="section-number">16.10. </span>总结<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <p>我们在本章中介绍了有关 Python 的更多功能。虽然我们还未涵盖到 Python
 的所有功能，不过在这一阶段，我们已经涉猎了大多数你将在实践中遇到的内容。这足以让你开始编写任何你所期望的程序。</p>
 </div>
@@ -243,9 +243,9 @@ PyDanny</a></p></li>
 <li><a class="reference internal" href="#id5">16.5. 列表推导</a></li>
 <li><a class="reference internal" href="#id6">16.6. 在函数中接收元组与字典</a></li>
 <li><a class="reference internal" href="#assert">16.7. <code class="docutils literal notranslate"><span class="pre">assert</span></code> 语句</a></li>
-<li><a class="reference internal" href="#decorator">16.8. 装饰器</a></li>
+<li><a class="reference internal" href="#id7">16.8. 装饰器</a></li>
 <li><a class="reference internal" href="#python-2-python-3">16.9. Python 2 与 Python 3 的不同</a></li>
-<li><a class="reference internal" href="#id9">16.10. 总结</a></li>
+<li><a class="reference internal" href="#id8">16.10. 总结</a></li>
 </ul>
 </li>
 </ul>

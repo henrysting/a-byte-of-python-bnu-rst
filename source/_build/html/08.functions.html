@@ -206,7 +206,7 @@ WorldWorldWorldWorldWorld
 <div><p><em>注意</em></p>
 <p>只有那些位于参数列表末尾的参数才能被赋予默认参数值，意即在函数的参数列表中拥有默认参数值的参数不能位于没有默认参数值的参数之前。</p>
 <p>这是因为值是按参数所处的位置依次分配的。举例来说，<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">func(a,</span> <span class="pre">b=5)</span></code>
-是有效的，但 <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">func(a=5,</span> <span class="pre">b)</span></code> <a href="#id16"><span class="problematic" id="id17">是_无效的_</span></a>。</p>
+是有效的，但 <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">func(a=5,</span> <span class="pre">b)</span></code> 是无效的。</p>
 </div></blockquote>
 </div>
 <div class="section" id="id5">
@@ -279,12 +279,12 @@ Arguments）都将被收集并汇集成一个称为“param”的元组（Tuple�
 <p>类似地，当我们声明一个诸如 <code class="docutils literal notranslate"><span class="pre">**param</span></code>
 的双星号参数时，从此处开始直至结束的所有关键字参数都将被收集并汇集成一个名为
 <code class="docutils literal notranslate"><span class="pre">param</span></code> 的字典（Dictionary）。</p>
-<p>我们将在<a href="#id7"><span class="problematic" id="id8">:doc:`后面的章节 &lt;./07.data_structures#data-structures&gt;`__</span></a>探索有关元组与字典的更多内容。</p>
+<p>我们将在<a class="reference internal" href="07.data_structures.html"><span class="doc">后面的章节</span></a>探索有关元组与字典的更多内容。</p>
 </div>
 <div class="section" id="return">
 <span id="return-statement"></span><h2><span class="section-number">8.7. </span><code class="docutils literal notranslate"><span class="pre">return</span></code> 语句<a class="headerlink" href="#return" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">return</span></code>
-<a href="#id18"><span class="problematic" id="id19">语句用于从函数中_返回_</span></a>，也就是中断函数。<a href="#id20"><span class="problematic" id="id21">我们也可以选择在中断函数时从函数中_返回一个值_</span></a>。</p>
+语句用于从函数中返回，也就是中断函数。我们也可以选择在中断函数时从函数中返回一个值。</p>
 <p>案例（保存为 <code class="docutils literal notranslate"><span class="pre">function_return.py</span></code>）：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">maximum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
@@ -305,7 +305,7 @@ Arguments）都将被收集并汇集成一个称为“param”的元组（Tuple�
 <p><em>它是如何工作的</em></p>
 <p><code class="docutils literal notranslate"><span class="pre">maximum</span></code>
 函数将会返回参数中的最大值，在本例中是提供给函数的数值。它使用一套简单的
-<code class="docutils literal notranslate"><span class="pre">if...else</span></code> <a href="#id22"><span class="problematic" id="id23">语句来找到较大的那个值并将其_返回_</span></a>。</p>
+<code class="docutils literal notranslate"><span class="pre">if...else</span></code> 语句来找到较大的那个值并将其返回。</p>
 <p>要注意到如果 <code class="docutils literal notranslate"><span class="pre">return</span></code> 语句没有搭配任何一个值则代表着
 <code class="docutils literal notranslate"><span class="pre">返回</span> <span class="pre">None</span></code>。<code class="docutils literal notranslate"><span class="pre">None</span></code> 在 Python
 中一个特殊的类型，代表着虚无。举个例子，
@@ -356,13 +356,12 @@ Strings）<em>，在称呼它时通常会使用另一个短一些的名字_docst
 </div>
 <p><strong>它是如何工作的</strong></p>
 <p>函数的第一行逻辑行中的字符串是该函数的
-<em>文档字符串（DocString）</em>。这里要注意文档字符串也适用于后面相关章节将提到的<a href="#id9"><span class="problematic" id="id10">:doc:`模块（Modules） &lt;./09.modules#modules&gt;`__</span></a>与 <a href="#id11"><span class="problematic" id="id12">:doc:`类（Class） &lt;./13.object_oriented_programming#oop&gt;`__</span></a>
-。</p>
+<em>文档字符串（DocString）</em>。这里要注意文档字符串也适用于后面相关章节将提到的<a class="reference internal" href="09.modules.html"><span class="doc">模块（Modules）</span></a>与 <a class="reference internal" href="13.object_oriented_programming.html"><span class="doc">类（Class）</span></a>。</p>
 <p>该文档字符串所约定的是一串多行字符串，其中第一行以某一大写字母开始，以句号结束。第二行为空行，后跟的第三行开始是任何详细的解释说明。在此_强烈建议_你在你所有重要功能的所有文档字符串中都遵循这一约定。</p>
 <p>我们可以通过使用函数的
-<code class="docutils literal notranslate"><span class="pre">__doc__</span></code>（<a href="#id24"><span class="problematic" id="id25">注意其中的_双下划綫_</span></a>）属性（属于函数的名称）来获取函数
+<code class="docutils literal notranslate"><span class="pre">__doc__</span></code>（注意其中的双下划线）属性（属于函数的名称）来获取函数
 <code class="docutils literal notranslate"><span class="pre">print_max</span></code> 的文档字符串属性。只消记住 Python
-将_所有东西_都视为一个对象，这其中自然包括函数。我们将在后面的<a href="#id13"><span class="problematic" id="id14">:doc:`类（Class） &lt;./13.object_oriented_programming#oop&gt;`__</span></a>章节讨论有关对象的更多细节。</p>
+将_所有东西_都视为一个对象，这其中自然包括函数。我们将在后面的<a class="reference internal" href="13.object_oriented_programming.html"><span class="doc">类（Class）</span></a>章节讨论有关对象的更多细节。</p>
 <p>如果你曾使用过 Python 的 <code class="docutils literal notranslate"><span class="pre">help()</span></code>
 函数，那么你应该已经了解了文档字符串的用途了。它所做的便是获取函数的
 <code class="docutils literal notranslate"><span class="pre">__doc__</span></code>
@@ -373,8 +372,8 @@ Strings）<em>，在称呼它时通常会使用另一个短一些的名字_docst
 Python 发行版中附带的 <code class="docutils literal notranslate"><span class="pre">pydoc</span></code> 命令与 <code class="docutils literal notranslate"><span class="pre">help()</span></code>
 使用文档字符串的方式类似。</p>
 </div>
-<div class="section" id="id15">
-<h2><span class="section-number">8.9. </span>总结<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id7">
+<h2><span class="section-number">8.9. </span>总结<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <p>我们已经了解了许多方面的函数，但我们依旧还未覆盖到所有类型的函数。不过，我们已经覆盖到了大部分你每天日常使用都会使用到的
 Python 函数。</p>
 <p>接下来，我们将了解如何创建并使用 Python 模块。</p>
@@ -399,7 +398,7 @@ Python 函数。</p>
 <li><a class="reference internal" href="#id6">8.6. 可变参数</a></li>
 <li><a class="reference internal" href="#return">8.7. <code class="docutils literal notranslate"><span class="pre">return</span></code> 语句</a></li>
 <li><a class="reference internal" href="#docstrings">8.8. DocStrings</a></li>
-<li><a class="reference internal" href="#id15">8.9. 总结</a></li>
+<li><a class="reference internal" href="#id7">8.9. 总结</a></li>
 </ul>
 </li>
 </ul>

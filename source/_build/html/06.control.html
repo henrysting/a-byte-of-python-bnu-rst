@@ -120,7 +120,7 @@ Done
 <p>在这个程序中，我们根据用户猜测的数字来检查这一数字是否是我们所设置的。我们将变量
 <code class="docutils literal notranslate"><span class="pre">number</span></code> 设为任何我们所希望的整数，例如 <code class="docutils literal notranslate"><span class="pre">23</span></code>。然后，我们通过
 <code class="docutils literal notranslate"><span class="pre">input()</span></code>
-函数来获取用户的猜测数。所谓函数是一种可重复使用的程序。我们将在<a href="#id2"><span class="problematic" id="id3">:doc:`下一章 &lt;./08.functions&gt;`__</span></a>详细讨论它。</p>
+函数来获取用户的猜测数。所谓函数是一种可重复使用的程序。我们将在<a class="reference internal" href="08.functions.html"><span class="doc">下一章</span></a>详细讨论它。</p>
 <p>我们为内置的 <code class="docutils literal notranslate"><span class="pre">input</span></code>
 函数提供一串打印到屏幕上的字符串并等待用户的输入。一旦我们输入了某些内容并按下键盘上的
 <code class="docutils literal notranslate"><span class="pre">enter</span></code> 键，<code class="docutils literal notranslate"><span class="pre">input()</span></code>
@@ -224,7 +224,7 @@ Done
 <div class="section" id="for">
 <h2><span class="section-number">6.3. </span><code class="docutils literal notranslate"><span class="pre">for</span></code> 循环<a class="headerlink" href="#for" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">for...in</span></code>
-语句是另一种循环语句，其特点是会在一系列对象上进行_迭代（Iterates）_，意即它会遍历序列中的每一个项目。我们将在后面的 <a href="#id4"><span class="problematic" id="id5">:doc:`序列（Sequences） &lt;./07.data_structures&gt;`__</span></a>章节中了解有关它的更多内容。现在你所需要的就是所谓队列就是一系列项目的有序集合。</p>
+语句是另一种循环语句，其特点是会在一系列对象上进行_迭代（Iterates）_，意即它会遍历序列中的每一个项目。我们将在后面的 <a class="reference internal" href="07.data_structures.html"><span class="doc">序列（Sequences）</span></a>章节中了解有关它的更多内容。现在你所需要的就是所谓队列就是一系列项目的有序集合。</p>
 <p>案例（保存为 <code class="docutils literal notranslate"><span class="pre">for.py</span></code>）：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -242,7 +242,7 @@ The for loop is over
 </pre></div>
 </div>
 <p><strong>它是如何工作的</strong></p>
-<p>在这一程序中，<a href="#id8"><span class="problematic" id="id9">我们打印了一个数字_序列_</span></a>。我们通过内置的 <code class="docutils literal notranslate"><span class="pre">range</span></code>
+<p>在这一程序中，<a href="#id4"><span class="problematic" id="id5">我们打印了一个数字_序列_</span></a>。我们通过内置的 <code class="docutils literal notranslate"><span class="pre">range</span></code>
 函数生成这一数字序列。</p>
 <p>在这里我们所要做的事情是提供两个数字，而 <code class="docutils literal notranslate"><span class="pre">range</span></code>
 将会返回一个数字序列，从第一个数字开始，至第二个数字结束。举个例子，<code class="docutils literal notranslate"><span class="pre">range(1,5)</span></code>
@@ -357,8 +357,8 @@ Enter something : quit
 语句跳过代码块中的其余语句。否则，循环中的剩余语句将被执行，并在此处进行我们所希望的任何类型的处理。</p>
 <p>要注意 <code class="docutils literal notranslate"><span class="pre">continue</span></code> 语句同样能用于 <code class="docutils literal notranslate"><span class="pre">for</span></code> 循环。</p>
 </div>
-<div class="section" id="id6">
-<h2><span class="section-number">6.6. </span>练习<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h2><span class="section-number">6.6. </span>练习<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <dl class="simple">
 <dt>1.如果数a能被数b整除，a就叫做b的倍数，b就叫做a的约数。</dt><dd><p>如：6 的约数为 2 和 3 。</p>
 </dd>
@@ -375,8 +375,8 @@ Enter something : quit
 </dl>
 <p><img alt="image0" src="_images/2_structure.png" /></p>
 </div>
-<div class="section" id="id7">
-<h2><span class="section-number">6.7. </span>总结<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h2><span class="section-number">6.7. </span>总结<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>我们已经了解了三种控制流语句——<code class="docutils literal notranslate"><span class="pre">if</span></code>，<code class="docutils literal notranslate"><span class="pre">while</span></code> 和 <code class="docutils literal notranslate"><span class="pre">for</span></code>
 ——及其相关的 <code class="docutils literal notranslate"><span class="pre">break</span></code> 与 <code class="docutils literal notranslate"><span class="pre">continue</span></code> 语句是如何工作的。这些语句是
 Python 中一些最常用的部分，因此，习惯去使用它们是必要的。</p>
@@ -398,8 +398,8 @@ Python 中一些最常用的部分，因此，习惯去使用它们是必要的�
 <li><a class="reference internal" href="#for">6.3. <code class="docutils literal notranslate"><span class="pre">for</span></code> 循环</a></li>
 <li><a class="reference internal" href="#break">6.4. <code class="docutils literal notranslate"><span class="pre">break</span></code> 语句</a></li>
 <li><a class="reference internal" href="#continue">6.5. <code class="docutils literal notranslate"><span class="pre">continue</span></code> 语句</a></li>
-<li><a class="reference internal" href="#id6">6.6. 练习</a></li>
-<li><a class="reference internal" href="#id7">6.7. 总结</a></li>
+<li><a class="reference internal" href="#id2">6.6. 练习</a></li>
+<li><a class="reference internal" href="#id3">6.7. 总结</a></li>
 </ul>
 </li>
 </ul>

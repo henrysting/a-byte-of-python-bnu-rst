@@ -45,7 +45,7 @@ pickle
    是一本极具价值的“烹饪法”与提示的集合，它介绍了如何通过 Python
    解决某些特定类型的问题。
 -  `Python Module of the Week <http://pymotw.com/2/contents.html>`__
-   是另一本优秀的\  :doc:`标准库 <./16.stdlib#stdlib>`__\ 必读指南。
+   是另一本优秀的\ :doc:`标准库 <./16.standrad_library>`\ 必读指南。
 
 建议
 ----
@@ -198,7 +198,7 @@ GNU/Linux 是目标平台，那你是要做 KDE 用户还是 GNOME 用户。
 
 我们一直在使用 *CPython* 软件来运行我们的程序。它被成为 CPython
 是因为它是使用 C 语言编写的，同时它也是_经典的（Classical） Python
-解释器_。
+解释器。
 
 还有其他软件可以运行你的 Python 程序：
 
@@ -231,7 +231,7 @@ JavaScript）编写你的 Web 浏览器（“Ajax”）程序。
 函数式编程（面向高阶读者）
 --------------------------
 
-当你开始编写更加庞大的程序时，你应该清楚了解更多关于使用函数的方式来进行编程，而不是我们在\ :doc:`《面向对象编程》章节中 <./13.object_oriented_programming#oop>`__\ 所学习的基于类的方式进行编程：
+当你开始编写更加庞大的程序时，你应该清楚了解更多关于使用函数的方式来进行编程，而不是我们在\ :doc:`《面向对象编程》章节中 <./13.object_oriented_programming>`\ 所学习的基于类的方式进行编程：
 
 -  `Functional Programming Howto by A.M.
    Kuchling <http://docs.python.org/3/howto/functional.html>`__
@@ -245,6 +245,6 @@ JavaScript）编写你的 Web 浏览器（“Ajax”）程序。
 总结
 ----
 
-现在我们已经行至本书末尾，不过，正如人们所说，这是_昭示着开始的终结_！你现在已经是一名
+现在我们已经行至本书末尾，不过，正如人们所说，这是昭示着开始的终结！你现在已经是一名
 Python 用户，毫无疑问，你已准备好通过 Python
 来解决诸多问题了。你可以开始自动化你的电脑，去做任何你以前难以想象的事情，你可以开始编写你自己的游戏，开始做更多更多的事，而且不止于此。来，让我们出发吧！
