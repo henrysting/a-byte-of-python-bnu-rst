@@ -860,5 +860,5 @@ Joining）*\ 。你可以在后面当我们讨论\ :doc:`核心：数据结构 <
 
 现在我们已经了解了诸多本质性的细节，我们可以前去了解控制流语句等更多更加有趣的东西。记得一定要充分理解你在本章所阅读的内容。
 
-.. |image0| image:: ../pic/04.basis/pycharm_command_line_arguments.png
+.. |image0| image:: ../pic/03.IDE/pycharm_command_line_arguments.png
 

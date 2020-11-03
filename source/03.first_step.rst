@@ -272,14 +272,14 @@ PyCharm
 
 当你打开 PyCharm 时，你会看见如下界面，点击 ``Create New Project`` ：
 
-.. figure:: ../pic/03.pycharm/pycharm_open.png
+.. figure:: ../pic/03.IDE/pycharm_open.png
    :alt: 当你打开 PyCharm 时
 
    当你打开 PyCharm 时
 
 选择 ``Pure Python`` ：
 
-.. figure:: ../pic/03.pycharm/pycharm_create_new_project.png
+.. figure:: ../pic/03.IDE/pycharm_create_new_project.png
    :alt: PyCharm 新项目
 
    PyCharm 新项目
@@ -287,7 +287,7 @@ PyCharm
 将你的项目路径位置中的 ``untitled`` 更改为 ``helloworld``
 ，你所看到的界面细节应该类似于下方这番：
 
-.. figure:: ../pic/03.pycharm/pycharm_create_new_project_pure_python.png
+.. figure:: ../pic/03.IDE/pycharm_create_new_project_pure_python.png
    :alt: PyCharm 项目细节
 
    PyCharm 项目细节
@@ -297,21 +297,21 @@ PyCharm
 对侧边栏中的 ``helloworld`` 右击选中，并选择 ``New`` -> ``Python File``
 ：
 
-.. figure:: ../pic/03.pycharm/pycharm_new_python_file.png
+.. figure:: ../pic/03.IDE/pycharm_new_python_file.png
    :alt: PyCharm -&gt; New -&gt; Python File
 
    PyCharm -&gt; New -&gt; Python File
 
 你会被要求输入名字，现在输入 ``hello`` ：
 
-.. figure:: ../pic/03.pycharm/pycharm_new_file_input.png
+.. figure:: ../pic/03.IDE/pycharm_new_file_input.png
    :alt: PyCharm 新文件对话框
 
    PyCharm 新文件对话框
 
 现在你便可以看见一个新的文件已为你开启：
 
-.. figure:: ../pic/03.pycharm/pycharm_hello_open.png
+.. figure:: ../pic/03.IDE/pycharm_hello_open.png
    :alt: PyCharm hello.py 文件
 
    PyCharm hello.py 文件
@@ -324,14 +324,14 @@ PyCharm
 
 现在右击你所输入的内容（无需选中文本），然后点击 ``Run 'hello'`` 。
 
-.. figure:: ../pic/03.pycharm/pycharm_run.png
+.. figure:: ../pic/03.IDE/pycharm_run.png
    :alt: PyCharm Run ‘hello’
 
    PyCharm Run ‘hello’
 
 此刻你将会看到你的程序所输出的内容（它所打印出来的内容）：
 
-.. figure:: ../pic/03.pycharm/pycharm_output.png
+.. figure:: ../pic/03.IDE/pycharm_output.png
    :alt: PyCharm 输出内容
 
    PyCharm 输出内容
