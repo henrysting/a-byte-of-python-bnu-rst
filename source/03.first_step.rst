@@ -192,62 +192,30 @@ Jupyter
 是一个基于网页的开源多语言开发环境。它将文档、代码、注释、结果、甚至图像整合到一个文档文件之中。
 代码的撰写、调试以及分享都因此变得十分方便，非常适合教学和演示。
 Anaconda中已经包含了Jupyter，不需要安装额外的软件。
-使用时，仅需要在终端下用 cd 命令切换到工作目录，
-键入下列命令后，便会自动打开默认网页浏览器进入环境
 
-::
-
-   jupyter notebook 
-
-.. figure:: ../pic/03.IDE/jupyter.png
+.. figure:: ../pic/03.IDE/jupyter.png                                                                                                                                       
    :alt: jupyter
 
-   jupyter
+使用时，仅需要在终端下用 cd 命令切换到工作目录，
+键入 jupyter notebook  命令后，便会自动打开默认网页浏览器进入环境
+ 
+.. figure:: ../pic/03.IDE/Jupyter01.png
 
-我们将在这里说明jupyter notebook如何安装。
+在页面右上角可以找到新建笔记的按钮
 
-1.打开终端，确定连接到网络，并更新pip `` python3 -m pip install --upgrade pip ``
+.. figure:: ../pic/03.IDE/Jupyter02.png
 
-.. figure:: ../pic/03.IDE/linux-jupyter1.png
+在新建的笔记页面就可以直接撰写并执行代码
 
-2.执行安装命令 `` pip install jupyter `` 
+.. figure:: ../pic/03.IDE/Jupyter03.png
 
-.. figure:: ../pic/03.IDE/linux-jupyter2.png
+Jupyter笔记是以单元格的形式来组织的，
 
-3.更新jupyter的配置文件jupyter_notebook_config.py，命令为： `` jupyter notebook --generate-config `` .以下文件在LINUX下路径为 ``/home/user/.jupyter/jupyter_notebook_config.py`` (user是用户文件夹)
-在WINDOWS下路径为 ``C:\用户\user\.jupyter\jupyter_notebook_config.py`` (user是用户文件夹)
+.. figure:: ../pic/03.IDE/Jupyter04.png
 
+单元格还有幻灯片、附件、标签等属性，可以根据需要灵活定制。
 
-.. figure:: ../pic/03.IDE/linux-jupyter3.png
-
-4.配置设置，为如果你想使用其他浏览器，把 ``c.NotebookApp.browser`` 前面的注释#去掉,选项换为你自己浏览器的安装路径：
-c.NotebookApp.browser = '/usr/bin/firefox'(LINUX)
-c.NotebookApp.browser = u'/opt/google/chrome/google-chrome'(LINUX)
-
-在WINDOWS下仅以配置CHROME为默认浏览器举例。c.NotebookApp.browser这一选项变为：
-
-.. code:: python
-
-   import webbrowser
-   webbrowser.register("chrome",None,webbrowser.GenericBrowser(u"C:\\ProgramFiles(x86)\\Google\\Chrome\\Application\\chrome.exe"))
-   c.NotebookApp.browser = 'chrome'
-
-.. figure:: ../pic/03.IDE/windows-jupyter.png
-
-.. figure:: ../pic/03.IDE/linux-jupyter4.png
-
-5.在终端输入 ``jupyter notebook`` 后回车就可以打开了。
-
-
-注意，如果报错 ``OSError: [Errno 99] Cannot assign requested address`` ，说明JUPYTER当前找不到IP，你可以在jupyter_notebook_config.py中设置
-c.NotebookApp.ip=你当前的IP地址
-
-其中IP地址可以通过终端查询，命令在WINDOWS下为 ``ipconfig`` ,LINUX下为 ``ifconfig`` 。
-
-
-.. figure:: ../pic/03.IDE/linux-jupyter5.png
-
-.. figure:: ../pic/03.IDE/linux-jupyter6.png
+.. figure:: ../pic/03.IDE/Jupyter05.png
 
 Spyder
 ~~~~~~
@@ -275,14 +243,14 @@ PyCharm
 
 当你打开 PyCharm 时，你会看见如下界面，点击 ``Create New Project`` ：
 
-.. figure:: ../pic/pycharm_open.png
+.. figure:: ../pic/03.IDE/pycharm_open.png
    :alt: 当你打开 PyCharm 时
 
    当你打开 PyCharm 时
 
 选择 ``Pure Python`` ：
 
-.. figure:: ../pic/pycharm_create_new_project.png
+.. figure:: ../pic/03.IDE/pycharm_create_new_project.png
    :alt: PyCharm 新项目
 
    PyCharm 新项目
@@ -290,7 +258,7 @@ PyCharm
 将你的项目路径位置中的 ``untitled`` 更改为 ``helloworld``
 ，你所看到的界面细节应该类似于下方这番：
 
-.. figure:: ../pic/pycharm_create_new_project_pure_python.png
+.. figure:: ../pic/03.IDE/pycharm_create_new_project_pure_python.png
    :alt: PyCharm 项目细节
 
    PyCharm 项目细节
@@ -300,21 +268,21 @@ PyCharm
 对侧边栏中的 ``helloworld`` 右击选中，并选择 ``New`` -> ``Python File``
 ：
 
-.. figure:: ../pic/pycharm_new_python_file.png
+.. figure:: ../pic/03.IDE/pycharm_new_python_file.png
    :alt: PyCharm -&gt; New -&gt; Python File
 
    PyCharm -&gt; New -&gt; Python File
 
 你会被要求输入名字，现在输入 ``hello`` ：
 
-.. figure:: ../pic/pycharm_new_file_input.png
+.. figure:: ../pic/03.IDE/pycharm_new_file_input.png
    :alt: PyCharm 新文件对话框
 
    PyCharm 新文件对话框
 
 现在你便可以看见一个新的文件已为你开启：
 
-.. figure:: ../pic/pycharm_hello_open.png
+.. figure:: ../pic/03.IDE/pycharm_hello_open.png
    :alt: PyCharm hello.py 文件
 
    PyCharm hello.py 文件
@@ -327,14 +295,14 @@ PyCharm
 
 现在右击你所输入的内容（无需选中文本），然后点击 ``Run 'hello'`` 。
 
-.. figure:: ../pic/pycharm_run.png
+.. figure:: ../pic/03.IDE/pycharm_run.png
    :alt: PyCharm Run ‘hello’
 
    PyCharm Run ‘hello’
 
 此刻你将会看到你的程序所输出的内容（它所打印出来的内容）：
 
-.. figure:: ../pic/pycharm_output.png
+.. figure:: ../pic/03.IDE/pycharm_output.png
    :alt: PyCharm 输出内容
 
    PyCharm 输出内容
@@ -441,7 +409,7 @@ Python 程序：
    $ python hello.py
    hello world
 
-.. figure:: ../pic/terminal_screenshot.png
+.. figure:: ../pic/03.IDE/terminal_screenshot.png
    :alt: 在终端中运行程序的截图
 
    在终端中运行程序的截图
@@ -473,12 +441,12 @@ Python 程序是由 *语句*
 
 .. |IDLE界面| image:: ../pic/03.IDE/IDLE.jpg
 .. |Eclipse| image:: ../pic/03.IDE/Eclipse.jpg
-.. |image21| image:: ../pic/02/vscode1.png
-.. |image22| image:: ../pic/02/vscode2.png
-.. |image23| image:: ../pic/02/vscode3.png
-.. |image24| image:: ../pic/02/vscode4.png
-.. |image25| image:: ../pic/02/editor0.png
+.. |image21| image:: ../pic/03.IDE/vscode1.png
+.. |image22| image:: ../pic/03.IDE/vscode2.png
+.. |image23| image:: ../pic/03.IDE/vscode3.png
+.. |image24| image:: ../pic/03.IDE/vscode4.png
+.. |image25| image:: ../pic/03.IDE/editor0.png
     :width: 49 %
-.. |image26| image:: ../pic/02/editor1.png
+.. |image26| image:: ../pic/03.IDE/editor1.png
     :width: 49 %
 
