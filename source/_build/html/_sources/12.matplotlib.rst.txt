@@ -257,7 +257,6 @@ colormap
    import pylab as pl
    pl.colormaps()
    #查看色表内容
-
    pl.cm.hot(0.001)
    pl.cm.hot(0.999)
    pl.cm.hot(0.5)

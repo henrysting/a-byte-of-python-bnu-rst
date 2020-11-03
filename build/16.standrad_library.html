@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11. 11 进阶：标准库 &#8212; A-Byte-of-Python-BNU 0.1 文档</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="12. 扩展：科学计算 numpy和scipy" href="11.numpy_and_scipy.html" />
+    <link rel="prev" title="10. 核心：输入与输出" href="10.io.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="11.numpy_and_scipy.html" title="12. 扩展：科学计算 numpy和scipy"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="10.io.html" title="10. 核心：输入与输出"
+             accesskey="P">上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">A-Byte-of-Python-BNU 0.1 文档</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">11. </span>11 进阶：标准库</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1><span class="section-number">11. </span>11 进阶：标准库<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>Python 标准库（Python Standrad
+Library）中包含了大量有用的模块，同时也是每个标准的 Python
+安装包中的一部分。熟悉 Python
+标准库十分重要，因为只要你熟知这些库可以做到什么事，许多问题都能够轻易解决。</p>
+<p>我们将探索这个库中的一些常用模块。你能在你的 Python
+安装包中附带的文档中的<a class="reference external" href="http://docs.python.org/3/library/">“库概览（Library Reference）”
+部分</a>中查找到所有模块的全部细节。</p>
+<p>让我们来了解一些有用的模块。</p>
+<blockquote>
+<div><p><strong>注意：</strong>如果你觉得本章内容过于超前，你可以先跳过本章。不过，我强烈建议你在适应了采用
+Python 进行编程后再来看看本章。</p>
+</div></blockquote>
+<div class="section" id="id2">
+<h2><span class="section-number">11.1. </span>系统内置模块<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><em>os ： 对操作系统服务提供了可移植的（ portable）的接口。</em></p></li>
+<li><p><em>sys： 包括跟python解析器和环境相关的变量和函数。</em></p></li>
+<li><p><em>decimal：
+python中的float使用双精度的二进制浮点编码来表示的，这种编码导致了小数不能被精确的表示，例如0.1实际上内存中为0.100000000000000001，还有3*0.1
+== 0.3
+为False.decimal就是为了解决类似的问题的，拥有更高的精确度，能表示更大范围的数字，更精确地四舍五入。</em></p></li>
+<li><p><em>math： 定义了标准的数学方法，例如cos(x),sin(x)等。</em></p></li>
+<li><p><em>random： 随机数生成。</em></p></li>
+<li><p><em>string： 包含大量处理字符串的函数。</em></p></li>
+<li><p><em>io： 实现了各种IO形式和内置的open()函数。</em></p></li>
+<li><p><em>datetime： 时间日期相关函数。</em></p></li>
+<li><p><em>timeit： 计时函数，调试相关。</em></p></li>
+<li><p><em>logging：
+将一些调试（Debugging）信息或一些重要的信息储存在某个地方。</em></p></li>
+</ul>
+<p>下面我们来详细介绍几个标准库。</p>
+</div>
+<div class="section" id="os">
+<h2><span class="section-number">11.2. </span><code class="docutils literal notranslate"><span class="pre">OS</span></code> 模块<a class="headerlink" href="#os" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><em>os.name： 获取当前体系平台， Windows下返回&quot;“nt”“，
+Linux下返回”“posix”&quot;。</em></p></li>
+<li><p><em>os.linesep： 获取当前平台应用的行终止符。 Windows下返回&quot;“/r/n”“，
+Linux应用”“/n”&quot;。</em></p></li>
+<li><p><em>os.getcwd(): 获取当前工作目录，即当前python脚本工作的目录路径。</em></p></li>
+<li><p><em>os.listdir(path)：返回指定目录下的所有文件和目录名。</em></p></li>
+<li><p><em>os.path.split()：分离路径中的目录名和文件名。</em></p></li>
+<li><p><em>os.path.exists()：检查路径是否存在。</em></p></li>
+<li><p><em>os.path.isfile()： 判断是否为文件。</em></p></li>
+</ul>
+<p>从下面的例子我们可以使用os模块：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;D:</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;D:</span><span class="se">\\</span><span class="s2">test&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sys">
+<span id="id3"></span><h2><span class="section-number">11.3. </span><code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块<a class="headerlink" href="#sys" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块包括了一些针对特定系统的功能。我们已经了解过 <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code>
+列表中包括了命令行参数。</p>
+<p>想象一些我们需要检查正在使用的 Python 软件的版本，<code class="docutils literal notranslate"><span class="pre">sys</span></code>
+模块会给我们相关的信息。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span>
+<span class="go">sys.version_info(major=3, minor=5, micro=1, releaselevel=&#39;final&#39;, serial=0)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="o">.</span><span class="n">major</span> <span class="o">==</span> <span class="mi">3</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p><strong>它是如何工作的</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块包含一个 <code class="docutils literal notranslate"><span class="pre">version_info</span></code>
+元组，它提供给我们版本信息。第一个条目是主版本信息。我们可以调出这些信息并使用它。</p>
+<p>除此之外，<code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块还有以下功能：</p>
+<ul>
+<li><p><em>sys.argv 获取命令行传入参数。</em></p>
+<p>– sys.argv[0] 为脚本名， sys.argv[1] 为第一个参数</p>
+</li>
+<li><p><em>sys.getdefaultencoding(): 获取当前终端编码，一般默认为ascii。</em></p></li>
+<li><p><em>sys.getfilesystemencoding(): 获取文件系统编码，
+Windows下返回&quot;“mbcs”“， mac下返回”“utf-8”&quot;。</em></p></li>
+<li><p><em>sys.path: 命令搜索路径。</em></p></li>
+</ul>
+</div>
+<div class="section" id="decimal">
+<h2><span class="section-number">11.4. </span><code class="docutils literal notranslate"><span class="pre">decimal</span></code> 模块<a class="headerlink" href="#decimal" title="永久链接至标题">¶</a></h2>
+<p>Python中浮点数默认提供16位精度，无法精确存储十进制数。十进制数学计算模块decimal可以精确处理十进制。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.20f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.20f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="mf">2.645</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.20f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="mf">2.675</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="mf">2.675</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.1</span><span class="o">-</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="go">5.55111512313e-17</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span> <span class="k">as</span> <span class="n">D</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">D</span><span class="p">(</span><span class="s1">&#39;0.1&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">D</span><span class="p">(</span><span class="s1">&#39;0.1&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">D</span><span class="p">(</span><span class="s1">&#39;0.1&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">D</span><span class="p">(</span><span class="s1">&#39;0.3&#39;</span><span class="p">)</span>
+<span class="go">Decimal(&quot;0.0&quot;)</span>
+</pre></div>
+</div>
+<div class="section" id="id4">
+<h3><span class="section-number">11.4.1. </span><code class="docutils literal notranslate"><span class="pre">decimal</span></code> 精度控制<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span> <span class="k">as</span> <span class="n">D</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">getcontext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">getcontext</span><span class="p">()</span><span class="o">.</span><span class="n">prec</span>
+<span class="go">28</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">D</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">D</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="go">Decimal(&#39;0.1428571428571428571428571429&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">getcontext</span><span class="p">()</span><span class="o">.</span><span class="n">prec</span><span class="o">=</span><span class="mi">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">D</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">D</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="go">Decimal(&#39;0.142857&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">D</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mf">1.12</span><span class="p">)</span><span class="o">/</span><span class="n">D</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="math">
+<h2><span class="section-number">11.5. </span><code class="docutils literal notranslate"><span class="pre">math</span></code> 数学模块<a class="headerlink" href="#math" title="永久链接至标题">¶</a></h2>
+<p>Python内置的常规数学计算模块，满足一般的计算需求。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">e</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">fmod</span><span class="p">(</span><span class="mf">9.8</span><span class="p">,</span><span class="mf">4.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>hypot(x,y) 从原点(0,0)到(x,y)的直线距离。</em></p></li>
+<li><p><em>radians(x) 角度数转弧度。</em></p></li>
+<li><p><em>复数运算可使用 cmath 模块。</em></p></li>
+</ul>
+</div>
+<div class="section" id="random">
+<h2><span class="section-number">11.6. </span><code class="docutils literal notranslate"><span class="pre">random</span></code> 模块<a class="headerlink" href="#random" title="永久链接至标题">¶</a></h2>
+<p>此模块专门用于生成随机数。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">random</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">99</span><span class="p">)</span> <span class="c1">#随机整数</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">#随机偶数</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="c1">#随机浮点数</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1">#均匀分布</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="s1">&#39;?abc&amp;%^*f&#39;</span><span class="p">)</span> <span class="c1">#随机字符</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="s1">&#39;abcdefghij&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="c1">#洗牌</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="datetime">
+<h2><span class="section-number">11.7. </span><code class="docutils literal notranslate"><span class="pre">datetime</span></code> 模块<a class="headerlink" href="#datetime" title="永久链接至标题">¶</a></h2>
+<p>此模块专门用于处理日期和时间。date：表示日期的类；
+time：表示时间的类；datetime：表示日期时间； timedelta：表示时间间隔，
+tzinfo：与时区有关的相关信息。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;date.max:&#39;</span><span class="p">,</span> <span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;date.min:&#39;</span><span class="p">,</span> <span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">min</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;date.today():&#39;</span><span class="p">,</span> <span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">isoweekday</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">+</span><span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Time:&#39;</span><span class="p">,</span> <span class="n">dt</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="section" id="id5">
+<h3><span class="section-number">11.7.1. </span>时间与字符串<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dtdt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dtdt</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dtdt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">dtdt</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span><span class="s1">&#39;</span><span class="si">%c</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">dtdt</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">dtdt</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s1">&#39;2015/12/2020:56:30&#39;</span><span class="p">,</span><span class="s1">&#39;%Y/%m/</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">days</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">seconds</span><span class="p">,</span> <span class="n">d</span><span class="o">.</span><span class="n">microseconds</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>%a 星期的简写， %A 星期的全称</em></p></li>
+<li><p><em>%b 月份的简写， %B 月份的全称</em></p></li>
+<li><p><em>%I: 小时（ 12小时制）， %W 周数（星期一起算）</em></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="timeit">
+<h2><span class="section-number">11.8. </span><code class="docutils literal notranslate"><span class="pre">timeit</span></code> 模块<a class="headerlink" href="#timeit" title="永久链接至标题">¶</a></h2>
+<p>此模块专门用于计时。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">timeit</span> <span class="k">as</span> <span class="nn">ti</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">ti</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="s1">&#39;x=range(100)&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">timeit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ti</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="s1">&#39;x=range(100)&#39;</span><span class="p">,</span><span class="n">number</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">20000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="logging">
+<span id="id6"></span><h2><span class="section-number">11.9. </span>日志模块<a class="headerlink" href="#logging" title="永久链接至标题">¶</a></h2>
+<p>如果你想将一些调试（Debugging）信息或一些重要的信息储存在某个地方，以便你可以检查你的程序是否如你所期望那般运行，应该怎么做？你应该如何将这些信息“储存在某个地方”？这可以通过
+<code class="docutils literal notranslate"><span class="pre">logging</span></code> 模块来实现。</p>
+<p>保存为 <code class="docutils literal notranslate"><span class="pre">stdlib_logging.py</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">platform</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">platform</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Windows&#39;</span><span class="p">):</span>
+    <span class="n">logging_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;HOMEDRIVE&#39;</span><span class="p">),</span>
+                                <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;HOMEPATH&#39;</span><span class="p">),</span>
+                                <span class="s1">&#39;test.log&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">logging_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;HOME&#39;</span><span class="p">),</span>
+                                <span class="s1">&#39;test.log&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Logging to&quot;</span><span class="p">,</span> <span class="n">logging_file</span><span class="p">)</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
+    <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> : </span><span class="si">%(levelname)s</span><span class="s1"> : </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">filename</span><span class="o">=</span><span class="n">logging_file</span><span class="p">,</span>
+    <span class="n">filemode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Start of the program&quot;</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Doing something&quot;</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Dying now&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python stdlib_logging.py
+Logging to /Users/swa/test.log
+
+$ cat /Users/swa/test.log
+2014-03-29 09:27:36,660 : DEBUG : Start of the program
+2014-03-29 09:27:36,660 : INFO : Doing something
+2014-03-29 09:27:36,660 : WARNING : Dying now
+</pre></div>
+</div>
+<p>如果你不能运行 <code class="docutils literal notranslate"><span class="pre">cat</span></code> 命令，你可以通过一款文本编辑器打开 <code class="docutils literal notranslate"><span class="pre">test.log</span></code>
+文件。</p>
+<p><strong>它是如何工作的</strong></p>
+<p>我们使用了三款标准库中的模块——<code class="docutils literal notranslate"><span class="pre">os</span></code>
+模块用以和操作系统交互，<code class="docutils literal notranslate"><span class="pre">platform</span></code>
+模块用以获取平台——操作系统——的信息，<code class="docutils literal notranslate"><span class="pre">logging</span></code>
+模块用来_记录（Log）_信息。</p>
+<p>首先，我们通过检查 <code class="docutils literal notranslate"><span class="pre">platform.platform()</span></code>
+返回的字符串来确认我们正在使用的操作系统（有关更多信息，请参阅<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">platform;</span> <span class="pre">help(platform)</span></code>）。如果它是
+Windows，我们将找出其主驱动器（Home Drive），主文件夹（Home
+Folder）以及我们希望存储信息的文件名。将这三个部分汇聚到一起，我们得到了有关文件的全部位置信息。对于其它平台而言，我们需要知道的只是用户的主文件夹位置，这样我们就可获得文件的全部位置信息。</p>
+<p>我们使用 <code class="docutils literal notranslate"><span class="pre">os.path.join()</span></code>
+函数来将这三部分位置信息聚合到一起。使用这一特殊函数，而非仅仅将这几段字符串拼凑在一起的原因是这个函数会确保完整的位置路径符合当前操作系统的预期格式。</p>
+<p>然后我们配置 <code class="docutils literal notranslate"><span class="pre">logging</span></code>
+模块，让它以特定的格式将所有信息写入我们指定的文件。</p>
+<p>最后，无论这些信息是用以调试，提醒，警告甚至是其它关键的消息，我们都可以将其聚合并记录。一旦程序开始运行，我们可以检查这一文件，从而我们便能知道程序运行过程中究竟发生了什么，哪怕在用户运行时什么信息都没有显示。</p>
+</div>
+<div class="section" id="motw">
+<span id="id7"></span><h2><span class="section-number">11.10. </span>每周模块系列<a class="headerlink" href="#motw" title="永久链接至标题">¶</a></h2>
+<p>标准库中还有许多模块值得探索，例如一些<a class="reference external" href="http://docs.python.org/3/library/pdb.html">用以调试（Debugging）的模块</a>，
+<a class="reference external" href="http://docs.python.org/3/library/argparse.html">处理命令行选项的模块</a>，<a class="reference external" href="http://docs.python.org/3/library/re.html">正则表达式（Regular
+Expressions）模块</a>
+等等等等。</p>
+<p>进一步探索标准库的最好方法是阅读由 Doug Hellmann 撰写的优秀的 <a class="reference external" href="http://pymotw.com/2/contents.html">Python
+Module of the Week</a>
+系列（你还可以阅读<a class="reference external" href="http://amzn.com/0321767349">它的实体书</a>或是阅读
+<a class="reference external" href="http://docs.python.org/3/">Python 官方文档</a>）。</p>
+</div>
+<div class="section" id="id8">
+<h2><span class="section-number">11.11. </span>总结<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>在这一章我们探索了 Python
+标准库中提供的诸多的模块的一些功能。我强烈建议你浏览 <a class="reference external" href="http://docs.python.org/3/library/">Python
+标准库文档</a>来了解所有可以使用的模块。</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">11. 11 进阶：标准库</a><ul>
+<li><a class="reference internal" href="#id2">11.1. 系统内置模块</a></li>
+<li><a class="reference internal" href="#os">11.2. <code class="docutils literal notranslate"><span class="pre">OS</span></code> 模块</a></li>
+<li><a class="reference internal" href="#sys">11.3. <code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块</a></li>
+<li><a class="reference internal" href="#decimal">11.4. <code class="docutils literal notranslate"><span class="pre">decimal</span></code> 模块</a><ul>
+<li><a class="reference internal" href="#id4">11.4.1. <code class="docutils literal notranslate"><span class="pre">decimal</span></code> 精度控制</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#math">11.5. <code class="docutils literal notranslate"><span class="pre">math</span></code> 数学模块</a></li>
+<li><a class="reference internal" href="#random">11.6. <code class="docutils literal notranslate"><span class="pre">random</span></code> 模块</a></li>
+<li><a class="reference internal" href="#datetime">11.7. <code class="docutils literal notranslate"><span class="pre">datetime</span></code> 模块</a><ul>
+<li><a class="reference internal" href="#id5">11.7.1. 时间与字符串</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#timeit">11.8. <code class="docutils literal notranslate"><span class="pre">timeit</span></code> 模块</a></li>
+<li><a class="reference internal" href="#logging">11.9. 日志模块</a></li>
+<li><a class="reference internal" href="#motw">11.10. 每周模块系列</a></li>
+<li><a class="reference internal" href="#id8">11.11. 总结</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>上一个主题</h4>
+  <p class="topless"><a href="10.io.html"
+                        title="上一章"><span class="section-number">10. </span>核心：输入与输出</a></p>
+  <h4>下一个主题</h4>
+  <p class="topless"><a href="11.numpy_and_scipy.html"
+                        title="下一章"><span class="section-number">12. </span>扩展：科学计算 numpy和scipy</a></p>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/16.standrad_library.rst.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="11.numpy_and_scipy.html" title="12. 扩展：科学计算 numpy和scipy"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="10.io.html" title="10. 核心：输入与输出"
+             >上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">A-Byte-of-Python-BNU 0.1 文档</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">11. </span>11 进阶：标准库</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2020, BNU-Astro.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

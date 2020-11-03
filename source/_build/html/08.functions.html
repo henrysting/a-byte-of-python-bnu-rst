@@ -1,0 +1,455 @@
+
+<!DOCTYPE html>
+
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8. 核心：函数 &#8212; A-Byte-of-Python-BNU 0.1 文档</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="9. 核心：模块" href="09.modules.html" />
+    <link rel="prev" title="7. 核心：数据结构" href="07.data_structures.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="09.modules.html" title="9. 核心：模块"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="07.data_structures.html" title="7. 核心：数据结构"
+             accesskey="P">上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">A-Byte-of-Python-BNU 0.1 文档</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">8. </span>核心：函数</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1><span class="section-number">8. </span>核心：函数<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>函数（Functions）是指可重复使用的程序片段。它们允许你为某个代码块赋予名字，允许你通过这一特殊的名字在你的程序任何地方来运行代码块，并可重复任何次数。这就是所谓的_调用（Calling）_函数。我们已经使用过了许多内置的函数，例如
+<code class="docutils literal notranslate"><span class="pre">len</span></code> 和 <code class="docutils literal notranslate"><span class="pre">range</span></code>。</p>
+<p>函数概念可能是在任何复杂的软件（无论使用的是何种编程语言）中_最_重要的构建块，所以我们接下来将在本章中探讨有关函数的各个方面。</p>
+<p>函数可以通过关键字 <code class="docutils literal notranslate"><span class="pre">def</span></code>
+来定义。这一关键字后跟一个函数的_标识符_名称，再跟一对圆括号，其中可以包括一些变量的名称，再以冒号结尾，结束这一行。随后而来的语句块是函数的一部分。下面的案例将会展示出这其实非常简单：</p>
+<p>案例（保存为 <code class="docutils literal notranslate"><span class="pre">function1.py</span></code>）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="c1"># 该块属于这一函数</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
+<span class="c1"># 函数结束</span>
+
+<span class="n">say_hello</span><span class="p">()</span>  <span class="c1"># 调用函数</span>
+<span class="n">say_hello</span><span class="p">()</span>  <span class="c1"># 再次调用函数</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python function1.py
+hello world
+hello world
+</pre></div>
+</div>
+<p><strong>它是如何工作的</strong></p>
+<p>我们以上文解释过的方式定义名为 <code class="docutils literal notranslate"><span class="pre">say_hello</span></code>
+的函数。这个函数不使用参数，因此在括号中没有声明变量。函数的参数只是输入到函数之中，以便我可以传递不同的值给它，并获得相应的结果。</p>
+<p>要注意到我们可以两次调用相同的函数，这意味着我们不必重新把代码再写一次。</p>
+<div class="section" id="id2">
+<h2><span class="section-number">8.1. </span>函数参数<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>函数可以获取参数，这个参数的值由你所提供，借此，函数便可以利用这些值来_做_一些事情。这些参数与变量类似，这些变量的值在我们调用函数时已被定义，且在函数运行时均已赋值完成。</p>
+<p>函数中的参数通过将其放置在用以定义函数的一对圆括号中指定，并通过逗号予以分隔。当我们调用函数时，我们以同样的形式提供需要的值。要注意在此使用的术语——在定义函数时给定的名称称作_“形参”（Parameters）<em>，在调用函数时你所提供给函数的值称作</em>“实参”（Arguments）_。</p>
+<p>案例（保存为 <code class="docutils literal notranslate"><span class="pre">function_param.py</span></code>）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s1">&#39;is maximum&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s1">&#39;is equal to&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s1">&#39;is maximum&#39;</span><span class="p">)</span>
+
+<span class="c1"># 直接传递字面值</span>
+<span class="n">print_max</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="c1"># 以参数的形式传递变量</span>
+<span class="n">print_max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python function_param.py
+4 is maximum
+7 is maximum
+</pre></div>
+</div>
+<p><strong>它是如何工作的</strong></p>
+<p>在这里，我们将函数命名为 <code class="docutils literal notranslate"><span class="pre">print_max</span></code> 并使用两个参数分别称作 <code class="docutils literal notranslate"><span class="pre">a</span></code> 和
+<code class="docutils literal notranslate"><span class="pre">b</span></code>。我们使用一个简单的 <code class="docutils literal notranslate"><span class="pre">if...else</span></code>
+语句来找出更大的那个数，并将它打印出来。</p>
+<p>第一次调用函数 <code class="docutils literal notranslate"><span class="pre">print_max</span></code>
+时，我们以实参的形式直接向函数提供这一数字。在第二次调用时，我们将变量作为实参来调用函数。<code class="docutils literal notranslate"><span class="pre">print_max(x,</span> <span class="pre">y)</span></code>
+将使得实参 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的值将被赋值给形参 <code class="docutils literal notranslate"><span class="pre">a</span></code>，而实参 <code class="docutils literal notranslate"><span class="pre">y</span></code>
+的值将被赋值给形参 <code class="docutils literal notranslate"><span class="pre">b</span></code>。在两次调用中，<code class="docutils literal notranslate"><span class="pre">print_max</span></code>
+都以相同的方式工作。</p>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">8.2. </span>局部变量<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>当你在一个函数的定义中声明变量时，它们不会以任何方式与身处函数之外但具有相同名称的变量产生关系，也就是说，这些变量名只存在于函数这一_局部（Local）<em>。这被称为变量的_作用域（Scope）</em>。所有变量的作用域是它们被定义的块，从定义它们的名字的定义点开始。</p>
+<p>案例（保存为 <code class="docutils literal notranslate"><span class="pre">function_local.py</span></code>）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span>
+
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Changed local x to&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+
+<span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is still&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python function_local.py
+x is 50
+Changed local x to 2
+x is still 50
+</pre></div>
+</div>
+<p><strong>它是如何工作的</strong></p>
+<p>当我们第一次打印出存在于函数块的第一行的名为 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的值时，Python
+使用的是在函数声明之上的主代码块中声明的这一参数的值。</p>
+<p>接着，我们将值 <code class="docutils literal notranslate"><span class="pre">2</span></code> 赋值给 <code class="docutils literal notranslate"><span class="pre">x</span></code>。<code class="docutils literal notranslate"><span class="pre">x</span></code>
+是我们这一函数的局部变量。因此，当我们改变函数中 <code class="docutils literal notranslate"><span class="pre">x</span></code>
+的值的时候，主代码块中的 <code class="docutils literal notranslate"><span class="pre">x</span></code> 则不会受到影响。</p>
+<p>随着最后一句 <code class="docutils literal notranslate"><span class="pre">print</span></code> 语句，我们展示出主代码块中定义的 <code class="docutils literal notranslate"><span class="pre">x</span></code>
+的值，由此确认它实际上不受先前调用的函数中的局部变量的影响。</p>
+</div>
+<div class="section" id="global">
+<span id="global-statement"></span><h2><span class="section-number">8.3. </span><code class="docutils literal notranslate"><span class="pre">global</span></code> 语句<a class="headerlink" href="#global" title="永久链接至标题">¶</a></h2>
+<p>如果你想给一个在程序顶层的变量赋值（也就是说它不存在于任何作用域中，无论是函数还是类），那么你必须告诉
+Python 这一变量并非局部的，而是_全局（Global）_的。我们需要通过
+<code class="docutils literal notranslate"><span class="pre">global</span></code> 语句来完成这件事。因为在不使用 <code class="docutils literal notranslate"><span class="pre">global</span></code>
+语句的情况下，不可能为一个定义于函数之外的变量赋值。</p>
+<p>你可以使用定义于函数之外的变量的值（假设函数中没有具有相同名字的变量）。然而，这种方式不会受到鼓励而且应该避免，因为它对于程序的读者来说是含糊不清的，无法弄清楚变量的定义究竟在哪。而通过使用
+<code class="docutils literal notranslate"><span class="pre">global</span></code> 语句便可清楚看出这一变量是在最外边的代码块中定义的。</p>
+<p>案例（保存为 <code class="docutils literal notranslate"><span class="pre">function_global.py</span></code>）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span>
+
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">x</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x is&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Changed global x to&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+
+<span class="n">func</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Value of x is&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python function_global.py
+x is 50
+Changed global x to 2
+Value of x is 2
+</pre></div>
+</div>
+<p><strong>它是如何工作的</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">global</span></code> 语句用以声明 <code class="docutils literal notranslate"><span class="pre">x</span></code> 是一个全局变量——因此，当我们在函数中为
+<code class="docutils literal notranslate"><span class="pre">x</span></code> 进行赋值时，这一改动将影响到我们在主代码块中使用的 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的值。</p>
+<p>你可以在同一句 <code class="docutils literal notranslate"><span class="pre">global</span></code> 语句中指定不止一个的全局变量，例如
+<code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z</span></code>。</p>
+</div>
+<div class="section" id="default-arguments">
+<span id="id4"></span><h2><span class="section-number">8.4. </span>默认参数值<a class="headerlink" href="#default-arguments" title="永久链接至标题">¶</a></h2>
+<p>对于一些函数来说，你可能为希望使一些参数_可选_并使用默认的值，以避免用户不想为他们提供值的情况。默认参数值可以有效帮助解决这一情况。你可以通过在函数定义时附加一个赋值运算符（<code class="docutils literal notranslate"><span class="pre">=</span></code>）来为参数指定默认参数值。</p>
+<p>要注意到，默认参数值应该是常数。更确切地说，默认参数值应该是不可变的——这将在后面的章节中予以更详细的解释。就目前来说，只要记住就行了。</p>
+<p>案例（保存为 <code class="docutils literal notranslate"><span class="pre">function_default.py</span></code>）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">message</span> <span class="o">*</span> <span class="n">times</span><span class="p">)</span>
+
+<span class="n">say</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+<span class="n">say</span><span class="p">(</span><span class="s1">&#39;World&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python function_default.py
+Hello
+WorldWorldWorldWorldWorld
+</pre></div>
+</div>
+<p><strong>它是如何工作的</strong></p>
+<p>名为 <code class="docutils literal notranslate"><span class="pre">say</span></code>
+的函数用以按照给定的次数打印一串字符串。如果我们没有提供一个数值，则将按照默认设置，只打印一次字符串。我们通过为参数
+<code class="docutils literal notranslate"><span class="pre">times</span></code> 指定默认参数值 <code class="docutils literal notranslate"><span class="pre">1</span></code> 来实现这一点。</p>
+<p>在第一次使用 <code class="docutils literal notranslate"><span class="pre">say</span></code>
+时，我们只提供字符串因而函数只会将这个字符串打印一次。在第二次使用
+<code class="docutils literal notranslate"><span class="pre">say</span></code> 时，我们既提供了字符串，同时也提供了一个参数
+<code class="docutils literal notranslate"><span class="pre">5</span></code>，声明我们希望_说（Say）_这个字符串五次。</p>
+<blockquote>
+<div><p><em>注意</em></p>
+<p>只有那些位于参数列表末尾的参数才能被赋予默认参数值，意即在函数的参数列表中拥有默认参数值的参数不能位于没有默认参数值的参数之前。</p>
+<p>这是因为值是按参数所处的位置依次分配的。举例来说，<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">func(a,</span> <span class="pre">b=5)</span></code>
+是有效的，但 <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">func(a=5,</span> <span class="pre">b)</span></code> <a href="#id16"><span class="problematic" id="id17">是_无效的_</span></a>。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">8.5. </span>关键字参数<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>如果你有一些具有许多参数的函数，而你又希望只对其中的一些进行指定，那么你可以通过命名它们来给这些参数赋值——这就是_关键字参数（Keyword
+Arguments）_——我们使用命名（关键字）而非位置（一直以来我们所使用的方式）来指定函数中的参数。</p>
+<p>这样做有两大优点——其一，我们不再需要考虑参数的顺序，函数的使用将更加容易。其二，我们可以只对那些我们希望赋予的参数以赋值，只要其它的参数都具有默认参数值。</p>
+<p>案例（保存为 <code class="docutils literal notranslate"><span class="pre">function_keyword.py</span></code>）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a is&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;and b is&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;and c is&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">func</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">func</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python function_keyword.py
+a is 3 and b is 7 and c is 10
+a is 25 and b is 5 and c is 24
+a is 100 and b is 5 and c is 50
+</pre></div>
+</div>
+<p><strong>它是如何工作的</strong></p>
+<p>名为 <code class="docutils literal notranslate"><span class="pre">func</span></code>
+的函数有一个没有默认参数值的参数，后跟两个各自带有默认参数值的参数。</p>
+<p>在第一次调用函数时，<code class="docutils literal notranslate"><span class="pre">func(3,</span> <span class="pre">7)</span></code>，参数 <code class="docutils literal notranslate"><span class="pre">a</span></code> 获得了值
+<code class="docutils literal notranslate"><span class="pre">3</span></code>，参数 <code class="docutils literal notranslate"><span class="pre">b</span></code> 获得了值 <code class="docutils literal notranslate"><span class="pre">7</span></code>，而 <code class="docutils literal notranslate"><span class="pre">c</span></code> 获得了默认参数值
+<code class="docutils literal notranslate"><span class="pre">10</span></code>。</p>
+<p>在第二次调用函数时，<code class="docutils literal notranslate"><span class="pre">func(25,</span> <span class="pre">c=24)</span></code>，由于其所处的位置，变量 <code class="docutils literal notranslate"><span class="pre">a</span></code>
+首先获得了值 25。然后，由于命名——即关键字参数——指定，变量 <code class="docutils literal notranslate"><span class="pre">c</span></code> 获得了值
+<code class="docutils literal notranslate"><span class="pre">24</span></code>。变量 <code class="docutils literal notranslate"><span class="pre">b</span></code> 获得默认参数值 <code class="docutils literal notranslate"><span class="pre">5</span></code>。</p>
+<p>在第三次调用函数时，<code class="docutils literal notranslate"><span class="pre">func(c=50,</span> <span class="pre">a=100)</span></code>，我们全部使用关键字参数来指定值。在这里要注意到，尽管
+<code class="docutils literal notranslate"><span class="pre">a</span></code> 在 <code class="docutils literal notranslate"><span class="pre">c</span></code> 之前定义，但我们还是在变量 <code class="docutils literal notranslate"><span class="pre">a</span></code> 之前指定了变量 <code class="docutils literal notranslate"><span class="pre">c</span></code>。</p>
+</div>
+<div class="section" id="id6">
+<h2><span class="section-number">8.6. </span>可变参数<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>有时你可能想定义的函数里面能够有_任意_数量的变量，也就是参数数量是可变的，这可以通过使用星号来实现（将下方案例保存为
+<code class="docutils literal notranslate"><span class="pre">function_varargs.py</span></code>）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">total</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="o">*</span><span class="n">numbers</span><span class="p">,</span> <span class="o">**</span><span class="n">phonebook</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+
+    <span class="c1">#遍历元组中的所有项目</span>
+    <span class="k">for</span> <span class="n">single_item</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;single_item&#39;</span><span class="p">,</span> <span class="n">single_item</span><span class="p">)</span>
+
+    <span class="c1">#遍历字典中的所有项目</span>
+    <span class="k">for</span> <span class="n">first_part</span><span class="p">,</span> <span class="n">second_part</span> <span class="ow">in</span> <span class="n">phonebook</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">first_part</span><span class="p">,</span><span class="n">second_part</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">Jack</span><span class="o">=</span><span class="mi">1123</span><span class="p">,</span><span class="n">John</span><span class="o">=</span><span class="mi">2231</span><span class="p">,</span><span class="n">Inge</span><span class="o">=</span><span class="mi">1560</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python function_varargs.py
+a 10
+single_item 1
+single_item 2
+single_item 3
+Inge 1560
+John 2231
+Jack 1123
+None
+</pre></div>
+</div>
+<p><strong>它是如何工作的</strong></p>
+<p>当我们声明一个诸如 <code class="docutils literal notranslate"><span class="pre">*param</span></code>
+的星号参数时，从此处开始直到结束的所有位置参数（Positional
+Arguments）都将被收集并汇集成一个称为“param”的元组（Tuple）。</p>
+<p>类似地，当我们声明一个诸如 <code class="docutils literal notranslate"><span class="pre">**param</span></code>
+的双星号参数时，从此处开始直至结束的所有关键字参数都将被收集并汇集成一个名为
+<code class="docutils literal notranslate"><span class="pre">param</span></code> 的字典（Dictionary）。</p>
+<p>我们将在<a href="#id7"><span class="problematic" id="id8">:doc:`后面的章节 &lt;./07.data_structures#data-structures&gt;`__</span></a>探索有关元组与字典的更多内容。</p>
+</div>
+<div class="section" id="return">
+<span id="return-statement"></span><h2><span class="section-number">8.7. </span><code class="docutils literal notranslate"><span class="pre">return</span></code> 语句<a class="headerlink" href="#return" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">return</span></code>
+<a href="#id18"><span class="problematic" id="id19">语句用于从函数中_返回_</span></a>，也就是中断函数。<a href="#id20"><span class="problematic" id="id21">我们也可以选择在中断函数时从函数中_返回一个值_</span></a>。</p>
+<p>案例（保存为 <code class="docutils literal notranslate"><span class="pre">function_return.py</span></code>）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">maximum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;The numbers are equal&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">y</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">maximum</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python function_return.py
+3
+</pre></div>
+</div>
+<p><em>它是如何工作的</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">maximum</span></code>
+函数将会返回参数中的最大值，在本例中是提供给函数的数值。它使用一套简单的
+<code class="docutils literal notranslate"><span class="pre">if...else</span></code> <a href="#id22"><span class="problematic" id="id23">语句来找到较大的那个值并将其_返回_</span></a>。</p>
+<p>要注意到如果 <code class="docutils literal notranslate"><span class="pre">return</span></code> 语句没有搭配任何一个值则代表着
+<code class="docutils literal notranslate"><span class="pre">返回</span> <span class="pre">None</span></code>。<code class="docutils literal notranslate"><span class="pre">None</span></code> 在 Python
+中一个特殊的类型，代表着虚无。举个例子，
+它用于指示一个变量没有值，如果有值则它的值便是 <code class="docutils literal notranslate"><span class="pre">None（虚无）</span></code>。</p>
+<p>每一个函数都在其末尾隐含了一句 <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code>，除非你写了你自己的
+<code class="docutils literal notranslate"><span class="pre">return</span></code> 语句。你可以运行 <code class="docutils literal notranslate"><span class="pre">print(some_function())</span></code>，其中
+<code class="docutils literal notranslate"><span class="pre">some_function</span></code> 函数不使用 <code class="docutils literal notranslate"><span class="pre">return</span></code> 语句，就像这样：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">some_function</span><span class="p">():</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Python 中的 <code class="docutils literal notranslate"><span class="pre">pass</span></code> 语句用于指示一个没有内容的语句块。</p>
+<blockquote>
+<div><p>提示：有一个名为 <code class="docutils literal notranslate"><span class="pre">max</span></code>
+的内置函数已经实现了“找到最大数”这一功能，所以尽可能地使用这一内置函数。</p>
+</div></blockquote>
+</div>
+<div class="section" id="docstrings">
+<h2><span class="section-number">8.8. </span>DocStrings<a class="headerlink" href="#docstrings" title="永久链接至标题">¶</a></h2>
+<p>Python 有一个甚是优美的功能称作_文档字符串（Documentation
+Strings）<em>，在称呼它时通常会使用另一个短一些的名字_docstrings</em>。DocStrings
+是一款你应当使用的重要工具，它能够帮助你更好地记录程序并让其更加易于理解。令人惊叹的是，当程序实际运行时，我们甚至可以通过一个函数来获取文档！</p>
+<p>案例（保存为 <code class="docutils literal notranslate"><span class="pre">function_docstring.py</span></code>）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;打印两个数值中的最大数。</span>
+
+<span class="sd">    这两个数都应该是整数&#39;&#39;&#39;</span>
+    <span class="c1"># 如果可能，将其转换至整数类型</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;is maximum&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;is maximum&#39;</span><span class="p">)</span>
+
+<span class="n">print_max</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">print_max</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python function_docstring.py
+5 is maximum
+打印两个数值中的最大数。
+
+    这两个数都应该是整数
+</pre></div>
+</div>
+<p><strong>它是如何工作的</strong></p>
+<p>函数的第一行逻辑行中的字符串是该函数的
+<em>文档字符串（DocString）</em>。这里要注意文档字符串也适用于后面相关章节将提到的<a href="#id9"><span class="problematic" id="id10">:doc:`模块（Modules） &lt;./09.modules#modules&gt;`__</span></a>与 <a href="#id11"><span class="problematic" id="id12">:doc:`类（Class） &lt;./13.object_oriented_programming#oop&gt;`__</span></a>
+。</p>
+<p>该文档字符串所约定的是一串多行字符串，其中第一行以某一大写字母开始，以句号结束。第二行为空行，后跟的第三行开始是任何详细的解释说明。在此_强烈建议_你在你所有重要功能的所有文档字符串中都遵循这一约定。</p>
+<p>我们可以通过使用函数的
+<code class="docutils literal notranslate"><span class="pre">__doc__</span></code>（<a href="#id24"><span class="problematic" id="id25">注意其中的_双下划綫_</span></a>）属性（属于函数的名称）来获取函数
+<code class="docutils literal notranslate"><span class="pre">print_max</span></code> 的文档字符串属性。只消记住 Python
+将_所有东西_都视为一个对象，这其中自然包括函数。我们将在后面的<a href="#id13"><span class="problematic" id="id14">:doc:`类（Class） &lt;./13.object_oriented_programming#oop&gt;`__</span></a>章节讨论有关对象的更多细节。</p>
+<p>如果你曾使用过 Python 的 <code class="docutils literal notranslate"><span class="pre">help()</span></code>
+函数，那么你应该已经了解了文档字符串的用途了。它所做的便是获取函数的
+<code class="docutils literal notranslate"><span class="pre">__doc__</span></code>
+属性并以一种整洁的方式将其呈现给你。你可以在上方的函数中尝试一下——只需在程序中包含
+<code class="docutils literal notranslate"><span class="pre">help(print_max)</span></code> 就行了。要记住你可以通过按下 <code class="docutils literal notranslate"><span class="pre">q</span></code> 键来退出
+<code class="docutils literal notranslate"><span class="pre">help</span></code>。</p>
+<p>自动化工具可以以这种方式检索你的程序中的文档。因此，我_强烈推荐_你为你编写的所有重要的函数配以文档字符串。你的
+Python 发行版中附带的 <code class="docutils literal notranslate"><span class="pre">pydoc</span></code> 命令与 <code class="docutils literal notranslate"><span class="pre">help()</span></code>
+使用文档字符串的方式类似。</p>
+</div>
+<div class="section" id="id15">
+<h2><span class="section-number">8.9. </span>总结<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h2>
+<p>我们已经了解了许多方面的函数，但我们依旧还未覆盖到所有类型的函数。不过，我们已经覆盖到了大部分你每天日常使用都会使用到的
+Python 函数。</p>
+<p>接下来，我们将了解如何创建并使用 Python 模块。</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">8. 核心：函数</a><ul>
+<li><a class="reference internal" href="#id2">8.1. 函数参数</a></li>
+<li><a class="reference internal" href="#id3">8.2. 局部变量</a></li>
+<li><a class="reference internal" href="#global">8.3. <code class="docutils literal notranslate"><span class="pre">global</span></code> 语句</a></li>
+<li><a class="reference internal" href="#default-arguments">8.4. 默认参数值</a></li>
+<li><a class="reference internal" href="#id5">8.5. 关键字参数</a></li>
+<li><a class="reference internal" href="#id6">8.6. 可变参数</a></li>
+<li><a class="reference internal" href="#return">8.7. <code class="docutils literal notranslate"><span class="pre">return</span></code> 语句</a></li>
+<li><a class="reference internal" href="#docstrings">8.8. DocStrings</a></li>
+<li><a class="reference internal" href="#id15">8.9. 总结</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>上一个主题</h4>
+  <p class="topless"><a href="07.data_structures.html"
+                        title="上一章"><span class="section-number">7. </span>核心：数据结构</a></p>
+  <h4>下一个主题</h4>
+  <p class="topless"><a href="09.modules.html"
+                        title="下一章"><span class="section-number">9. </span>核心：模块</a></p>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/08.functions.rst.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="09.modules.html" title="9. 核心：模块"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="07.data_structures.html" title="7. 核心：数据结构"
+             >上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">A-Byte-of-Python-BNU 0.1 文档</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">8. </span>核心：函数</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2020, BNU-Astro.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

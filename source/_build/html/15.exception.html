@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15. 进阶：异常 &#8212; A-Byte-of-Python-BNU 0.1 文档</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="16. 更多" href="17.more.html" />
+    <link rel="prev" title="14. 进阶：解决问题" href="14.advance.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="17.more.html" title="16. 更多"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="14.advance.html" title="14. 进阶：解决问题"
+             accesskey="P">上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">A-Byte-of-Python-BNU 0.1 文档</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">15. </span>进阶：异常</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1><span class="section-number">15. </span>进阶：异常<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>当你的程序出现例外情况时就会发生异常（Exception）。例如，当你想要读取一个文件时，而那个文件却不存在，怎么办？又或者你在程序执行时不小心把它删除了，怎么办？这些通过使用<strong>异常</strong>来进行处理。</p>
+<p>类似地，如果你的程序中出现了一些无效的语句该怎么办？Python
+将会对此进行处理，<strong>举起（Raises）</strong>它的小手来告诉你哪里出现了一个<strong>错误（Error）</strong>。</p>
+<div class="section" id="id2">
+<h2><span class="section-number">15.1. </span>错误<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>你可以想象一个简单的 <code class="docutils literal notranslate"><span class="pre">print</span></code> 函数调用。如果我们把 <code class="docutils literal notranslate"><span class="pre">print</span></code> 误拼成
+<code class="docutils literal notranslate"><span class="pre">Print</span></code> 会怎样？你会注意到它的首字母是大写。在这一例子中，Python
+会_抛出（Raise）_一个语法错误。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">NameError</span>: <span class="n">name &#39;Print&#39; is not defined</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+<span class="go">Hello World</span>
+</pre></div>
+</div>
+<p>你会注意到一个 <code class="docutils literal notranslate"><span class="pre">NameError</span></code> 错误被抛出，同时 Python
+还会打印出检测到的错误发生的位置。这就是一个错误<strong>错误处理器（Error
+Handler）</strong> 为这个错误所做的事情。</p>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">15.2. </span>异常<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>我们将<strong>尝试（Try）</strong>去读取用户的输入内容。按下 <code class="docutils literal notranslate"><span class="pre">[ctrl-d]</span></code>
+来看看会发生什么事情。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter something --&gt; &#39;</span><span class="p">)</span>
+<span class="go">Enter something --&gt; Traceback (most recent call last):</span>
+<span class="go">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span>
+<span class="go">EOFError</span>
+</pre></div>
+</div>
+<p>此处 Python 指出了一个称作 <code class="docutils literal notranslate"><span class="pre">EOFError</span></code>
+的错误，代表着它发现了一个_文件结尾（End of File）_符号（由 <code class="docutils literal notranslate"><span class="pre">ctrl-d</span></code>
+实现）在不该出现的时候出现了。</p>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">15.3. </span>处理异常<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>我们可以通过使用 <code class="docutils literal notranslate"><span class="pre">try..except</span></code>
+来处理异常状况。一般来说我们会把通常的语句放在 try
+代码块中，将我们的错误处理器代码放置在 except 代码块中。</p>
+<p>案例（保存文 <code class="docutils literal notranslate"><span class="pre">exceptions_handle.py</span></code>）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter something --&gt; &#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">EOFError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Why did you do an EOF on me?&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You cancelled the operation.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You entered </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Press ctrl + d
+$ python exceptions_handle.py
+Enter something --&gt; Why did you do an EOF on me?
+
+# Press ctrl + c
+$ python exceptions_handle.py
+Enter something --&gt; ^CYou cancelled the operation.
+
+$ python exceptions_handle.py
+Enter something --&gt; No exceptions
+You entered No exceptions
+</pre></div>
+</div>
+<p><strong>它是如何工作的</strong></p>
+<p>我们将所有可能引发异常或错误的语句放在 <code class="docutils literal notranslate"><span class="pre">try</span></code>
+代码块中，并将相应的错误或异常的处理器（Handler）放在 <code class="docutils literal notranslate"><span class="pre">except</span></code>
+子句或代码块中。<code class="docutils literal notranslate"><span class="pre">except</span></code>
+子句可以处理某种特定的错误或异常，或者是一个在括号中列出的错误或异常。如果没有提供错误或异常的名称，它将处理_所有_错误与异常。</p>
+<p>要注意到必须至少有一句 <code class="docutils literal notranslate"><span class="pre">except</span></code> 字句与每一句 <code class="docutils literal notranslate"><span class="pre">try</span></code>
+字句相关联。不然，有一个 try 代码块又有什么意义？</p>
+<p>如果没有任何错误或异常被处理，那么将调用 Python
+默认处理器，它只会终端程序执行并打印出错误信息。我们已经在前面的章节里见过了这种处理方式。</p>
+<p>你还可以拥有一个 <code class="docutils literal notranslate"><span class="pre">else</span></code> 子句与 <code class="docutils literal notranslate"><span class="pre">try..except</span></code>
+代码块相关联。<code class="docutils literal notranslate"><span class="pre">else</span></code> 子句将在没有发生异常的时候执行。</p>
+<p>在下一个案例中，我们还将了解如何获取异常对象以便我们可以检索其他信息。</p>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">15.4. </span>抛出异常<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>你可以通过 <code class="docutils literal notranslate"><span class="pre">raise</span></code>
+语句来_引发_一次异常，具体方法是提供错误名或异常名以及要_抛出（Thrown）_异常的对象。</p>
+<p>你能够引发的错误或异常必须是直接或间接从属于 <code class="docutils literal notranslate"><span class="pre">Exception</span></code>（异常）
+类的派生类。</p>
+<p>案例（保存为 <code class="docutils literal notranslate"><span class="pre">exceptions_raise.py</span></code>）：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># encoding=UTF-8</span>
+
+<span class="k">class</span> <span class="nc">ShortInputException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;一个由用户定义的异常类&#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">atleast</span><span class="p">):</span>
+        <span class="ne">Exception</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">length</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">atleast</span> <span class="o">=</span> <span class="n">atleast</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter something --&gt; &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">ShortInputException</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="c1"># 其他工作能在此处继续正常运行</span>
+<span class="k">except</span> <span class="ne">EOFError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Why did you do an EOF on me?&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ShortInputException</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">((</span><span class="s1">&#39;ShortInputException: The input was &#39;</span> <span class="o">+</span>
+           <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> long, expected at least </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="p">)</span>
+          <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="n">length</span><span class="p">,</span> <span class="n">ex</span><span class="o">.</span><span class="n">atleast</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No exception was raised.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python exceptions_raise.py
+Enter something --&gt; a
+ShortInputException: The input was 1 long, expected at least 3
+
+$ python exceptions_raise.py
+Enter something --&gt; abc
+No exception was raised.
+</pre></div>
+</div>
+<p><strong>它是如何工作的</strong></p>
+<p>在本例中，我们创建了我们自己的异常类型。这一新的异常类型叫作
+<code class="docutils literal notranslate"><span class="pre">ShortInputException</span></code>。它包含两个字段——获取给定输入文本长度的
+<code class="docutils literal notranslate"><span class="pre">length</span></code>，程序期望的最小长度 <code class="docutils literal notranslate"><span class="pre">atleast</span></code>。</p>
+<p>在 <code class="docutils literal notranslate"><span class="pre">except</span></code> 子句中，我们提及了错误类，将该类存储 <code class="docutils literal notranslate"><span class="pre">as（为）</span></code>
+相应的错误名或异常名。这类似于函数调用中的形参与实参。在这个特殊的
+<code class="docutils literal notranslate"><span class="pre">except</span></code> 子句中我们使用异常对象的 <code class="docutils literal notranslate"><span class="pre">length</span></code> 与 <code class="docutils literal notranslate"><span class="pre">atleast</span></code>
+字段来向用户打印一条合适的信息。</p>
+</div>
+<div class="section" id="try-finally">
+<h2><span class="section-number">15.5. </span>Try … Finally<a class="headerlink" href="#try-finally" title="永久链接至标题">¶</a></h2>
+<p>假设你正在你的读取中读取一份文件。你应该如何确保文件对象被正确关闭，无论是否会发生异常？这可以通过
+<code class="docutils literal notranslate"><span class="pre">finally</span></code> 块来完成。</p>
+<p>保存该程序为 <code class="docutils literal notranslate"><span class="pre">exceptions_finally.py</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;poem.txt&quot;</span><span class="p">)</span>
+    <span class="c1"># 我们常用的文件阅读风格</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Press ctrl+c now&quot;</span><span class="p">)</span>
+        <span class="c1"># 为了确保它能运行一段时间</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not find file poem.txt&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;!! You cancelled the reading from the file.&quot;</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(Cleaning up: Closed the file)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>输出：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python exceptions_finally.py
+Programming is fun
+Press ctrl+c now
+^C!! You cancelled the reading from the file.
+(Cleaning up: Closed the file)
+</pre></div>
+</div>
+<p><strong>它是如何工作的</strong></p>
+<p>我们按照通常文件读取进行操作，但是我们同时通过使用 <code class="docutils literal notranslate"><span class="pre">time.sleep</span></code>
+函数任意在每打印一行后插入两秒休眠，使得程序运行变得缓慢（在通常情况下
+Python 运行得非常快速）。当程序在处在运行过过程中时，按下 <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">c</span></code>
+来中断或取消程序。</p>
+<p>你会注意到 <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code>
+异常被抛出，尔后程序退出。不过，在程序退出之前，finally
+子句得到执行，文件对象总会被关闭。</p>
+<p>另外要注意到我们在 <code class="docutils literal notranslate"><span class="pre">print</span></code> 之后使用了
+<code class="docutils literal notranslate"><span class="pre">sys.stout.flush()</span></code>，以便它能被立即打印到屏幕上。</p>
+</div>
+<div class="section" id="with">
+<span id="id6"></span><h2><span class="section-number">15.6. </span><code class="docutils literal notranslate"><span class="pre">with</span></code> 语句<a class="headerlink" href="#with" title="永久链接至标题">¶</a></h2>
+<p>在 <code class="docutils literal notranslate"><span class="pre">try</span></code> 块中获取资源，然后在 <code class="docutils literal notranslate"><span class="pre">finally</span></code>
+块中释放资源是一种常见的模式。因此，还有一个 <code class="docutils literal notranslate"><span class="pre">with</span></code>
+语句使得这一过程可以以一种干净的姿态得以完成。</p>
+<p>保存为 <code class="docutils literal notranslate"><span class="pre">exceptions_using_with.py</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;poem.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>它是如何工作的</strong></p>
+<p>程序输出的内容应与上一个案例所呈现的相同。本例的不同之处在于我们使用的是
+<code class="docutils literal notranslate"><span class="pre">open</span></code> 函数与 <code class="docutils literal notranslate"><span class="pre">with</span></code> 语句——我们将关闭文件的操作交由 <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open</span></code>
+来自动完成。</p>
+<p>在幕后发生的事情是有一项 <code class="docutils literal notranslate"><span class="pre">with</span></code>
+语句所使用的协议（Protocol）。它会获取由 <code class="docutils literal notranslate"><span class="pre">open</span></code>
+语句返回的对象，在本案例中就是“thefile”。</p>
+<p>它_总会_在代码块开始之前调用 <code class="docutils literal notranslate"><span class="pre">thefile.__enter__</span></code>
+函数，并且_总会_在代码块执行完毕之后调用 <code class="docutils literal notranslate"><span class="pre">thefile.__exit__</span></code>。</p>
+<p>因此，我们在 <code class="docutils literal notranslate"><span class="pre">finally</span></code> 代码块中编写的代码应该格外留心 <code class="docutils literal notranslate"><span class="pre">__exit__</span></code>
+方法的自动操作。这能够帮助我们避免重复显式使用 <code class="docutils literal notranslate"><span class="pre">try..finally</span></code> 语句。</p>
+<p>有关该话题的更多讨论已经超出了本书所能涉及的范围，因此请参考 <a class="reference external" href="http://www.python.org/dev/peps/pep-0343/">PEP
+343</a> 来了解更加全面的解释。</p>
+</div>
+<div class="section" id="id7">
+<h2><span class="section-number">15.7. </span>总结<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>在这一章我们讨论了 <code class="docutils literal notranslate"><span class="pre">try..except</span></code> 和 <code class="docutils literal notranslate"><span class="pre">try..finally</span></code>
+语句的用法。同时我们也已经看到了如何创建我们自己的异常类型，还有如何抛出异常。</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">目录</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">15. 进阶：异常</a><ul>
+<li><a class="reference internal" href="#id2">15.1. 错误</a></li>
+<li><a class="reference internal" href="#id3">15.2. 异常</a></li>
+<li><a class="reference internal" href="#id4">15.3. 处理异常</a></li>
+<li><a class="reference internal" href="#id5">15.4. 抛出异常</a></li>
+<li><a class="reference internal" href="#try-finally">15.5. Try … Finally</a></li>
+<li><a class="reference internal" href="#with">15.6. <code class="docutils literal notranslate"><span class="pre">with</span></code> 语句</a></li>
+<li><a class="reference internal" href="#id7">15.7. 总结</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>上一个主题</h4>
+  <p class="topless"><a href="14.advance.html"
+                        title="上一章"><span class="section-number">14. </span>进阶：解决问题</a></p>
+  <h4>下一个主题</h4>
+  <p class="topless"><a href="17.more.html"
+                        title="下一章"><span class="section-number">16. </span>更多</a></p>
+  <div role="note" aria-label="source link">
+    <h3>本页</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/15.exception.rst.txt"
+            rel="nofollow">显示源代码</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="转向" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="17.more.html" title="16. 更多"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="14.advance.html" title="14. 进阶：解决问题"
+             >上一页</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">A-Byte-of-Python-BNU 0.1 文档</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">15. </span>进阶：异常</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; 版权所有 2020, BNU-Astro.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

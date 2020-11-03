@@ -85,7 +85,7 @@ Python 提示符（Python Prompt）。
 退出解释器环境
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-退出解释器环境,在LINUX下可以通过按下 ``ctrl + d`` 组合键,在WINDOWS下可以通过按下 ``ctrl + z`` 组合键,或是在任意操作系统的命令行界面输入 ``exit()``
+退出解释器环境可以通过按下 ``[ctrl + d]`` 组合键或是输入 ``exit()``
 （注意：务必包含括号 ``()``\ ）并敲下回车实现。
 
 
@@ -185,15 +185,12 @@ IDLE
 GUI工具包编写。但是这个软件功能有限，兼容性不好，甚至无法与终端输出保持一致。不建议使用。
 |IDLE界面|
 
-Jupyter
+Jupyter Notebook
 ~~~~~~~~~~~~~~~~
 
 `Jupyter Notebook <https://jupyter.org/>`__
-是一个基于网页的开源多语言开发环境。它将文档、代码、注释、结果、甚至图像整合到一个文档文件之中。
-代码的撰写、调试以及分享都因此变得十分方便，非常适合教学和演示。
-Anaconda中已经包含了Jupyter，不需要安装额外的软件。
-使用时，仅需要在终端下用 cd 命令切换到工作目录，
-键入下列命令后，便会自动打开默认网页浏览器进入环境
+是一个基于Web端的开源多语言开发环境。将文档、代码、注释、结果、甚至图像整合到一个文档文件之中。代码的撰写、调试及分享都因此变得十分方便。
+在终端键入下列命令后，会自动打开默认网页浏览器进入环境
 
 ::
 
@@ -203,51 +200,6 @@ Anaconda中已经包含了Jupyter，不需要安装额外的软件。
    :alt: jupyter
 
    jupyter
-
-我们将在这里说明jupyter notebook如何安装。
-
-1.打开终端，确定连接到网络，并更新pip `` python3 -m pip install --upgrade pip ``
-
-.. figure:: ../pic/03.IDE/linux-jupyter1.png
-
-2.执行安装命令 `` pip install jupyter `` 
-
-.. figure:: ../pic/03.IDE/linux-jupyter2.png
-
-3.更新jupyter的配置文件jupyter_notebook_config.py，命令为： `` jupyter notebook --generate-config `` .以下文件在LINUX下路径为 ``/home/user/.jupyter/jupyter_notebook_config.py`` (user是用户文件夹)
-在WINDOWS下路径为 ``C:\用户\user\.jupyter\jupyter_notebook_config.py`` (user是用户文件夹)
-
-
-.. figure:: ../pic/03.IDE/linux-jupyter3.png
-
-4.配置设置，为如果你想使用其他浏览器，把 ``c.NotebookApp.browser`` 前面的注释#去掉,选项换为你自己浏览器的安装路径：
-c.NotebookApp.browser = '/usr/bin/firefox'(LINUX)
-c.NotebookApp.browser = u'/opt/google/chrome/google-chrome'(LINUX)
-
-在WINDOWS下仅以配置CHROME为默认浏览器举例。c.NotebookApp.browser这一选项变为：
-
-.. code:: python
-
-   import webbrowser
-   webbrowser.register("chrome",None,webbrowser.GenericBrowser(u"C:\\ProgramFiles(x86)\\Google\\Chrome\\Application\\chrome.exe"))
-   c.NotebookApp.browser = 'chrome'
-
-.. figure:: ../pic/03.IDE/windows-jupyter.png
-
-.. figure:: ../pic/03.IDE/linux-jupyter4.png
-
-5.在终端输入 ``jupyter notebook`` 后回车就可以打开了。
-
-
-注意，如果报错 ``OSError: [Errno 99] Cannot assign requested address`` ，说明JUPYTER当前找不到IP，你可以在jupyter_notebook_config.py中设置
-c.NotebookApp.ip=你当前的IP地址
-
-其中IP地址可以通过终端查询，命令在WINDOWS下为 ``ipconfig`` ,LINUX下为 ``ifconfig`` 。
-
-
-.. figure:: ../pic/03.IDE/linux-jupyter5.png
-
-.. figure:: ../pic/03.IDE/linux-jupyter6.png
 
 Spyder
 ~~~~~~
