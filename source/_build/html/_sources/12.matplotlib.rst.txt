@@ -37,14 +37,14 @@ Plot参数
 
 .. code:: python
 
-   alpha : float
-   color or c : any matplotlib color
-   label : any string , 图注名称
-   linestyle or ls : [ '-' | '--' | '-.' | ':' | 'steps' | ...]
-   linewidth or lw: float value (points, 0.3527mm )
-   marker [ '+' | ',' | '.' | '1' | '2' | '3' | '4' ]
-   markersize or ms : float
-   zorder: any number 叠放顺序
+   #alpha : float
+   #color or c : any matplotlib color
+   #label : any string , 图注名称
+   #linestyle or ls : [ '-' | '--' | '-.' | ':' | 'steps' | ...]
+   #linewidth or lw: float value (points, 0.3527mm )
+   #marker [ '+' | ',' | '.' | '1' | '2' | '3' | '4' ]
+   #markersize or ms : float
+   #zorder: any number 叠放顺序
 
 颜色
 ~~~~
