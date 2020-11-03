@@ -415,4 +415,4 @@ C/C++
 Python 中一些最常用的部分，因此，习惯去使用它们是必要的。
 
 
-.. |image0| image:: ../pic/2_structure.png
+.. |image0| image:: ../pic/06.control/2_structure.png
