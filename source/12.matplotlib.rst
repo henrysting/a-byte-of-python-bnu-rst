@@ -257,6 +257,7 @@ colormap
    import pylab as pl
    pl.colormaps()
    #查看色表内容
+
    pl.cm.hot(0.001)
    pl.cm.hot(0.999)
    pl.cm.hot(0.5)
@@ -489,7 +490,6 @@ pylab实时动画
 
 
 
-
 .. |image0| image:: ../pic/matplotlib/figure_1.png
 .. |image1| image:: ../pic/matplotlib/figure_2.png
 .. |image2| image:: ../pic/matplotlib/figure_3.png
@@ -505,5 +505,6 @@ pylab实时动画
 .. |image12| image:: ../pic/matplotlib/figure_13.png
 .. |image13| image:: ../pic/matplotlib/figure_14.png
 .. |image14| image:: ../pic/matplotlib/figure_16.png
+
 .. |image15| image:: ../pic/matplotlib/subplot.png
 .. |image16| image:: ../pic/matplotlib/heatmap.png
