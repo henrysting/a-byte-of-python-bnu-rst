@@ -37,14 +37,14 @@ Plot参数
 
 .. code:: python
 
-   alpha : float
-   color or c : any matplotlib color
-   label : any string , 图注名称
-   linestyle or ls : [ '-' | '--' | '-.' | ':' | 'steps' | ...]
-   linewidth or lw: float value (points, 0.3527mm )
-   marker [ '+' | ',' | '.' | '1' | '2' | '3' | '4' ]
-   markersize or ms : float
-   zorder: any number 叠放顺序
+   #alpha : float
+   #color or c : any matplotlib color
+   #label : any string , 图注名称
+   #linestyle or ls : [ '-' | '--' | '-.' | ':' | 'steps' | ...]
+   #linewidth or lw: float value (points, 0.3527mm )
+   #marker [ '+' | ',' | '.' | '1' | '2' | '3' | '4' ]
+   #markersize or ms : float
+   #zorder: any number 叠放顺序
 
 颜色
 ~~~~
@@ -490,21 +490,21 @@ pylab实时动画
 
 
 
+.. |image0| image:: ../pic/matplotlib/figure_1.png
+.. |image1| image:: ../pic/matplotlib/figure_2.png
+.. |image2| image:: ../pic/matplotlib/figure_3.png
+.. |image3| image:: ../pic/matplotlib/figure_4.png
+.. |image4| image:: ../pic/matplotlib/figure_5.png
+.. |image5| image:: ../pic/matplotlib/figure_6.png
+.. |image6| image:: ../pic/matplotlib/figure_7.png
+.. |image7| image:: ../pic/matplotlib/figure_8.png
+.. |image8| image:: ../pic/matplotlib/figure_9.png
+.. |image9| image:: ../pic/matplotlib/figure_10.png
+.. |image10| image:: ../pic/matplotlib/figure_11.png
+.. |image11| image:: ../pic/matplotlib/figure_12.png
+.. |image12| image:: ../pic/matplotlib/figure_13.png
+.. |image13| image:: ../pic/matplotlib/figure_14.png
+.. |image14| image:: ../pic/matplotlib/figure_16.png
 
-.. |image0| image:: ../pic/matplotlib/Figure_1.png
-.. |image1| image:: ../pic/matplotlib/Figure_2.png
-.. |image2| image:: ../pic/matplotlib/Figure_3.png
-.. |image3| image:: ../pic/matplotlib/Figure_4.png
-.. |image4| image:: ../pic/matplotlib/Figure_5.png
-.. |image5| image:: ../pic/matplotlib/Figure_6.png
-.. |image6| image:: ../pic/matplotlib/Figure_7.png
-.. |image7| image:: ../pic/matplotlib/Figure_8.png
-.. |image8| image:: ../pic/matplotlib/Figure_9.png
-.. |image9| image:: ../pic/matplotlib/Figure_10.png
-.. |image10| image:: ../pic/matplotlib/Figure_11.png
-.. |image11| image:: ../pic/matplotlib/Figure_12.png
-.. |image12| image:: ../pic/matplotlib/Figure_13.png
-.. |image13| image:: ../pic/matplotlib/Figure_14.png
-.. |image14| image:: ../pic/matplotlib/Figure_16.png
 .. |image15| image:: ../pic/matplotlib/subplot.png
 .. |image16| image:: ../pic/matplotlib/heatmap.png
