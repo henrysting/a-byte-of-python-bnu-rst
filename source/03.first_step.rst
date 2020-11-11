@@ -439,7 +439,7 @@ Python 程序是由 *语句*
 
 从此你便成为一名 Python 用户了，现在让我们来学习更多有关 Python 的概念。
 
-.. |IDLE界面| image:: ../pic/03.IDE/IDLE.jpg
+.. |IDLE界面| image:: ../pic/03.IDE/IDLE.png
 .. |Eclipse| image:: ../pic/03.IDE/Eclipse.jpg
 .. |image21| image:: ../pic/03.IDE/vscode1.png
 .. |image22| image:: ../pic/03.IDE/vscode2.png
