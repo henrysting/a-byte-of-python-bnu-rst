@@ -334,13 +334,14 @@ Python 中你需要在它们之间多加上一个逗号。
    ab['Guido'] = 'guido@python.org'
 
    if 'Guido' in ab:
-       print("\nGuido's address is", ab['Guido'])
+      print("\nGuido's address is", ab['Guido'])
 
    # 修改一对键值—值配对
    ab['Guido'] = 'guido@java.org'
 
    if 'Guido' in ab:
-       print("\nGuido's address is", ab['Guido'])
+      print("\nGuido's address is", ab['Guido'])
+
 输出：
 
 .. code:: text

@@ -9,7 +9,7 @@
 解释器本身的本地语言来编写模块。举例来说，你可以使用 `C语言 <http://docs.python.org/3/extending/>`__\ 来撰写 Python
 模块，并且在编译后，你可以通过标准 Python 解释器在你的 Python 代码中使用它们。
 
-一个模块可以被其它程序_导入_并运用其功能。我们在使用 Python 标准库的功能时也同样如此。模块名与脚本的文件名相同，例如我们编写了一个
+一个模块可以被其它程序导入并运用其功能。我们在使用 Python 标准库的功能时也同样如此。模块名与脚本的文件名相同，例如我们编写了一个
 名为Items.py的脚本，则可在另外一个脚本中用 ``import Items`` 语句来导入它。首先，我们要了解如何使用标准库模块。
 
 案例 (保存为 ``module_using_sys.py``):
@@ -79,6 +79,8 @@
 
 另外要注意的是在sys中提到的当前目录指的是程序启动的目录。这就需要在操作系统上进行操作。我们需要os模块为操作系统服务提供了可移植的（portable）的接口。你可以通过运行
 ``print(os.getcwd())`` 来查看你的程序目前所处在的目录。 
+
+
 
 按字节码编译的 .pyc 文件
 ------------------------
@@ -152,9 +154,40 @@ Python 是如何工作的吗？）。这一 ``.pyc``
 编写你自己的模块
 ----------------
 
+除了标准库模块外，我们可以自己编写与导入模块。每个py文件都可以是一个模块，。接下来我们自己定义一个模块，
+
 编写你自己的模块很简单，这其实就是你一直在做的事情！这是因为每一个
-Python 程序同时也是一个模块。你只需要保证它以 ``.py``
+Python 程序同时也是一个模块,被其他模块导入。你只需要保证它以 ``.py``
 为扩展名即可。下面的案例会作出清晰的解释。
+
+创建如下文件 ``bnupy.py`` 并运行:
+
+.. code:: python
+
+   def hello():
+      print("hello,world!")
+   def bye():
+      print("bye,world!")
+      
+   if __name__=="__main__":
+      hello()
+      bye()
+      print("Test pass!")
+
+.. code:: text
+
+   D:>python bnupy.py 
+   hello,world!
+   bye,world!
+   Test pass!
+   
+   >>> import bnupy
+   >>> dir()
+   >>> bnupy.hello()
+   hello,world!
+   >>> bnupy.bye()
+   bye,world!
+   >>> 
 
 案例（保存为 ``mymodule.py``\ ）：
 
@@ -165,7 +198,7 @@ Python 程序同时也是一个模块。你只需要保证它以 ``.py``
 
    __version__ = '0.1'
 
-上方所呈现的就是一个简单的模块。正如你所看见的，与我们一般所使用的
+上方所呈现的就是简单的模块。正如你所看见的，与我们一般所使用的
 Python 的程序相比其实并没有什么特殊的区别。我们接下来将看到如何在其它
 Python 程序中使用这一模块。
 
@@ -251,7 +284,7 @@ Python 程序中使用这一模块。
 
 案例：
 
-.. code:: python
+.. code:: text
 
    $ python
    >>> import sys
@@ -302,18 +335,91 @@ Python 程序中使用这一模块。
 可以访问 ``str``\ （String，字符串）类的属性。
 
 同时，还有一个
-```vars()`` <http://docs.python.org/3/library/functions.html#vars>`__
+```vars()`` `<http://docs.python.org/3/library/functions.html#vars>`__
 函数也可以返回给你这些值的属性，但只是可能，它并不能针对所有类都能正常工作。
 
 **如果你对这个函数有疑问，可以通过help(包名.函数名)的方式查看帮助**
 
+
+模块管理工具pip
+----------------------
+
+
+•pip功能：提供非核心模块的管理功能
+
+•Python3 下名称为pip3，但是可以设置默认pip对应的版本为python3，需要调节优先级
+
+以下是几个常用的命令：
+
+.. code:: text
+
+   where pip 查看pip路径
+   pip -V 查看当前版本
+   pip -h 查看命令
+   pip install / uninstall / list
+
+
+但是pip只处理python代码，程序包(whl)等，对于一些复杂的模块调用，需要借助包管理软件。在此之前我们先介绍什么是包：
+
 包
 --
 
-现在，你必须开始遵守用以组织你的程序的层次结构。变量通常位于函数内部，函数与全局变量通常位于模块内部。如果你希望组织起这些模块的话，应该怎么办？这便是包（Packages）应当登场的时刻。
+现在，你必须开始遵守用以组织你的程序的层次结构。变量通常位于函数内部，函数与全局变量通常位于模块内部。
+如果你希望组织起这些模块的话，应该怎么办？这便是包（Packages）应当登场的时刻。
+
+
+什么是包(package)
+
+•模块：py文件，包含若干函数
+
+•包：py文件夹，包含多个py文件（模块）
+
+•创建一个文件夹bnupy，其中包含两个文件 ``bnupy1.py`` : 
+
+.. code:: python
+
+   def hello1():
+      print("hello,world!")
+   if __name__=="__main__":
+      hello1()    
+      print("Test pass!")
+      
+``bnupy2.py`` :
+
+   def bye2 ():
+      print("bye-bye,world!")
+   if __name__=="__main__":
+      bye2 ()
+      print("Test pass!")
+      
+.. code:: text
+
+   >>>import bnupy.bnupy1
+   >>>bnupy.bnupy1.hello1
 
 包是指一个包含模块与一个特殊的 ``__init__.py`` 文件的文件夹，后者向
-Python 表明这一文件夹是特别的，因为其包含了 Python 模块。
+Python 表明这一文件夹是特别的，因为其包含了 Python 模块。每当import的时候，就会自动执行里面的函数。
+
+.. code:: python
+
+   __all__ = ["bnupy1", "bnupy2"]  
+
+.. code:: text
+
+   >>>from bnupyimport *
+   >>>dir()
+   >>>bnupy2.bye()
+
+.. code:: python
+
+   from . import bnupy1
+   from . import bnupy2
+
+.. code:: text
+
+   >>>import bnupy
+   >>>dir()
+   >>>bnupy.bnupy2.bye()
 
 让我们这样设想：你想创建一个名为“world”的包，其中还包含着
 “asia”、“africa”等其它子包，同时这些子包都包含了诸如“india”、
@@ -338,11 +444,172 @@ Python 表明这一文件夹是特别的，因为其包含了 Python 模块。
                    - bar.py
 
 包是一种能够方便地分层组织模块的方式.你将在
-\ :doc:`标准库 <./16.standrad_library>  `
+\ :doc:`标准库 <./16.standrad_library>`\
 中看到许多有关于此的实例。
+
+包管理工具conda
+----------------
+
+conda是包及其依赖项和环境的管理工具。
+
+▪ 适用语言：Python, R, Ruby, Lua, Scala, Java, JavaScript, C/C++, FORTRAN。
+
+▪ 适用平台：Windows, macOS, Linux
+
+▪ 用途：
+
+① 快速安装、运行和升级包及其依赖项。
+
+② 在计算机中便捷地创建、保存、加载和切换环境。
+
+    如果你需要的包要求不同版本的Python，你无需切换到不同的环境，因为conda同样是一个环境管理器。仅需要几条命令，你可以创建一个完全独立的环境来运行不同的Python版本，同时继续在你常规的环境中使用你常用的Python版本。——Conda官方网站
+
+▪ conda为Python项目而创造，但可适用于上述的多种语言。
+
+▪ conda包和环境管理器包含于Anaconda的所有版本当中。
+
+以下是conda常用的命令。
+
+.. code:: python
+
+   conda--help #查询命令
+   conda--version #查看版本
+   conda install/uninstall numpy #安装库numpy
+   conda list #查询库
+
+模块应用
+------------
+
+以下我们举一些与天文相关的数据处理例子。
+
+下载 `python 下载页面  <http://202.112.85.96/python/ref>`__ 中所有文件,在Python中可使用html代码分析模块BeautifulSoup
+
+.. code:: python
+
+   import urllib.request
+   url= 'http://202.112.85.96/python/ref'
+   response = urllib.request.urlopen(url)
+   html = response.read()
+   #print(html)
+   from bs4 import BeautifulSoup as bs
+   soup = bs(html, 'html.parser')
+   links = soup.findAll('a')
+   # print(links)
+   for a  in   links:
+      print(url+a['href'])
+      if  "jpg" in a[ 'href']:
+         urllib.request.urlretrieve(url+a['href'], a['href'])
+
+使用python进行图像处理
+
+在数字图像处理中，使用若干个 ``m*n`` 矩阵代表 ``m*n`` 像素的图像。如果是灰度图像则是2维矩阵，
+彩色图像则是3个二维矩阵合成的三维矩阵，每个矩阵分别由图像的RGB值之一或者色调、饱和度和明度三个值组成，
+矩阵元素范围为0-255的整数。
+
+图像处理
+
+.. code:: python
+
+   import matplotlib.pyplot as plt
+   img = plt.imread('BNULogo.jpg')
+   img_s= img[::2,::2]
+   plt.imsave("logo_sml.png", img_s)
+   img_c= img[   400:600 ,400:600 ]
+   plt.imsave("logo_crop.png", img_c)
+   plt.show()
+
+|image01|
+
+|image02|
+
+.. code:: python
+
+   import numpy as np
+   import matplotlib.pyplot as plt
+   comb = np.zeros([992,1280,3])
+   fname= "opo0907h"
+   for i in range(3):
+      img = plt.imread(fname+"_" +str(i)+'.jpg')
+      print(i,img.shape)
+      comb[:,:,i] = img/255.
+   plt.imshow(comb)
+   plt.show()
+   plt.imsave(fname+"_comb.jpg", comb)
+
+.. code:: text
+
+   0 (992, 1280)
+   1 (992, 1280)
+   2 (992, 1280)
+
+|image03|
+
+滤镜特效（Lomo）:更改图片蓝值
+
+.. code:: python
+
+   import numpy as np
+   import matplotlib.pyplot as plt
+   #读取原始图像
+   img=plt.imread('IMG_1556_c.jpg')#returnRGB
+   #获取图像行和列
+   rows,cols=img.shape[:2]
+   B=np.sqrt(img[:,:,2])*12
+   B[B>255]=255
+   G=img[:,:,1];R=img[:,:,0]
+   img_f=np.stack((R,G,B),axis=2)
+   img_f=img_f.astype('uint8')
+   #~print(img_f[:3,:3,:])
+   plt.imsave('IMG_1556_r.png', img_f)
+
+|image04|
+
+.. code:: python
+
+   import os
+   import numpy as np
+   import matplotlib.pyplot as plt
+   from PIL import Image
+   im=Image.open(os.path.join(str(os.getcwd())+'/'+"BNULogo.jpg"))
+   print(im.size)
+   im2=im.resize((300,300),Image.ANTIALIAS)
+   im2.save("bnu_logo_scaled.jpg",quality=90)
+   im3=im.crop((400,400,600,600))
+   im3.save("bnu_logo_croped.jpg")
+   im4=im.rotate(45)
+   plt.imshow(im4)
+   plt.show()
+
+|image05|
+
+|image06|
+
+验证码
+
+.. code:: python
+
+   from PIL import Image, ImageDraw
+   import pylab as plt
+   nimg= Image.new('RGB',(60,30),'red')
+   draw = ImageDraw.Draw(nimg)
+   draw.text((10,10 ),'1 2 3')
+   plt.imshow(nimg)
+   plt.show()
+
+|image07|
+
+
 
 总结
 ----
 
 如同函数是程序中的可重用部分那般，模块是一种可重用的程序。包是用以组织模块的另一种层次结构。Python
 所附带的标准库就是这样一组有关包与模块的例子。
+
+.. |image01| image:: ../pic/09.modules/logo_sml.png
+.. |image02| image:: ../pic/09.modules/logo_crop.png
+.. |image03| image:: ../pic/09.modules/opo0907h_comb.jpg
+.. |image04| image:: ../pic/09.modules/IMG_1556_r.png
+.. |image05| image:: ../pic/09.modules/bnu_logo_scaled.jpg
+.. |image06| image:: ../pic/09.modules/bnu_logo_croped.jpg
+.. |image07| image:: ../pic/09.modules/captcha.png
