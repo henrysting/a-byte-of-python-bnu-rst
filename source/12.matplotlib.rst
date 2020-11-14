@@ -354,7 +354,7 @@ colormap
 mplot3d 函数
 ~~~~~~~~~~~~
 
-.. code:: txt
+.. code:: text
 
    plot3D：三维控件绘图
    plot_surface： 三维网格曲面

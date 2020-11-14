@@ -99,7 +99,7 @@ Python 脚本。
      adding: Users/swa/notes/blah3.txt (stored 0%)
    Successful backup to /Users/swa/backup/20140328084844.zip
 
-现在，我们正处于_测试（Testing）_阶段，在这一阶段我们测试我们的程序是否能正常工作。如果其行为不符合我们的预期，那么我们需要对我们的程序进行
+现在，我们正处于测试（Testing）阶段，在这一阶段我们测试我们的程序是否能正常工作。如果其行为不符合我们的预期，那么我们需要对我们的程序进行
 *Debug* 工作，也就是说，移除程序中的 *Bug*\ （错误）。
 
 如果上面的程序不能够正常工作，复制打印在 ``Zip command is``
