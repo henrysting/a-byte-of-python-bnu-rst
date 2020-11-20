@@ -66,5 +66,14 @@ html_static_path = ['/home/user/ywc/github/a-byte-of-python-bnu-rst/build']
 latex_engine = 'xelatex'
 latex_use_xindy = False
 latex_elements = {
-    'preamble': '\\usepackage[UTF8]{ctex}\n',
+    'preamble': '''
+\\usepackage{xeCJK}
+\\usepackage{indentfirst}
+\\setlength{\\parindent}{2em}
+\\setCJKmainfont{Noto Serif CJK SC}
+\\setCJKmonofont[Scale=0.9]{Noto Sans Mono CJK SC}
+\\setCJKfamilyfont{song}{Noto Sans CJK SC}
+\\setCJKfamilyfont{sf}{Noto Sans CJK SC}
+'''
+
 }

@@ -27,11 +27,9 @@
     扩展：绘图模块 matplotlib <12.matplotlib.rst>
     扩展：数据处理模块 pandas <pandas.rst>
     扩展：GUI编程<GUI.rst>
-    进阶：解决问题 <14.advance.rst>
     进阶：错误和异常 <15.exception.rst>
     进阶：额外特性 <17.more.rst>
     进阶：面向对象编程 <13.object_oriented_programming.rst>
-    迈出下一步 <18.next.rst>
 
 索引
 ==================
