@@ -335,7 +335,7 @@ Python 程序中使用这一模块。
 可以访问 ``str``\ （String，字符串）类的属性。
 
 同时，还有一个
-```vars()`` `<http://docs.python.org/3/library/functions.html#vars>`__
+`vars() <http://docs.python.org/3/library/functions.html#vars>`__
 函数也可以返回给你这些值的属性，但只是可能，它并不能针对所有类都能正常工作。
 
 **如果你对这个函数有疑问，可以通过help(包名.函数名)的方式查看帮助**

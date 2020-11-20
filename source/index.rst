@@ -26,6 +26,7 @@
     扩展：科学计算 numpy和scipy <11.numpy_and_scipy.rst>
     扩展：绘图模块 matplotlib <12.matplotlib.rst>
     扩展：数据处理模块 pandas <pandas.rst>
+    扩展：GUI编程<GUI.rst>
     进阶：解决问题 <14.advance.rst>
     进阶：错误和异常 <15.exception.rst>
     进阶：额外特性 <17.more.rst>
