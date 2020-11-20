@@ -245,7 +245,7 @@ matplotlibs后端
 根据输入参数画图
 ~~~~~~~~~~~~~~~~
 
-代码参考`http://202.112.85.96/wiki/doku.php/python;example`_
+代码参考 `网址 <http://202.112.85.96/wiki/doku.php/python;example>`_
 
 .. code:: python
 
