@@ -216,7 +216,7 @@ matplotlibs后端
 ~~~~~~~~~~~~~~
 
 .. list-table:: matplotlib
-    ：widths: 15 20 30
+    list：
     :header-rows: 1
 
     * - 后端
@@ -342,7 +342,7 @@ matplotlibs后端
 我们也可以选择其他打包工具
 
 .. list-table:: 打包工具
-    ：widths: 15 20 30
+    list：
     :header-rows: 1
 
     * - Solution
