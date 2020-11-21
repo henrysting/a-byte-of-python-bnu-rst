@@ -73,10 +73,3 @@ plt.imshow(nimg)
 plt.show()
 
 
-random.sample('abcdefghij',3)  
-img = Image.fromarray(back,'RGB')
-draw2 = ImageDraw.Draw(img)
-draw2.point([x, y], fill='red')
-draw2.line((x1,y1,x2,y2),fill='red')
-plt.imshow(img)
-plt.show()

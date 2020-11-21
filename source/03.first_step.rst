@@ -209,6 +209,8 @@ Anaconda中已经包含了Jupyter，不需要安装额外的软件。
 
 .. figure:: ../pic/03.IDE/Jupyter03.png
 
+注意：显示图像需要在使文件第一句话为JUPYTER内置魔法函数 ``%matplotlib inline``
+
 Jupyter笔记是以单元格的形式来组织的，
 
 .. figure:: ../pic/03.IDE/Jupyter04.png
@@ -216,6 +218,40 @@ Jupyter笔记是以单元格的形式来组织的，
 单元格还有幻灯片、附件、标签等属性，可以根据需要灵活定制。
 
 .. figure:: ../pic/03.IDE/Jupyter05.png
+
+在jupyter中，我们可以使用Markdown语法来做笔记。Markdown是一种轻量级的、易于学习的标记语言，
+用于格式化纯文本。
+
+.. code:: text
+
+   # 第一个Jupyter笔记
+   ## 这是二级标题
+   这是本*Python课程*学习的第一个*Jupyter*笔记示例。
+   ~~你可以通过本笔记迅速掌握python语言。~~
+
+   >Lifeisshort,you need Python
+   
+   下面演示了对html代码的支持：
+   <ahref="http://202.112.85.96/python">Python课程资源</a>
+
+.. figure:: ../pic/03.IDE/markdown.png
+
+如果我们想在单元格内插入公式，那么需要使用LATEX语法。
+
+在JUPYTER中新建标签类单元格并键入以下内容：
+
+.. code:: text
+
+Latex语法
+
+   当前行内插入公式：$\int_0^{+\infty}x^2dx$
+
+   下一行插入公式,黑体辐射公式：
+   $$I_{\lambda}(\lambda,T)=\frac{2hc^2}{\lambda^{5}}\frac{1}{e^{\frac{hc}{\lambda kT}}-1}$$
+
+点击单元格下方的运行按钮，得到结果：
+
+.. figure:: ../pic/03.IDE/latex.png
 
 Spyder
 ~~~~~~
