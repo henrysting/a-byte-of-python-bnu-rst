@@ -1,16 +1,18 @@
 扩展：绘图模块 matplotlib
 ============================
 
-图形相关模块
-------------
 
-Matplotlib：基于数值计算模块Numeric及Numarray，克隆了许多Matlab中的函数，帮助用户轻松地获得高质量的二维图形。
+Matplotlib基于数值计算模块Numpy，克隆了许多Matlab中的函数，能够帮助用户轻松地获得高质量的二维图形。
+Matplotlib模块支持的图表类型非常之多，几乎能胜任任何绘图任务。
+但对于特定数据，选取合适的图表类型来表达数据的内涵非常重要。
+为了方便科学计算和数据分析的初学者，我们这里给出一个简单的示意图来告诉大家如何选取合适的图表类型。
 
-PIL(Python Imaging Library)：支持各种图片文件格式，能进行图形格式的转换、显示，以及图形的放大、缩小和旋转等处理。
-
-Visual：是Python的一个简单易用的3D图形库，使用它可以快速创建3D场景、动画。
+|image3|
 
 下面我们来通过实际的例子来学习matplotlib绘图模块。
+
+二维图像
+------------
 
 范例：绘制函数
 
@@ -34,36 +36,34 @@ Visual：是Python的一个简单易用的3D图形库，使用它可以快速创
 
 Plot参数
 ~~~~~~~~
+plot 命令中包含丰富的选项，可以灵活的调节数据点和连线的各种属性。
 
-.. code:: python
-
-   #alpha : float
-   #color or c : any matplotlib color
-   #label : any string , 图注名称
-   #linestyle or ls : [ '-' | '--' | '-.' | ':' | 'steps' | ...]
-   #linewidth or lw: float value (points, 0.3527mm )
-   #marker [ '+' | ',' | '.' | '1' | '2' | '3' | '4' ]
-   #markersize or ms : float
-   #zorder: any number 叠放顺序
+-   **alpha** : float
+-   **color or c**: any matplotlib color
+-   **label** : any string , 图注名称
+-   **linestyle or ls**: [ '-' | '--' | '-.' | ':' | 'steps' | ...]
+-   **linewidth or lw**: float value (points, 0.3527mm )
+-   **marker** [ '+' | ',' | '.' | '1' | '2' | '3' | '4' ]
+-   **markersize or ms** : float
+-   **zorder**: any number 叠放顺序
 
 颜色
 ~~~~
+matplotlib 包含8种基本颜色，可以用单个字母表示：
+
+*  蓝色： 'b' (blue)
+*  绿色： 'g' (green)
+*  红色： 'r' (red)
+*  青色： 'c' (cyan)
+*  洋红： 'm' (magenta)
+*  黄色： 'y' (yellow)
+*  黑色： 'k' (black)
+*  白色： 'w' (white)
+
+也可以用数字表示灰度，如 0.75 ([0,1]内任意浮点数)。
+如果需要更多颜色，还可以采用RGB表示法： 由红色、绿色和蓝色的值组成的十六进制符号来定义，如 '#2F4F4F' 或 (0.18,0.31,0.31)
 
 |image1|
-
-.. code:: python
-
-   #蓝色： 'b' (blue)
-   #绿色： 'g' (green)
-   #红色： 'r' (red)
-   #青色： 'c' (cyan)
-   #洋红： 'm' (magenta)
-   #黄色： 'y' (yellow)
-   #黑色： 'k' (black)
-   #白色： 'w' (white)
-
-   #灰度表示： e.g. 0.75 ([0,1]内任意浮点数)
-   #RGB表示法： 由红色、绿色和蓝色的值组成的十六进制符号来定义 e.g. '#2F4F4F' 或 (0.18,0.31,0.31)
 
 坐标轴定制
 ~~~~~~~~~~
@@ -109,12 +109,6 @@ Plot参数
 
 |image2|
 
-图表类型
-~~~~~~~~
-
-matplotlib模块支持的图表类型非常之多，几乎能胜任任何绘图任务。但对于特定数据，选取合适的图表类型来表达数据的内涵非常重要。为了方便科学计算和数据分析的初学者，我们这里给出一个简单的示意图来告诉大家如何选取合适的图表类型。
-
-|image3|
 
 直方图
 ~~~~~~
@@ -264,7 +258,7 @@ colormap
    pl.cm.hot(0.5, 0.5)
 
 三维作图
-~~~~~~~~
+---------
 
 .. code:: python
 
@@ -411,6 +405,10 @@ mplot3d 函数
 
 |image13|
 
+
+动画绘制
+-------------
+
 动画模块 animation
 ~~~~~~~~~~~~~~~~~~
 
@@ -429,10 +427,10 @@ mplot3d 函数
    ani.FuncAnimation(fig, animate, np.arange(1, 200), interval=25, blit=True)
    plt.show()
 
-
-pylab实时动画
--------------
-
+ 
+ 实时动画
+ ~~~~~~~~~
+ 
 .. code:: python
 
    import pylab as pl
@@ -492,6 +490,7 @@ pylab实时动画
 
 .. |image0| image:: ../pic/matplotlib/figure_1.png
 .. |image1| image:: ../pic/matplotlib/figure_2.png
+   :width: 400 px
 .. |image2| image:: ../pic/matplotlib/figure_3.png
 .. |image3| image:: ../pic/matplotlib/figure_4.png
 .. |image4| image:: ../pic/matplotlib/figure_5.png

@@ -7,7 +7,7 @@
 
 你可能已经猜到了，这是通过控制流语句来实现的。在 Python 中有三种控制流语句——\ ``if`` ``for`` 和 ``while``\ 。
 
-所有控制流语句分为判断部分，和非判断部分，比如：
+所有控制流语句分为判断部分和非判断部分，比如：
 
 .. code:: python
 
@@ -27,12 +27,12 @@
        print('No, it is a little lower than that')
        # 你必须通过猜测一个大于（>）设置数的数字来到达这里。
 
-**这里有if,elif,else,或者for的语句是判断部分，判断分支的方向，或者循环是否应该结束。
-判断部分结尾一定要用冒号结尾，而且需要使用英文标点。。否则会出现错误：**
-**``SyntaxError: invalid syntax``**
+这里有if,elif,else,或者for的语句是判断部分，判断分支的方向，或者循环是否应该结束。
+判断部分结尾一定要用冒号结尾，而且需要使用英文标点。。否则会出现错误：
+``SyntaxError: invalid syntax``
 
-**非判断部分，同一层分支（或循环）需要使用相同个数的 ``tab`` 制表符或者四个空格来区分。不要混用tab或者空格，否则会出现错误：**
-**`` IndentationError: unexpected indent``**
+非判断部分，同一层分支（或循环）需要使用相同个数的 ``tab`` 制表符或者四个空格来区分。不要混用tab或者空格，否则会出现错误：
+`` IndentationError: unexpected indent``
 
 ``if`` 语句
 -----------
@@ -68,7 +68,7 @@
 
 输出：
 
-.. code:: text
+.. code:: console
 
    $ python if.py
    Enter an integer : 50
@@ -178,7 +178,7 @@ C/C++
 
 输出：
 
-.. code:: text
+.. code:: console
 
    $ python while.py
    Enter an integer : 50
@@ -234,7 +234,7 @@ C/C++
 
 输出：
 
-.. code:: text
+.. code:: console
 
    $ python for.py
    1
@@ -253,10 +253,10 @@ C/C++
 将会返回一个数字序列，从第一个数字开始，至第二个数字结束。举个例子，\ ``range(1,5)`` 
 将输出序列 ``[1, 2, 3, 4]`` \ 。在默认情况下，\ ``range`` 将会以 1 逐步递增。如果我们向 ``range``
 提供第三个数字，则这个数字将成为逐步递增的加数。同样举个例子来说明，\ ``range(1,5,2)``
-将会输出 ``[1, 3]``\ 。要记住这一序列扩展_直到_第二个数字，也就是说，它_不会_包括第二个数字在内。
+将会输出 ``[1, 3]``\ 。要记住这一序列扩展 *直到* 第二个数字，也就是说，它 *不会* 包括第二个数字在内。
 
 另外需要注意的是，\ ``range()``
-每次只会生成一个数字，如果你希望获得完整的数字列表，要在使用 ``range()``
+在python3中是一个数字序列对象，如果你希望获得完整的数字列表，要在使用 ``range()``
 时调用 ``list()``\ 。例如下面这样：\ ``list(range(5))`` ，它将会返回
 ``[0, 1, 2, 3, 4]``\ 。有关列表的详细解释将会在
 \ :doc:`《数据结构》一章 <./07.data_structures>` \ 呈现。
@@ -292,7 +292,7 @@ C/C++
 --------------
 
 ``break``
-语句用以_中断_（Break）循环语句，也就是中止循环语句的执行，即使循环条件没有变更为
+语句用以 *中断* （Break）循环语句，也就是中止循环语句的执行，即使循环条件没有变更为
 ``False``\ ，或队列中的项目尚未完全迭代依旧如此。
 
 有一点需要尤其注意，如果你 *中断* 了一个 ``for`` 或 ``while``
@@ -311,7 +311,7 @@ C/C++
 
 输出：
 
-.. code:: text
+.. code:: console
 
    $ python break.py
    Enter something : Programming is fun
@@ -334,17 +334,6 @@ C/C++
 输入字符串的长度可以通过内置的 ``len`` 函数来找到。
 
 记住，\ ``break`` 语句同样可以适用于 ``for`` 循环。
-
-**Swaroop 的诗意 Python**
-
-我所使用的输入内容是一首我所写的小诗：
-
-.. code:: text
-
-   Programming is fun
-   When the work is done
-   if you wanna make your work also fun:
-       use Python!
 
 .. _continue-statement:
 
@@ -370,7 +359,7 @@ C/C++
 
 输出：
 
-.. code:: text
+.. code:: console
 
    $ python continue.py
    Enter something : a
@@ -404,9 +393,9 @@ C/C++
 2.求以下方程的数值解：
 
 代数方程（包含加、减、乘、除、乘方、开方六则运算的方程）：
-            x^5=3x
+            x \ :sup:`5` = 3x
 超越方程（包含指数、对数、三角函数等超越函数）：
-         2^x=3x
+         2 \ :sup:`x` = 3x
 
 |image0|
 

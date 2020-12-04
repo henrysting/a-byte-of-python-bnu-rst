@@ -1,30 +1,21 @@
-扩展：科学计算 numpy和scipy
+扩展：科学计算 numpy
 ==============================
 
 科学计算常用模块
 
--  *Numpy：Arrays manipulation library
-   科学计算的必装模块，几乎所有的其他科学模块都依赖于它*
--  *Scipy：扩展的科学计算模块*
--  *PyGSL：C/C++语言中著名的科学计算函数库GNU Scientific
-   Library(GSL)的python版*
--  *Matplotlib：高质量的2D作图模块，足以替代GNUPlot*
--  *Mayavi：强大的三维作图模块，属于EPD公司套件的一部分（注意：此模块支持Python2，官方未支持Python3）*
--  *Sympy：符号计算模块*
--  *StatLib：统计学工具箱*
--  *Escript/Finley：偏微分方程求解*
--  *Parallel Python：并行计算模块*
+-  **Numpy**：Arrays manipulation library
+   科学计算的必装模块，几乎所有的其他科学模块都依赖于它
+-  **Scipy**：扩展的科学计算模块
+-  **PyGSL**：C/C++语言中著名的科学计算函数库GNU Scientific Library(GSL)的python版
+-  **Sympy**：符号计算模块
+-  **StatLib**：统计学工具箱
+-  **Escript/Finley**：偏微分方程求解
+-  **Parallel Python**：并行计算模块
 
-下面我们来详细介绍其中的numpy和scipy模块。
-
-Numpy模块简介
--------------
 
 Numpy是Python的扩展模块，提供了矩阵、线性代数、傅里叶变换等的解决方法。
 NumPy包含：N维矩阵对象、线性代数运算功能、傅里叶变换、Fortran代码集成的工具、C++代码集成的工具。
 
-Scipy模块简介
--------------
 
 SciPy是基于Numpy构建的一个集成了多种数学算法和方便的函数的Python模块。
 SciPy的子模块需要单独import。
@@ -150,10 +141,9 @@ argsort函数返回数组值从小到大的索引
    (2, 3)
    >>> a.dtype 
    dtype('int32')
-   分别试试a.sum() a.min() a.max() a.mean()
-   >> a.reshape(3,2) #转置a.T
-   >> a.ravel() #展开数组
-   >> a.repeat(2,axis=0) #复制元素
+   >>> a.reshape(3,2)      # 改变数组维度
+   >>> a.ravel()           # 展开数组
+   >>> a.repeat(2,axis=0)  # 复制元素
 
 数组合并
 --------
@@ -195,11 +185,15 @@ argsort函数返回数组值从小到大的索引
 
 既然更够存储数据，那一定也有读取之前已经存储的数据的方法。函数的格式如下：
 
-.. code:: python
+.. code:: tex
 
-   numpy.loadtxt(fname, dtype=<type 'float'>,comments='#', delimiter=None,converters=None, skiprows=0, usecols=None,unpack=False, ndmin=0)
+   numpy.loadtxt(fname, dtype=<type 'float'>,comments='#', delimiter=None,
+           converters=None, skiprows=0, usecols=None,unpack=False, ndmin=0)
 
    让我们来读取刚才已经存储的数据
+   
+.. code:: python
+
    >>> data = np.loadtxt('test.out', dtype = float)
    >>> data = np.loadtxt('test.out', usecols=[1])
 
@@ -207,6 +201,7 @@ argsort函数返回数组值从小到大的索引
 --------------
 
 Python本身其实自带math库以用于一般的数学计算，Numpy中的函数是针对数组设计的，且更为快速和强大，这里我们来弄清楚二者的具体区别。
+将下面的代码保存为脚本并执行。
 
 .. code:: python
 

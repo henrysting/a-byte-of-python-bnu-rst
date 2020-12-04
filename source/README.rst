@@ -7,19 +7,19 @@ Python）一书的基础上修订、补而来。
 《简明 Python 教程》是由 **Swaroop C H** 编写，旨在介绍 Python 语言的开源图书。2005 年，\ **沈洁元** 将本书的 1.20 版（基于python
 2.3）译为中文并公开发布，将本书的译名定为《简明 Python 教程》。2017年，\ **漠伦** 根据原书 4.0 版（基于python 3.5）重新翻译，并沿用同样的译名。
 2018年，北师大天文系师生在本书4.08c 版的基础上进行了调整和修改，用作Python课程的参考资料。2020年9月将其由Gitbook转换为Sphinx格式，
-所有代码在3.7下测试通过。最近更新于2020年10月09日。
+所有代码在3.7下测试通过。最近更新于2020年12月05日。
 
 版本
 ----
 
--  英文原版： https://python.swaroopch.com/
-   （\ `英文版源文件 <https://github.com/swaroopch/byte-of-python>`__\ ）
--  沈洁元译本： http://woodpecker.org.cn/abyteofpython_cn/chinese/
-   （\ `沈洁元译本源文件 <https://github.com/onion7878/A-Byte-of-Python-CN>`__\ ）
+-  北师大天文系修改版：\ https://a-byte-of-python-bnu-rst.readthedocs.io/en/latest/\ （\ `天文系修改版源文件 <https://github.com/henrysting/a-byte-of-python-bnu-rst/>`__\ ）
 -  漠伦译本：
    https://legacy.gitbook.com/book/lenkimo/byte-of-python-chinese-edition/
    （\ `漠伦译本源文件 <https://github.com/LenKiMo/byte-of-python>`__\ ）
--  北师大天文系修改版：\ https://a-byte-of-python-bnu-rst.readthedocs.io/en/latest/\ （\ `天文系修改版源文件 <https://github.com/henrysting/a-byte-of-python-bnu-rst/>`__\ ）
+-  沈洁元译本： http://woodpecker.org.cn/abyteofpython_cn/chinese/
+   （\ `沈洁元译本源文件 <https://github.com/onion7878/A-Byte-of-Python-CN>`__\ ）
+-  英文原版： https://python.swaroopch.com/
+   （\ `英文版源文件 <https://github.com/swaroopch/byte-of-python>`__\ ）
 
 版权
 ----

@@ -20,16 +20,15 @@
     核心：控制流 <06.control.rst>
     核心：数据结构 <07.data_structures.rst>
     核心：函数 <08.functions.rst>
-    核心：模块 <09.modules.rst>
+    核心：模块 <09.modules.rst>    
     核心：输入输出 <10.io.rst>
     核心：标准库 <16.standrad_library.rst>
     扩展：科学计算 numpy和scipy <11.numpy_and_scipy.rst>
     扩展：绘图模块 matplotlib <12.matplotlib.rst>
     扩展：数据处理模块 pandas <pandas.rst>
-    扩展：GUI编程<GUI.rst>
     进阶：错误和异常 <15.exception.rst>
+    进阶：GUI编程<GUI.rst>
     进阶：额外特性 <17.more.rst>
-    进阶：面向对象编程 <13.object_oriented_programming.rst>
 
 索引
 ==================

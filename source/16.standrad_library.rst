@@ -18,37 +18,34 @@ Library）中包含了大量有用的模块，同时也是每个标准的 Python
 系统内置模块
 ------------
 
--  *os ： 对操作系统服务提供了可移植的（ portable）的接口。*
--  *sys： 包括跟python解析器和环境相关的变量和函数。*
--  *decimal：
+-  **os** ： 对操作系统服务提供了可移植的（ portable）的接口。
+-  **sys** ： 包括跟python解析器和环境相关的变量和函数。
+-  **decimal** ：
    python中的float使用双精度的二进制浮点编码来表示的，这种编码导致了小数不能被精确的表示，例如0.1实际上内存中为0.100000000000000001，还有3*0.1
    == 0.3
-   为False.decimal就是为了解决类似的问题的，拥有更高的精确度，能表示更大范围的数字，更精确地四舍五入。*
--  *math： 定义了标准的数学方法，例如cos(x),sin(x)等。*
--  *random： 随机数生成。*
--  *string： 包含大量处理字符串的函数。*
--  *io： 实现了各种IO形式和内置的open()函数。*
--  *datetime： 时间日期相关函数。*
--  *timeit： 计时函数，调试相关。*
--  *logging：
-   将一些调试（Debugging）信息或一些重要的信息储存在某个地方。*
+   为False.decimal就是为了解决类似的问题的，拥有更高的精确度，能表示更大范围的数字，更精确地四舍五入。
+-  **math** ： 定义了标准的数学方法，例如cos(x),sin(x)等。
+-  **random** ： 随机数生成。
+-  **io** ： 实现了各种IO形式和内置的open()函数。
+-  **datetime** ： 时间日期相关函数。
+-  **timeit** ： 计时函数，调试相关。
+-  **logging** ：
+   将一些调试（Debugging）信息或一些重要的信息储存在某个地方。
 
 下面我们来详细介绍几个标准库。
 
 ``OS`` 模块
 -----------
 
--  *os.name： 获取当前体系平台， Windows下返回"“nt”“，
-   Linux下返回”“posix”"。*
--  *os.linesep： 获取当前平台应用的行终止符。 Windows下返回"“/r/n”“，
-   Linux应用”“/n”"。*
--  *os.getcwd(): 获取当前工作目录，即当前python脚本工作的目录路径。*
--  *os.listdir(path)：返回指定目录下的所有文件和目录名。*
--  *os.path.split()：分离路径中的目录名和文件名。*
--  *os.path.exists()：检查路径是否存在。*
--  *os.path.isfile()： 判断是否为文件。*
+-  **os.name()**： 获取当前体系平台， Windows下返回"“nt”，Linux下返回”“posix”"。
+-  **os.linesep()**： 获取当前平台应用的行终止符。 Windows下返回"“/r/n”， Linux应用”“/n”。
+-  **os.getcwd()**: 获取当前工作目录，即当前python脚本工作的目录路径。
+-  **os.listdir(path)**：返回指定目录下的所有文件和目录名。
+-  **os.path.split()**：分离路径中的目录名和文件名。
+-  **os.path.exists()**：检查路径是否存在。
+-  **os.path.isfile()**： 判断是否为文件。
 
-从下面的例子我们可以使用os模块：
+可以通过下面的例子来测试os模块的有关函数：
 
 .. code:: python
 
@@ -83,14 +80,14 @@ Library）中包含了大量有用的模块，同时也是每个标准的 Python
 
 除此之外，\ ``sys`` 模块还有以下功能：
 
--  *sys.argv 获取命令行传入参数。*
+-  **sys.argv** 获取命令行传入参数。
 
    – sys.argv[0] 为脚本名， sys.argv[1] 为第一个参数
 
--  *sys.getdefaultencoding(): 获取当前终端编码，一般默认为ascii。*
--  *sys.getfilesystemencoding(): 获取文件系统编码，
-   Windows下返回"“mbcs”“， mac下返回”“utf-8”"。*
--  *sys.path: 命令搜索路径。*
+-  **sys.getdefaultencoding()**: 获取当前终端编码，一般默认为ascii。
+-  **sys.getfilesystemencoding()**: 获取文件系统编码，
+   Windows下返回"“mbcs”“， mac下返回”“utf-8”"。
+-  **sys.path**: 命令搜索路径。
 
 ``decimal`` 模块
 ----------------
@@ -128,7 +125,7 @@ Python中浮点数默认提供16位精度，无法精确存储十进制数。十
 ``math`` 数学模块
 -----------------
 
-Python内置的常规数学计算模块，满足一般的计算需求。
+Python内置的常规数学计算模块，满足一般的计算需求。复数运算可使用 cmath 模块。
 
 .. code:: python
 
@@ -138,9 +135,8 @@ Python内置的常规数学计算模块，满足一般的计算需求。
    >>> math.sin(2*math.pi/180)
    >>> math.fmod(9.8,4.0)
 
--  *hypot(x,y) 从原点(0,0)到(x,y)的直线距离。*
--  *radians(x) 角度数转弧度。*
--  *复数运算可使用 cmath 模块。*
+-  **hypot(x,y)** 从原点(0,0)到(x,y)的直线距离。
+-  **radians(x)** 角度数转弧度。
 
 ``random`` 模块
 ---------------
@@ -150,14 +146,14 @@ Python内置的常规数学计算模块，满足一般的计算需求。
 .. code:: python
 
    >>> import random
-   >>> random.randint(0,99) #随机整数
+   >>> random.randint(0,99)        #随机整数
    >>> random.randrange(0, 101, 2) #随机偶数
-   >>> random.random() #随机浮点数
-   >>> random.uniform(1, 10) #均匀分布
-   >>> random.choice('?abc&%^*f') #随机字符
+   >>> random.random()             #随机浮点数
+   >>> random.uniform(1, 10)       #均匀分布
+   >>> random.choice('?abc&%^*f')  #随机字符
    >>> random.sample('abcdefghij',3)
    >>> items = [1, 2, 3, 4, 5, 6]
-   >>> random.shuffle(items) #洗牌
+   >>> random.shuffle(items)       #洗牌
 
 ``datetime`` 模块
 -----------------
@@ -188,9 +184,9 @@ tzinfo：与时区有关的相关信息。
    >>> d = dtdt.now() - dtdt.strptime('2015/12/2020:56:30','%Y/%m/%d %H:%M:%S')
    >>> (d.days, d.seconds, d.microseconds)
 
--  *%a 星期的简写， %A 星期的全称*
--  *%b 月份的简写， %B 月份的全称*
--  *%I: 小时（ 12小时制）， %W 周数（星期一起算）*
+-  **%a** 星期的简写， %A 星期的全称
+-  **%b** 月份的简写， %B 月份的全称
+-  **%I** 小时（ 12小时制）， %W 周数（星期一起算）
 
 ``timeit`` 模块
 ---------------
@@ -245,7 +241,7 @@ tzinfo：与时区有关的相关信息。
 
 输出：
 
-.. code:: text
+.. code:: console
 
    $ python stdlib_logging.py
    Logging to /Users/swa/test.log
@@ -263,7 +259,7 @@ tzinfo：与时区有关的相关信息。
 我们使用了三款标准库中的模块——\ ``os``
 模块用以和操作系统交互，\ ``platform``
 模块用以获取平台——操作系统——的信息，\ ``logging``
-模块用来_记录（Log）_信息。
+模块用来 *记录（Log）* 信息。
 
 首先，我们通过检查 ``platform.platform()``
 返回的字符串来确认我们正在使用的操作系统（有关更多信息，请参阅\ ``import platform; help(platform)``\ ）。如果它是

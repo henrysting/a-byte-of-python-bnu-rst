@@ -4,7 +4,7 @@
 接下来我们通过尝试在 Python 中运行一个经典的“Hello
 World”程序，来了解如何编写、保存与运行 Python 程序。
 
-python程序有两种运行方式——使用交互式解释器或使用脚本。下面我们将学习这两种方法。
+Python程序有两种运行方式——使用交互式解释器或使用脚本。下面我们将学习这两种方法。
 
 终端（Terminal）
 ----------------
@@ -20,7 +20,7 @@ R），输入 cmd 并回车来实现。 然后在命令行中输入 ``python3`` 
 并按下回车键来打开 Python 提示符（Python Prompt）。
 也可以输入``ipython`` 进入增强版的命令行环境。
 Windows用户只要正确地设置了PATH变量，应该可以从命令行启动解释器。
-如果安装时没有将Python加到系统路径当中，则可以使用安装菜单中的 Anaconda
+如果安装时没有将Python加到系统路径当中，则需要修改环境变量，或者使用程序菜单中的 Anaconda
 Prompt 程序启动。
 
 Linux 或 MacOS系统
@@ -50,7 +50,7 @@ Python 提示符（Python Prompt）。
 软件的细节将会因为你使用的电脑而有所不同，但是从提示符（如 ``>>>``
 ）开始部分应该是相同的，不会受到操作系统的影响。
 
-.. code:: bash
+.. code:: console
 
    nightwing@halo:~$ python
    Python 3.7.3 (default, Mar 27 2019, 22:11:17) 
@@ -126,7 +126,7 @@ Visual Studio Code（VSCode）
 
 |image21|
  
-2.同意协定，点击确定
+2.同意协议，点击确定
 
 |image22|
 
@@ -175,7 +175,7 @@ Emacs
 -----------------
 如果需要更丰富的功能，如检查并提示错误，进行代码跟踪和调试，则需要使用集成开发环境(IDE)。常见的IDE包括：
 \ `Jupyter Notebook <https://jupyter.org/install>`__\ , \ `Spyder <https://www.spyder-ide.org/>`__\, \ `Pycharm <https://www.jetbrains.com/pycharm/>`__\等。其中Jupyter Notebook和Spyder都是Anaconda默认包含的工具，无需额外安装。
-\ **注意：在进行编辑之前，请确认你的代码使用英文字体。部分中文字体的字符"O"与"0"无法区分，而且某些符号编译器无法识别。**
+\ **注意：在进行编辑之前，请确认你的代码使用英文字体。部分中文字体的字符"O"与"0"无法区分，而且中文字符很容易导致解释器出错。**
 
 IDLE
 ~~~~
@@ -222,7 +222,7 @@ Jupyter笔记是以单元格的形式来组织的，
 在jupyter中，我们可以使用Markdown语法来做笔记。Markdown是一种轻量级的、易于学习的标记语言，
 用于格式化纯文本。
 
-.. code:: text
+.. code:: txt
 
    # 第一个Jupyter笔记
    ## 这是二级标题
@@ -352,7 +352,7 @@ Quickstart <https://www.jetbrains.com/pycharm-educational/quickstart/>`__\
 页面找到有关 PyCharm 的更多信息。
 
 
-Vscode
+VSCode
 ~~~~~~~
 
 使用方法同以上类似。先打开一个你想保存.py文件的文件夹，然后编辑并允许即可。需要注意的是你需要编辑.vscode文件夹下的launch.json才能使vscode按照一个python的文件运行它。
@@ -452,9 +452,9 @@ Python 程序：
 
 如果你得到了与上图类似的输出结果，那么恭喜你！——你已经成功运行了你的第一个
 Python
-程序。你亦已经成功穿过了学习编程的最困难的部分，也就是，开始编写你的第一个程序！
+程序。你也已经成功穿过了学习编程最困难的部分，也就是，编写你的第一个程序！
 
-如果你遭遇了什么错误，请确认是否已经_正确地_输入了上面所列出的内容，并尝试重新运行程序。要注意
+如果你遭遇了什么错误，请确认是否已经 **正确地** 输入了上面所列出的内容，并尝试重新运行程序。要注意
 Python 是区分大小写的，如 ``print`` 和 ``Print`` 是不同的——注意前者的 p
 是小写的，而后者的 P
 是大写的。此外，你需要确保每一行的第一个字符前面都没有任何空格或制表格——我们会在后面了解
@@ -464,7 +464,7 @@ Python 是区分大小写的，如 ``print`` 和 ``Print`` 是不同的——注
 
 Python 程序是由 *语句*
 所构成的。我们的第一个程序中只有一条语句。在这条语句中，我们调用
-``print`` *语句* 来搭配我们提供的文本”hello world“。
+``print`` 语句来搭配我们提供的文本”hello world“。
 
 
 

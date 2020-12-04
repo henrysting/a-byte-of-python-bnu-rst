@@ -9,8 +9,8 @@ anaconda是包管理工具，我们将在\ :doc:`第九章 <./09.modules>`\介�
 
 Anaconda的最新版本可在\ `其官网 <https://www.anaconda.com/products/individual>`__\  或 \ `清华镜像 <https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/>`__\ 下载。本讲义所用版本为Anaconda3 2019.10（其中包含Python 3.7.3）。
 
-在 Windows 中安装
------------------
+Windows 
+--------
 
 Anaconda的安装过程与Windows平台的其他软件的安装过程无异。具体安装流程如下：
 
@@ -30,7 +30,7 @@ Anaconda的安装过程与Windows平台的其他软件的安装过程无异。�
 
 |image3|
 
-第五步：此处需注意，在这一步中我们 ** 推荐勾选第一个选项 ** 。这一选项的作用是将Python添加到Windows系统的环境变量PATH中，这样就能在终端cmd中直接运行Python。虽然有提示不建议勾选，但是只要系统中只安装一个版本的Python就不会有什么影响。
+第五步：此处需注意，在这一步中我们 **推荐勾选第一个选项** 。这一选项的作用是将Python添加到Windows系统的环境变量PATH中，这样就能在终端cmd中直接运行Python。虽然有提示不建议勾选，但是只要系统中只安装一个版本的Python就不会有什么影响。
 
 |image4|
 
@@ -58,10 +58,9 @@ Notebook能够在浏览器里编辑Python的Notebook文件，能够实现交互�
 
 |image8|
 
-#installation
 
-在 GNU/Linux 下安装
----------------------------
+GNU/Linux
+-----------
 
 对于GNU/Linux用户，访问 https://www.anaconda.com/download/
 并下载最新版本的Anaconda
@@ -123,15 +122,20 @@ Navigator、Jupyter Notebook和Spyder都得在命令行中启动。
 
 注意：输出的内容取决于你安装的Anaconda Python的版本。
 
-在 macOS 下安装
---------------------
+MacOS 
+--------
 
 对于macOS用户，安装过程和Linux类似。通过按键 ``Command + Space``
 （以启动 Spotlight 搜索），输入 ``Terminal`` 并按下 ``Enter``
 键来启动终端程序。
 
-Windows 环境下的环境变量设置
---------------------------------------------
+
+环境变量设置
+--------------
+如果安装之后无法在终端启动python，说明python所在的路径没有被加入系统的环境变量当中。我们需要手工设置。
+
+Windows
+~~~~~~~~~~~
 
 当我们直接使用终端启动程序时，比如直接输入 ``Python`` 然后回车，或者导入一些包时，系统首先需要在一个特定路径搜索，这时候就需要环境变量。不同操作系统下设置环境变量的方法不一样。
 
@@ -148,8 +152,9 @@ Windows 环境下的环境变量设置
 3.点击确定退出
 
 
-Linux环境下的环境变量设置
------------------------------------
+
+Linux
+~~~~~~~
 
 假设安装在~/anaconda3下：
 
@@ -162,25 +167,29 @@ Linux环境下的环境变量设置
 |image20|
 
 
-模块管理器的安装
+模块管理器
 ------------------
 
-我们使用Anaconda最主要的目的是使用它进行模块(module)的管理,关于模块我们将在\ :doc:`第九章 <./09.modules>` \进行讨论。在使用import语句导入需要包含的模块之前，我们需要使用Anaconda或者pip这样的管理器进行安装。需要说明的是在Windows，Linux以及MacOS中执行安装模块的命令都是一样的。以numpy模块为例：
+对于Anaconda中没有包含的扩充模块可以通过模块管理器来安装。关于模块我们将在\ :doc:`第九章 <./09.modules>`\进行讨论。
+模块管理器主要有 ``pip`` 和 ``conda`` 两种，其中  ``pip`` 适合安装纯 Python 模块； ``conda``  则支持安装非Python语言的函数库。
+在Windows，Linux以及MacOS中执行安装模块的命令都是一样的。以numpy模块为例：
 
 
-Anaconda
+conda
+~~~~~~
 在终端中输入 ``conda install numpy`` 并按下 ``Enter`` 即可。类似的，输入 ``conda install -c conda-forge notebook`` 可以安装jupyter notebook.
 
 
 pip
+~~~~
 在终端中输入 ``pip install numpy`` 并按下 ``Enter`` 即可。
-在执行这条命令前请确认只安装了Python3.x，虽然我们可以设置同时安装python2.x对应的pip2与pip3，但是鉴于python2.x已经于2020年1月停止维护的事实，除非某些模块必须使用python2.x，否则我们不建议你这样做。具体请搜索 ```python pip2与pip3如何共存```。
+在执行这条命令前请确认只安装了Python3.x，虽然我们可以设置同时安装python2.x对应的pip2与pip3，但是鉴于python2.x已经于2020年1月停止维护，除非某些模块必须使用python2.x，否则我们不建议你这样做。具体请搜索 ```python pip2与pip3如何共存```。
 
 总结
 ----
 
 从现在起，我们将假定你已经在你的系统中安装了Anaconda
-Python，和对应的编辑器。接下来，我们将要撰写我们的第一个 Python 程序。
+Python，以及对应的编辑器。接下来，我们将要撰写我们的第一个 Python 程序。
 
 .. |image0| image:: ../pic/02/windows_1.png
 .. |image1| image:: ../pic/02/windows_2.png

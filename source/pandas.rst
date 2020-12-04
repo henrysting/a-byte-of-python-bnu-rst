@@ -1,49 +1,13 @@
 扩展：数据处理模块 pandas
 ============================
 
-数据相关模块
-------------
+Numpy主要处理结构化数据, 适合用于数据量较小并且比较规则的时候。
+Pandas能够更灵活、方便地处理大量一致性不好、需要清理的数据。
+Pandas是基于NumPy构建的, 支持 CSV，Excel，JSON, HTML, SQL，HDF5等多种数据格式。
+Panas包含两个主要数据结构：Series和DataFrame。下面我们分别来介绍。
 
-
-numpy主要处理结构化数据, 适合用于数据量较小并且比较规则的时候基于数值计算模块Numeric及Numarray。
-但是在面对不同数据类型时,我们需要一个新模块。
-
-pandas是这一章节的首选库。它含有使数据分析工作变得更快更简单的高级数据结构和操作工具。
-pandas是基于NumPy构建的,让以NumPy为中心的应用变得更加简单。
-先介绍一点背景。在2008年早期, 没有任何一个单独的工具能够满足工作上的全部需求：
-
-• 具备按轴自动或显式数据对齐功能的数据结构。这可以防止许多由于数据未对齐以及来自不同数据源(索引方式不同)的数据而导致的常见错误。
-
-• 集成时间序列功能。
-
-• 既能处理时间序列数据也能处理非时间序列数据的数据结构。
-
-• 数学运算和约简(比如对某个轴求和)可以根据不同的元数据(轴编号)执行。
-
-• 灵活处理缺失数据。
-
-• 合并及其他出现在常见数据库(例如基于SQL的)中的关系型运算。
-
-我希望能够在一个地方完成所有这些事情,最好是一种能进行通用软件开发的语言。Python是一门不错的候选语言, 但那时候它还没有一组能完全提供上述功能的数据结构和工具。
-在过去的4年中, pandas逐渐成长为一个非常大的库, 它所能解决的数据处理问题已经比我期望的要多得多了。
-但随着其范围的扩大, 它也逐渐背离了我最初所期望的简洁性和易用性。我希望你在读完本书之后, 也能像我一样认为它是一个不可或缺的工具。
-
-pandas的优势：
-
-• 支持 CSV，Excel，JSON, HTML, SQL，HDF5等众多数据格式
-
-• 数据清洗
-
-• 数据处理与合并
-
-• 数据可视化
-
-
-下面我们来通过实际的例子来学习pandas模块。要使用pandas,你首先就得熟悉它的两个主要数据结构：Series和DataFrame。
-虽然它们并不能解决所有问题，但它们为大多数应用提供了一种可靠的、易于使用的基础。
-
-一维数据表(Series)-创建
-------------------------
+一维数据表(Series)
+---------------------
 
 Series是一种类似干一维数组的对象,它由一组数据(各种NumPy数据类型以及一组与之相关的数据标签(即索引)组成。
 仅由一组数据,使用 ``pandas.Series`` 即可产生最简单的Series。
@@ -63,39 +27,34 @@ Series的字符串表现形式为:索引在左边,值在右边。由于我们没
 
 .. code:: python 
 
-    import pandas as pd
-    people = [3.3,1.3,14,13.5]
-    a = pd.Series(people)
-    print("The Series is:\n", a)
-    print("The values are: \n", a.values)
-    print("The index is?\n", a.index)
-    print(a[1])
-    print(a[:2])
-    country = ["USA","JP","CHN","IND"]
-    b = pd.Series(people,country)
-    print(b[1])
-    print(b["USA"])
-    print(b[:"CHN"])
-
-结果是：
-
-.. code:: text
-
+    >>> import pandas as pd
+    >>>  people = [3.3,1.3,14,13.5]
+    >>>  a = pd.Series(people)
+    >>>  print("The Series is:\n", a)
     The Series is:
     0     3.3
     1     1.3
     3    13.5
     dtype: float64
+    >>>  print("The values are: \n", a.values)
     The values are:
     [ 3.3  1.3 14.  13.5]
+    >>>  print("The index is?\n", a.index)
     The index is?
     RangeIndex(start=0, stop=4, step=1)
+    >>>  print(a[1])
     1.3
+    >>>  print(a[:2])
     0    3.3
     1    1.3
     dtype: float64
+    >>>  country = ["USA","JP","CHN","IND"]
+    >>>  b = pd.Series(people,country)
+    >>>  print(b[1])
     1.3
+    >>>  print(b["USA"])
     3.3
+    >>>  print(b[:"CHN"])
     USA     3.3
     JP      1.3
     CHN    14.0
@@ -105,25 +64,25 @@ Series的字符串表现形式为:索引在左边,值在右边。由于我们没
 
 .. code:: python 
 
-    import pandas as pd 
-    data = {"USA":3.3, "JP":1.3, "CH":14, "IN":13.5}
-    c = pd.Series(data)
-    print(c)
-    print(c["CH"])
-    d = pd.Series(data, index=["USA","CH"])
-    print(d)
-
-.. code:: text
-
+    >>> import pandas as pd 
+    >>> data = {"USA":3.3, "JP":1.3, "CH":14, "IN":13.5}
+    >>> c = pd.Series(data)
+    >>> print(c)
     USA     3.3
     JP      1.3
     CH     14.0
     IN     13.5
     dtype: float64
+    >>> print(c["CH"])
     14.0
+    >>> d = pd.Series(data, index=["USA","CH"])
+    >>> print(d)
     USA     3.3
     CH     14.0
     dtype: float64
+
+.. code:: text
+
 
 一维数据表(Series)-创建
 

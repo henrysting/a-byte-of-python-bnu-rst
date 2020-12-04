@@ -26,7 +26,7 @@
 
 输出：
 
-.. code:: text
+.. code:: console
 
    $ python module_using_sys.py we are arguments
    The command line arguments are:
@@ -37,7 +37,7 @@
 
 
    The PYTHONPATH is ['/tmp/py',
-   # many entries here, not shown here
+   # 内容过多，未全部显示
    '/Library/Python/2.7/site-packages',
    '/usr/local/lib/python2.7/site-packages']
 
@@ -48,19 +48,19 @@
 首先，我们通过 ``import`` 语句_导入 ``sys``
 模块。基本上，这句代码将转化为我们告诉 Python
 我们希望使用这一模块。 ``sys`` 模块包含了与 Python
-解释器及其环境相关的功能，也就是所谓的_系统_功能（_sys_tem）。
+解释器及其环境相关的功能，也就是所谓的 *系统* 功能（ *sys* tem）。
 
 当 Python 运行 ``import sys`` 这一语句时，它会开始寻找 ``sys``
 模块。在这一案例中，由于其是一个内置模块，因此 Python 知道在哪里找到它。
 
 如果它不是一个已编译好的模块，即用 Python 编写的模块，那么 Python
-解释器将从它的 ``sys.path`` 变量所提供的目录中进行搜索。如果找到了对应模块，则该模块中的语句将在开始运行，并_能够_为你所使用。在这里需要注意的是，初始化工作只需在我们_第一次_导入模块时完成。
+解释器将从它的 ``sys.path`` 变量所提供的目录中进行搜索。如果找到了对应模块，则该模块中的语句将在开始运行，并 *能够* 为你所使用。在这里需要注意的是，初始化工作只需在我们 *第一次* 导入模块时完成。
 
 ``sys`` 模块中的 ``argv`` 变量通过使用点号予以指明，也就是 ``sys.argv`` 这样的形式。它清晰地表明了这一名称是 ``sys``
 模块的一部分。这一处理方式的另一个优点是这个名称不会与你程序中的其它任何一个 ``argv`` 变量冲突。
 
-``sys.argv`` 变量是一系列字符串的_列表（List）（列表将在\ :doc:`后面的章节 <./07.data_structures>` \ 予以详细解释）。具体而言，\ ``sys.argv``
-包含了_命令行参数（Command Line Arguments）_这一列表，也就是使用命令行传递给你的程序的参数。
+``sys.argv`` 变量是一系列字符串的 *列表（List）*（列表将在\ :doc:`后面的章节 <./07.data_structures>` \ 予以详细解释）。具体而言，\ ``sys.argv``
+包含了 *命令行参数（Command Line Arguments）* 这一列表，也就是使用命令行传递给你的程序的参数。
 
 如果你正在使用一款 IDE 来编写并运行这些程序，请在程序菜单中寻找相关指定命令行参数的选项。
 
@@ -86,7 +86,7 @@
 ------------------------
 
 导入一个模块是一件代价高昂的事情，因此 Python
-引入了一些技巧使其能够更快速的完成。其中一种方式便是创建_按字节码编译的（Byte-Compiled）_文件，这一文件以
+引入了一些技巧使其能够更快速的完成。其中一种方式便是创建 *按字节码编译的（Byte-Compiled）* 文件，这一文件以
 ``.pyc`` 为其扩展名，是将 Python
 转换成中间形式的文件（还记得\ :doc:`基础：背景介绍  <./01.about_python>` \ 一章中介绍的
 Python 是如何工作的吗？）。这一 ``.pyc``
@@ -95,7 +95,7 @@ Python 是如何工作的吗？）。这一 ``.pyc``
 注意：这些 ``.pyc`` 文件通常会创建在与对应的 ``.py``
 文件所处的目录中。如果 Python
 没有相应的权限对这一目录进行写入文件的操作，那么 ``.pyc``
-文件将_不会_被创建。
+文件将 *不会* 被创建。
 
 .. _from-import-statement:
 
@@ -136,7 +136,7 @@ Python 是如何工作的吗？）。这一 ``.pyc``
 
 输出：
 
-.. code:: text
+.. code:: console
 
    $ python module_using_name.py
    This program is being run by itself
@@ -174,20 +174,20 @@ Python 程序同时也是一个模块,被其他模块导入。你只需要保证
       bye()
       print("Test pass!")
 
-.. code:: text
+.. code:: console
 
    D:>python bnupy.py 
    hello,world!
    bye,world!
    Test pass!
    
+   D:>python
    >>> import bnupy
    >>> dir()
    >>> bnupy.hello()
    hello,world!
    >>> bnupy.bye()
    bye,world!
-   >>> 
 
 案例（保存为 ``mymodule.py``\ ）：
 
@@ -216,7 +216,7 @@ Python 程序中使用这一模块。
 
 输出：
 
-.. code:: text
+.. code:: console
 
    $ python mymodule_demo.py
    Hi, this is mymodule speaking.
@@ -264,11 +264,11 @@ Python 程序中使用这一模块。
 
    **警告：**
    
-   要记住你应该避免使用 ``import *``这种形式，即  ``from mymodule import*`` 。
+   要记住你应该避免使用 ``import *`` 这种形式，即  ``from mymodule import *``  。因为不同的模块中可能包含相同的函数名。
 
    **Python 之禅**
 
-   Python 的一大指导原则是“明了胜过晦涩”。你可以通过在 Python 中运行
+   Python 的一大指导原则是“明了胜过晦涩”(Explicit is better than implicit)。你可以通过在 Python 中运行
    ``import this`` 来了解更多内容。
 
 .. _dir-function:
@@ -284,20 +284,17 @@ Python 程序中使用这一模块。
 
 案例：
 
-.. code:: text
+.. code:: python
 
-   $ python
    >>> import sys
 
-   # 给出 sys 模块中的属性名称
-   >>> dir(sys)
-   ['__displayhook__', '__doc__',
-   'argv', 'builtin_module_names',
-   'version', 'version_info']
+   
+   >>> dir(sys)             # 列出 sys 模块中的属性名称
+   ['__displayhook__', '__doc__', 'argv', 
+   'builtin_module_names', 'version', 'version_info']
    # 此处只展示部分条目
 
-   # 给出当前模块的属性名称
-   >>> dir()
+   >>> dir()                # 给出当前模块的属性名称
    ['__builtins__', '__doc__',
    '__name__', '__package__','sys']
 
@@ -307,8 +304,7 @@ Python 程序中使用这一模块。
    >>> dir()
    ['__builtins__', '__doc__', '__name__', '__package__', 'a']
 
-   # 删除或移除一个名称
-   >>> del a
+   >>> del a              # 删除或移除一个名称
 
    >>> dir()
    ['__builtins__', '__doc__', '__name__', '__package__']
@@ -328,10 +324,10 @@ Python 程序中使用这一模块。
 函数所处的内容中。
 
 关于 ``del``
-的一个小小提示——这一语句用于_删除_一个变量或名称，当这一语句运行后，在本例中即
+的一个小小提示——这一语句用于 *删除* 一个变量或名称，当这一语句运行后，在本例中即
 ``del a``\ ，你便不再能访问变量 ``a``——它将如同从未存在过一般。
 
-要注意到 ``dir()`` 函数能对_任何_对象工作。例如运行 ``dir(str)``
+要注意到 ``dir()`` 函数能对 *任何* 对象工作。例如运行 ``dir(str)``
 可以访问 ``str``\ （String，字符串）类的属性。
 
 同时，还有一个
@@ -351,7 +347,7 @@ Python 程序中使用这一模块。
 
 以下是几个常用的命令：
 
-.. code:: text
+.. code:: console
 
    where pip 查看pip路径
    pip -V 查看当前版本
@@ -374,7 +370,9 @@ Python 程序中使用这一模块。
 
 •包：py文件夹，包含多个py文件（模块）
 
-•创建一个文件夹bnupy，其中包含两个文件 ``bnupy1.py`` : 
+•创建一个文件夹bnupy，其中包含两个文件 
+
+``bnupy1.py`` : 
 
 .. code:: python
 
@@ -386,16 +384,18 @@ Python 程序中使用这一模块。
       
 ``bnupy2.py`` :
 
+.. code:: python
+
    def bye2 ():
       print("bye-bye,world!")
    if __name__=="__main__":
       bye2 ()
       print("Test pass!")
       
-.. code:: text
+.. code:: python
 
-   >>>import bnupy.bnupy1
-   >>>bnupy.bnupy1.hello1
+   >>> import bnupy.bnupy1
+   >>> bnupy.bnupy1.hello1
 
 包是指一个包含模块与一个特殊的 ``__init__.py`` 文件的文件夹，后者向
 Python 表明这一文件夹是特别的，因为其包含了 Python 模块。每当import的时候，就会自动执行里面的函数。
@@ -404,22 +404,22 @@ Python 表明这一文件夹是特别的，因为其包含了 Python 模块。�
 
    __all__ = ["bnupy1", "bnupy2"]  
 
-.. code:: text
+.. code:: python
 
-   >>>from bnupyimport *
-   >>>dir()
-   >>>bnupy2.bye()
+   >>> from bnupyimport *
+   >>> dir()
+   >>> bnupy2.bye()
 
 .. code:: python
 
    from . import bnupy1
    from . import bnupy2
 
-.. code:: text
+.. code:: python
 
-   >>>import bnupy
-   >>>dir()
-   >>>bnupy.bnupy2.bye()
+   >>> import bnupy
+   >>> dir()
+   >>> bnupy.bnupy2.bye()
 
 让我们这样设想：你想创建一个名为“world”的包，其中还包含着
 “asia”、“africa”等其它子包，同时这些子包都包含了诸如“india”、
@@ -450,39 +450,39 @@ Python 表明这一文件夹是特别的，因为其包含了 Python 模块。�
 包管理工具conda
 ----------------
 
-conda是包及其依赖项和环境的管理工具。
+conda是包及其依赖项和环境的管理工具。它是为Python项目而创造，但可适用于多种语言。
+conda包和环境管理器包含于Anaconda的所有版本当中。
 
-▪ 适用语言：Python, R, Ruby, Lua, Scala, Java, JavaScript, C/C++, FORTRAN。
 
-▪ 适用平台：Windows, macOS, Linux
+* 适用语言：Python, R, Ruby, Lua, Scala, Java, JavaScript, C/C++, FORTRAN。
 
-▪ 用途：
+* 适用平台：Windows, macOS, Linux
 
-① 快速安装、运行和升级包及其依赖项。
+* 用途：
 
-② 在计算机中便捷地创建、保存、加载和切换环境。
+# 快速安装、运行和升级包及其依赖项。
+
+# 在计算机中便捷地创建、保存、加载和切换环境。
 
     如果你需要的包要求不同版本的Python，你无需切换到不同的环境，因为conda同样是一个环境管理器。仅需要几条命令，你可以创建一个完全独立的环境来运行不同的Python版本，同时继续在你常规的环境中使用你常用的Python版本。——Conda官方网站
-
-▪ conda为Python项目而创造，但可适用于上述的多种语言。
-
-▪ conda包和环境管理器包含于Anaconda的所有版本当中。
 
 以下是conda常用的命令。
 
 .. code:: python
 
-   conda--help #查询命令
-   conda--version #查看版本
-   conda install/uninstall numpy #安装库numpy
-   conda list #查询库
+   conda--help           # 查询命令
+   conda--version        # 查看版本
+   conda install numpy   # 安装numpy库
+   conda uninstall numpy # 卸载numpy库
+   conda list            # 列出已有库
 
 模块应用
 ------------
 
-以下我们举一些与天文相关的数据处理例子。
+以下我们举一些使用额外功能包的例子。
 
-下载 `python 下载页面  <http://202.112.85.96/python/ref>`__ 中所有文件,在Python中可使用html代码分析模块BeautifulSoup
+下载 `特定页面  <http://202.112.85.96/python/ref>`__ 中的所有文件,
+在Python中可使用html代码分析模块BeautifulSoup提取超链接。
 
 .. code:: python
 
@@ -495,7 +495,7 @@ conda是包及其依赖项和环境的管理工具。
    soup = bs(html, 'html.parser')
    links = soup.findAll('a')
    # print(links)
-   for a  in   links:
+   for a in links:
       print(url+a['href'])
       if  "jpg" in a[ 'href']:
          urllib.request.urlretrieve(url+a['href'], a['href'])
@@ -514,12 +514,15 @@ conda是包及其依赖项和环境的管理工具。
    img = plt.imread('BNULogo.jpg')
    img_s= img[::2,::2]
    plt.imsave("logo_sml.png", img_s)
-   img_c= img[   400:600 ,400:600 ]
-   plt.imsave("logo_crop.png", img_c)
-   plt.show()
 
 |image01|
 
+.. code:: python
+
+   img_c= img[400:600 ,400:600]
+   plt.imsave("logo_crop.png", img_c)
+   plt.show()
+   
 |image02|
 
 .. code:: python
@@ -544,7 +547,7 @@ conda是包及其依赖项和环境的管理工具。
 
 |image03|
 
-滤镜特效（Lomo）:更改图片蓝值
+滤镜特效（Lomo）:
 
 .. code:: python
 
@@ -574,17 +577,20 @@ conda是包及其依赖项和环境的管理工具。
    print(im.size)
    im2=im.resize((300,300),Image.ANTIALIAS)
    im2.save("bnu_logo_scaled.jpg",quality=90)
+   
+|image05|
+
+.. code:: python
+
    im3=im.crop((400,400,600,600))
    im3.save("bnu_logo_croped.jpg")
    im4=im.rotate(45)
    plt.imshow(im4)
    plt.show()
 
-|image05|
-
 |image06|
 
-验证码
+验证码生成
 
 .. code:: python
 
