@@ -22,7 +22,7 @@ copyright = '2020, BNU-Astro'
 author = 'BNU-Astro'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1'
+release = '1.0'
 
 master_doc = 'index'
 

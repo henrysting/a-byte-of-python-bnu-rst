@@ -213,7 +213,7 @@ Grid 布局
 .. figure:: ../pic/GUI/tkpaint.png
 
 matplotlibs后端
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. list-table:: matplotlib
     list：

@@ -81,8 +81,6 @@ Series的字符串表现形式为:索引在左边,值在右边。由于我们没
     CH     14.0
     dtype: float64
 
-.. code:: text
-
 
 一维数据表(Series)-创建
 

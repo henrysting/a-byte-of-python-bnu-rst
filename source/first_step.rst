@@ -222,14 +222,14 @@ Jupyter笔记是以单元格的形式来组织的，
 在jupyter中，我们可以使用Markdown语法来做笔记。Markdown是一种轻量级的、易于学习的标记语言，
 用于格式化纯文本。
 
-.. code:: txt
+.. code:: text
 
    # 第一个Jupyter笔记
    ## 这是二级标题
    这是本*Python课程*学习的第一个*Jupyter*笔记示例。
    ~~你可以通过本笔记迅速掌握python语言。~~
 
-   >Lifeisshort,you need Python
+   >Life is short,you need Python.
    
    下面演示了对html代码的支持：
    <ahref="http://202.112.85.96/python">Python课程资源</a>
@@ -241,8 +241,6 @@ Jupyter笔记是以单元格的形式来组织的，
 在JUPYTER中新建标签类单元格并键入以下内容：
 
 .. code:: text
-
-Latex语法
 
    当前行内插入公式：$\int_0^{+\infty}x^2dx$
 
@@ -409,7 +407,7 @@ program，程序的启动入口（在哪里找到文件），$file代表当前�
 启动你所选择的编辑器，输入如下程序并将它保存为 ``hello.py`` 。
 
 如果你正在使用
-PyCharm，我们已经讨论过\ :doc:`如何从脚本中运行它了 <./03.first_step>` \ 。
+PyCharm，我们已经讨论过\ :doc:`如何从脚本中运行它 <./first_step>` \ 。
 
 对于其它编辑器，打开一个新文件名将其命名为 ``hello.py``
 ，然后输入如下内容：
@@ -434,7 +432,7 @@ Python 程序：
 要想运行你的 Python 程序：
 
 1. 打开终端窗口（你可查阅先前的
-   \ :doc:`安装 :<./02.installation>` \ 章节来了解应该怎么做）。
+   \ :doc:`安装 :<./installation>` \ 章节来了解应该怎么做）。
 2. 使用 ``cd`` 命令来\ **改**\ 变\ **目**\ 录到你保存文件的地方，例如
    ``cd /tmp/py`` 。
 3. 通过输入命令 ``python hello.py``
@@ -458,7 +456,7 @@ Python
 Python 是区分大小写的，如 ``print`` 和 ``Print`` 是不同的——注意前者的 p
 是小写的，而后者的 P
 是大写的。此外，你需要确保每一行的第一个字符前面都没有任何空格或制表格——我们会在后面了解
-\ :doc:`为什么这件事如此重要 <./04.basis>` \ 。
+\ :doc:`为什么这件事如此重要 <./basis>` \ 。
 
 **它是如何工作的**
 

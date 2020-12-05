@@ -407,17 +407,17 @@ mplot3d 函数
 
 
 动画绘制
--------------
+-----------
 
 动画模块 animation
 ~~~~~~~~~~~~~~~~~~
+matplotlib 中包含生成动画的子模块animation，我们通过下面的例子来看一下它的用法。
 
 .. code:: python
 
    import numpy as np
    import matplotlib.pyplot as plt
    import matplotlib.animation as ani
-
    fig = plt.figure()
    x = np.arange(0, 2*np.pi, 0.01) # x-array
    line, = plt.plot(x, np.sin(x))
@@ -427,15 +427,14 @@ mplot3d 函数
    ani.FuncAnimation(fig, animate, np.arange(1, 200), interval=25, blit=True)
    plt.show()
 
- 
- 实时动画
- ~~~~~~~~~
+
+实时动画
+~~~~~~~~~
  
 .. code:: python
 
    import pylab as pl
    import numpy as np
-
    pl.ion() #实时绘图
    pl.show()
    x = np.arange(0,2*np.pi,0.01)
@@ -451,6 +450,8 @@ mplot3d 函数
 
 保存动画
 ~~~~~~~~
+生成可以播放的动画通常需要额外的视频编码器。
+这里我们先保存制作动画所需的单帧图像。
 
 .. code:: python
 
