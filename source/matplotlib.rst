@@ -389,7 +389,7 @@ Matplotlib 中包含生成动画的子模块 animation，我们通过下面的�
     import imageio
     import os
 
-    img_folder= "YOUR_PREFERRED_DIR"
+    img_folder = "YOUR_PREFERRED_DIR"
     # 排序
     files = os.listdir(img_folder)
     files.sort(key=lambda x: int(x[:3]))
@@ -397,7 +397,6 @@ Matplotlib 中包含生成动画的子模块 animation，我们通过下面的�
     frames = []
     for file in files:
         img_path = os.path.join(img_folder, file)
-        print(img_path)
         frames.append(imageio.imread(img_path))
 
     imageio.mimsave("ani.gif", frames, 'GIF', duration=0.1)
