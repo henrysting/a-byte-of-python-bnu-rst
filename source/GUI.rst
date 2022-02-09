@@ -1,32 +1,25 @@
 GUI编程
 ==========
 
-CLI & GUI
+人机交互界面
 ----------------
 
-CLI (command-line interface):
+用户和计算机之间的交互有多种方式，最初是通过打孔纸带，后来有了命令行终端，今天最主流的是图形窗口，在移动设备上，
+手势操作已成为最主要的交互方式。总的来说，交互方式越简单，开发的成本和难度就越高。产品也因此更容易出错。
 
-命令行界面，键盘操作，有稳定的输入输出格式， 特别适合进行协作、批处理或者后台定时任务。
-
-GUI（Graphical User Interface）:
-
-图形用户界面，适合鼠标点击，学习容易，功能明确，可扩展余地小，操作较CLI少，界面风格有时代性。
+- CLI (command-line interface):  命令行界面，键盘操作，有稳定的输入输出格式， 特别适合进行协作、批处理或者后台定时任务。
+- GUI（Graphical User Interface）: 图形用户界面，适合鼠标点击，学习容易，功能明确，可扩展余地小，操作较CLI少，界面风格有时代性。
 
 图形库--以TK为例
 -----------------
 
 目前主流的图形库有以下几种：
 
-Tk库：一个轻量级的跨平台图形开发工具。由Python创始人编写，python标配，模块为tkinter
-
-GTK库，跨平台的C语言开源图形开发框架，功能强大，模块为PyGtk
-
-Qt库，跨平台的C++图形开发框架，模块为PyQt
-
-wxwidgets，一个开源的跨平台的C++构架库，模块为WxPython，PySide
-
-MFC(MicrosoftFoundationClasses)：是微软基础类库的简称， 是微软公司实现的一个c++类库，主要封装了大部分的windows API函数，
-调用需要使用模块pywin
+- Tk库：一个轻量级的跨平台图形开发工具。由Python创始人编写，python标配，模块为tkinter
+- GTK库：跨平台的C语言开源图形开发框架，功能强大，模块为PyGtk
+- Qt库：跨平台的C++图形开发框架，模块为PyQt
+- wxwidgets：一个开源的跨平台的C++构架库，模块为WxPython，PySide
+- MFC(MicrosoftFoundationClasses)：是微软基础类库的简称， 是微软公司实现的一个c++类库，主要封装了大部分的windows API函数。python中调用需要使用模块pywin
 
 Tk库-窗口
 ~~~~~~~~~~~
@@ -48,31 +41,18 @@ Tk库-控件
 Tk 控件（Widget）:用于画布上各个单元的绘制：
 
 1. Label 标签。用来显示文字或图片
-
 2. Button 按钮。响应鼠标或键盘操作/事件的标签
-
 3. Entry 文本框。单行文字域,用来收集键盘输入
-
 4. Text 文本域。 多行文字区域,可用来收集(或显示）用户输入数字
-
 5. Frame 框架。包含其他组件的纯容器
-
 6. Canvas 画布。提供绘图功能(直线、椭圆、多边形、矩形）以包含位图或图形
-
 7. Message 消息框。类似于标签,但可以显示多行文本
-
 8. Checkbutton 选择按钮。一组方框,可以选其中任意个选项
-
 9. Listbox 列表框。一个选项列表,用户可以从中选择
-
 10. Menu 菜单。点下菜单按钮后弹出的一个用户可以选择的列表
-
 11. Menubutton 菜单按钮。用来包含菜单的组(下拉式，层叠式等)
-
 12. Radiobutton 单选按钮。一组按钮,其中只有一个可被按下
-
 13. Scale 进度条。线性"滑块"组件,可设定起始值和结束值
-
 14. Scrollbar 滚动条。对其支持的组件(文本功能)调节显示范围
 
 …………
@@ -92,7 +72,10 @@ Tk库-按钮
     tk.Button(root, text="OK",fg="blue",bd=2, width=28, command=callback).pack()
     root.mainloop()
 
-.. figure:: ../pic/GUI/tkbutton.png
+|image02|
+按下OK按钮会弹出一个对话窗口。
+
+|image02-1|
 
 关闭窗口
 
@@ -107,7 +90,7 @@ Tk库-按钮
     tk.Button(root, text="Close",fg="blue",bd=2, width=28, command=quit).pack()
     root.mainloop()
 
-.. figure:: ../pic/GUI/tkclose.png
+|image03|
 
 输入框
 
@@ -125,19 +108,17 @@ Tk库-按钮
     B.pack(side = RIGHT)
     root.mainloop()
 
-.. figure:: ../pic/GUI/tkinput.png
+|image04|
 
 几何布局
 ~~~~~~~~~~
 
 针对窗口（画布），我们可以选择不同的布局方式：
 
-pack：采用块的方式组织控件，组件简单的布局中代码量最少。默认在父窗体中自顶向下添加组件。
-
-grid：采用类似表格的结构组织控件，适合设计对话框和带有滚动条的窗体
-
-place：使用绝对坐标将控件放到指定位置
-
+ - pack：采用块的方式组织控件，组件简单的布局中代码量最少。默认在父窗体中自顶向下添加组件。
+ - grid：采用类似表格的结构组织控件，适合设计对话框和带有滚动条的窗体
+ - place：使用绝对坐标将控件放到指定位置
+ 
 pack布局：
 
 .. code:: python
@@ -151,7 +132,7 @@ pack布局：
     Label(root,text="L4",bg="blue").pack(side = BOTTOM)
     root.mainloop()
 
-.. figure:: ../pic/GUI/tkpack.png
+|image05|
 
 Grid 布局
 
@@ -167,7 +148,7 @@ Grid 布局
     cbutton.grid(columnspan=2, sticky='E')
     mainloop()
 
-.. figure:: ../pic/GUI/tkgrid.png
+|image06|
 
 文字重设
 
@@ -188,7 +169,8 @@ Grid 布局
     btnCal.pack()
     top.mainloop()
 
-.. figure:: ../pic/GUI/tkresettxt.png
+|image07| |image07-1|
+
 
 绘图框
 
@@ -210,7 +192,8 @@ Grid 布局
     canvas.get_tk_widget().pack(side=Tk.TOP, fill=Tk.BOTH, expand=1) 
     Tk.mainloop()
 
-.. figure:: ../pic/GUI/tkpaint.png
+|image08|
+
 
 matplotlibs后端
 ~~~~~~~~~~~~~~~~
@@ -220,27 +203,27 @@ matplotlibs后端
     :header-rows: 1
 
     * - 后端
-        - 描述
+      - 描述
     * - GTKAgg
-        - Agg渲染器输出到GTK绘图面板(需要PyGTK)
+      - Agg渲染器输出到GTK绘图面板(需要PyGTK)
     * - GTK
-        - GDK渲染器输出到GTK绘图面板(不推荐，需要PyGTK)
+      - GDK渲染器输出到GTK绘图面板(不推荐，需要PyGTK)
     * - GTKCairo 
-        - Cairo渲染器输出到GTK绘图面板(需要PyGTK)
+      - Cairo渲染器输出到GTK绘图面板(需要PyGTK)
     * - WXAgg 
-        - Agg渲染器输出到wxWidgets绘图面板（需要wxPython）
+      - Agg渲染器输出到wxWidgets绘图面板（需要wxPython）
     * - WX 
-        - 原生wxWidgets绘图输出到wxWidgets绘图面板(不推荐，需要wxPython) 
+      - 原生wxWidgets绘图输出到wxWidgets绘图面板(不推荐，需要wxPython) 
     * - TkAgg 
-        - Agg渲染器输出到Tk绘图面板(需要Tkinter) 
+      - Agg渲染器输出到Tk绘图面板(需要Tkinter) 
     * - QtAgg 
-        - Agg渲染器输出到Qt绘图面板（不推荐，请使用Qt4Agg，需要PyQt）
+      - Agg渲染器输出到Qt绘图面板（不推荐，请使用Qt4Agg，需要PyQt）
     * - Qt4Agg 
-        - Agg渲染器输出到Qt4绘图面板（需要PyQt4）
+      - Agg渲染器输出到Qt4绘图面板（需要PyQt4）
     * - FLTKAgg 
-        - Agg渲染器输出到FLTK绘图面板(需要pyFLTK, 使用不是很广，考虑使用TKAgg,GTKAgg,WXAgg,或者QT4Agg替代) 
+      - Agg渲染器输出到FLTK绘图面板(需要pyFLTK, 使用不是很广，考虑使用TKAgg,GTKAgg,WXAgg,或者QT4Agg替代) 
     * - macosx 
-        - Cocoa渲染器在osx上。（目前在非交互式模式缺少阻塞show()行为）
+      - Cocoa渲染器在osx上。（目前在非交互式模式缺少阻塞show()行为）
 
 根据输入参数画图
 ~~~~~~~~~~~~~~~~
@@ -277,7 +260,7 @@ matplotlibs后端
     canvas.get_tk_widget().grid(row=0, columnspan=3) 
     Tk.mainloop()
 
-.. figure:: ../pic/GUI/tkinputrandom.png
+|image09|
 
 
 画布动画
@@ -303,7 +286,7 @@ matplotlibs后端
     canvas.update()
     time.sleep(0.02)
 
-.. figure:: ../pic/GUI/tkframe.png
+|image10|
 
 鼠标事件
 ~~~~~~~~~~
@@ -346,56 +329,66 @@ matplotlibs后端
     :header-rows: 1
 
     * - Solution
-        - windows
-        - linux
-        - os x
-        - python3
-        - license
-        - one file mode 
-        - zipfile import
+      - windows
+      - linux
+      - os x
+      - python3
+      - license
+      - one file mode 
+      - zipfile import
     * - bbfreeze
-        -   yes
-        -   yes
-        -   yes
-        -   no
-        -   MIT
-        -   no 
-        -   yes
+      -   yes
+      -   yes
+      -   yes
+      -   no
+      -   MIT
+      -   no 
+      -   yes
     * - py2exe
-        - yes
-        - no
-        - no
-        - yes
-        - MIT
-        - yes 
-        - yes
+      - yes
+      - no
+      - no
+      - yes
+      - MIT
+      - yes 
+      - yes
     * - pyInstaller
-        - yes
-        - yes
-        - yes
-        - yes
-        - GPL
-        - yes
-        - no
+      - yes
+      - yes
+      - yes
+      - yes
+      - GPL
+      - yes
+      - no
     * - cx-Freeze
-        - yes
-        - yes
-        - yes
-        - yes
-        - PSF
-        - no 
-        - yes
+      - yes
+      - yes
+      - yes
+      - yes
+      - PSF
+      - no 
+      - yes
     * - py2app
-        - no
-        - no
-        - yes
-        - yes
-        - MIT
-        - no 
-        - yes
+      - no
+      - no
+      - yes
+      - yes
+      - MIT
+      - no 
+      - yes
         
 
 
-Play with Python!
 
-.. |image01| image:: ../pic/GUI/tkwindow.png
+.. |image01| image:: ../pic/GUI/GUI-tkhello.png
+.. |image02| image:: ../pic/GUI/GUI-tkbutton.png
+.. |image02-1| image:: ../pic/GUI/GUI-tkbuttonOK.png
+.. |image03| image:: ../pic/GUI/GUI-tkclose.png
+.. |image04| image:: ../pic/GUI/GUI-tkinput.png
+.. |image05| image:: ../pic/GUI/GUI-tkpack.png
+.. |image06| image:: ../pic/GUI/GUI-tkgrid.png
+.. |image07| image:: ../pic/GUI/GUI-tkreset.png
+.. |image07-1| image:: ../pic/GUI/GUI-tkreset2.png
+.. |image08| image:: ../pic/GUI/GUI-tkplot.png
+.. |image09| image:: ../pic/GUI/GUI-tkscatter.png
+.. |image10| image:: ../pic/GUI/GUI-tkframe.png

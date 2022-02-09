@@ -18,11 +18,11 @@
 # -- Project information -----------------------------------------------------
 
 project = 'A-Byte-of-Python-BNU'
-copyright = '2020, BNU-Astro'
+copyright = '2022, BNU-Astro'
 author = 'BNU-Astro'
 
 # The full version, including alpha/beta/rc tags
-release = '1.0'
+release = '1.2'
 
 master_doc = 'index'
 
@@ -60,7 +60,7 @@ html_theme = 'nature'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['/home/user/ywc/github/a-byte-of-python-bnu-rst/build']
+#html_static_path = ['/home/user/ywc/github/a-byte-of-python-bnu-rst/build']
 
 
 latex_engine = 'xelatex'
