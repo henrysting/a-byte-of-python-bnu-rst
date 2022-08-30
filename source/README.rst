@@ -7,7 +7,7 @@ Python）一书的基础上修订、补而来。
 《简明 Python 教程》是由 **Swaroop C H** 编写，旨在介绍 Python 语言的开源图书。2005 年，\ **沈洁元** 将本书的 1.20 版（基于python
 2.3）译为中文并公开发布，将本书的译名定为《简明 Python 教程》。2017年，\ **漠伦** 根据原书 4.0 版（基于python 3.5）重新翻译，并沿用同样的译名。
 2018年，北师大天文系师生在本书4.08c 版的基础上进行了调整和修改，用作Python课程的参考资料。2020年9月将其由Gitbook转换为Sphinx格式，
-所有代码在3.7下测试通过。最近更新于2020年12月05日。
+所有代码在3.7下测试通过。最近更新于2022年02月09日。
 
 版本
 ----
@@ -42,4 +42,9 @@ Python）一书的基础上修订、补而来。
 -  《Python编程快速上手》[美]Albert Sweigart，人民邮电出版社, (2016)
 -  《Python编程：从入门到实践》 [美]埃里克·马瑟斯，人民邮电出版社, (2016)
 -  `Python 3 官方文档 <https://docs.python.org/zh-cn/3/index.html>`__
--  《\ `深入 Python 3 <https://woodpecker.org.cn/diveintopython3/>`__\ 》(Dive Into Python 3), Mark Pilgrim, (2009)
+
+线上教程
+--------
+-  `动手学Python <https://www.freeaihub.com/python/>`__
+-  `W3School <https://www.w3school.com.cn/python/>`__ 
+-  `RUNOOB <https://www.runoob.com/python3/>`__
