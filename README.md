@@ -10,7 +10,7 @@
 * 英文原版： [https://python.swaroopch.com/](https://python.swaroopch.com/) （[英文版源文件](https://github.com/swaroopch/byte-of-python)）
 * 沈洁元译本： [http://woodpecker.org.cn/abyteofpython\_cn/chinese/](http://woodpecker.org.cn/abyteofpython_cn/chinese/) （[沈洁元译本源文件](https://github.com/onion7878/A-Byte-of-Python-CN)）
 * 漠伦译本： [https://legacy.gitbook.com/book/lenkimo/byte-of-python-chinese-edition/](https://legacy.gitbook.com/book/lenkimo/byte-of-python-chinese-edition/) （[漠伦译本源文件](https://github.com/LenKiMo/byte-of-python)）
-* 北师大天文系修改版：[https://a-byte-of-python-bnu-rst.readthedocs.io/en/latest/](https://a-byte-of-python-bnu-rst.readthedocs.io/en/latest/)（[天文系修改版源文件](https://github.com/henrysting/a-byte-of-python-bnu-rst)）
+* 北师大天文系修改版：[https://a-byte-of-python-bnu-rst.readthedocs.io/zh_CN/latest/](https://a-byte-of-python-bnu-rst.readthedocs.io/zh_CN/latest/)（[天文系修改版源文件](https://github.com/henrysting/a-byte-of-python-bnu-rst)）
 
 ## 版权
 
